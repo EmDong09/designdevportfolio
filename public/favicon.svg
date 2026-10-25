@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Emily Dong monogram">
+  <rect width="64" height="64" rx="14" fill="#FAF6F0"/>
+  <circle cx="24" cy="32" r="14" fill="#2446E8"/>
+  <path d="M34 18 L52 32 L34 46 Z" fill="#F4C9A8" opacity="0.92"/>
+</svg>

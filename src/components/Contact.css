@@ -1,0 +1,29 @@
+.contact {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-lavender-soft);
+}
+
+.contact__inner {
+  max-width: var(--content-width-narrow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  text-align: left;
+}
+
+.contact__heading {
+  font-size: var(--size-display);
+  font-family: var(--font-heading);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.contact__placeholder {
+  font-family: var(--font-subheading);
+  font-size: var(--size-subheading);
+  color: var(--color-text-muted);
+}
