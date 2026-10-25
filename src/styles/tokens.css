@@ -17,10 +17,12 @@
 
   --color-focus-ring: #14130f;
 
-  /* Typography — sourced from the project Figma file (see DESIGN_SYSTEM.md) */
+  /* Typography — sourced from the project Figma file (see DESIGN_SYSTEM.md).
+     Kokoro has no public web source yet, so the system sans renders until its
+     font files are added; the name stays first so it takes over automatically. */
   --font-heading: 'Abhaya Libre', Georgia, 'Times New Roman', serif;
   --font-subheading: 'Josefin Sans', 'Segoe UI', sans-serif;
-  --font-body: 'Kokoro', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Kokoro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   /* Fluid type scale: holds at 320px, matches Figma reference at desktop widths */
   --size-display: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);

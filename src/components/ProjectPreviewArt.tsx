@@ -11,7 +11,13 @@ interface ProjectPreviewArtProps {
  */
 export default function ProjectPreviewArt({ motif }: ProjectPreviewArtProps) {
   return (
-    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <svg
+      viewBox="0 0 400 300"
+      preserveAspectRatio="xMidYMid slice"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
       <rect width="400" height="300" fill="var(--color-bg-raised)" />
       {motif === 'compass' && <CompassMotif />}
       {motif === 'ritual' && <RitualMotif />}

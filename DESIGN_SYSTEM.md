@@ -14,13 +14,10 @@ Three-tier type scale, pulled from the Figma "Headings / Subheadings / Body text
 | Subheading | **Josefin Sans** | 30px | Regular (400) | Geometric sans |
 | Body | **Kokoro** | 18px | Regular (400) | Variable font; axes `CTGR 0, wdth 100` |
 
-### Google Fonts import
+### Font sources
 
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600&family=Josefin+Sans:wght@400&family=Kokoro&display=swap" rel="stylesheet">
-```
+- **Abhaya Libre** and **Josefin Sans** are self-hosted via Fontsource (`@fontsource/abhaya-libre`, `@fontsource/josefin-sans`, OFL-1.1), imported in `src/main.tsx`. No requests go to Google Fonts.
+- **Kokoro** is not available on Google Fonts or Fontsource, so it is likely only available inside Figma or installed locally there. Until its font files (and license) are supplied, body text falls back to the system sans stack. To enable it, add the `.woff2` files under `src/assets/fonts/`, declare an `@font-face` for `'Kokoro'` in `src/styles/global.css`, and record the license in the README. `--font-body` already lists Kokoro first.
 
 ### CSS custom properties
 
@@ -28,7 +25,7 @@ Three-tier type scale, pulled from the Figma "Headings / Subheadings / Body text
 :root {
   --font-heading: 'Abhaya Libre', serif;
   --font-subheading: 'Josefin Sans', sans-serif;
-  --font-body: 'Kokoro', sans-serif;
+  --font-body: 'Kokoro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --size-heading: 50px;
   --size-subheading: 30px;
@@ -39,13 +36,13 @@ Three-tier type scale, pulled from the Figma "Headings / Subheadings / Body text
   --weight-body: 400;
 }
 
-h1, .heading {
+h1, h2, .heading {
   font-family: var(--font-heading);
   font-size: var(--size-heading);
   font-weight: var(--weight-heading);
 }
 
-h2, .subheading {
+h3, .subheading {
   font-family: var(--font-subheading);
   font-size: var(--size-subheading);
   font-weight: var(--weight-subheading);
@@ -62,7 +59,8 @@ body, p, .body-text {
 ## Status
 
 - [x] Typography tokens extracted
-- [ ] Color tokens (not yet defined in Figma file)
+- [ ] Kokoro font files + license (needed to render the body font on the web)
+- [ ] Color tokens (not yet defined in Figma file; the site's palette lives in `src/styles/tokens.css`)
 - [ ] Spacing/layout tokens (not yet defined in Figma file)
 - [ ] Component specs (not yet defined in Figma file)
 

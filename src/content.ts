@@ -21,6 +21,8 @@ export interface Project {
   title: string
   isSample: boolean
   description: string
+  /** Shown in the preview dialog. Keep it to the concept direction — no invented research or results. */
+  overview: string
   tags: string[]
   motif: ProjectMotif
   previewAction: string
@@ -65,12 +67,19 @@ export const hero = {
 export const selectedWorkSampleNote =
   'Sample projects shown while portfolio work is being added.'
 
+export const sampleProjectLabel = 'Sample project'
+
+export const samplePreviewStatus =
+  'Placeholder concept. A full case study will replace this once real project work is added.'
+
 export const projects: Project[] = [
   {
     id: 'campus-compass',
     title: 'Campus Compass',
     isSample: true,
     description: 'A placeholder concept for exploring campus resources.',
+    overview:
+      'Concept direction: helping students find campus resources through clear wayfinding and simple navigation.',
     tags: ['UX Research', 'Interaction Design'],
     motif: 'compass',
     previewAction: 'Preview concept',
@@ -80,6 +89,8 @@ export const projects: Project[] = [
     title: 'Everyday Rituals',
     isSample: true,
     description: 'A placeholder concept for a reflective daily interface.',
+    overview:
+      'Concept direction: a calm interface for noticing and reflecting on small daily routines.',
     tags: ['UI Design', 'Prototyping'],
     motif: 'ritual',
     previewAction: 'Preview concept',
@@ -90,6 +101,8 @@ export const projects: Project[] = [
     isSample: true,
     description:
       'A placeholder exploration of typography, color, and visual storytelling.',
+    overview:
+      'Concept direction: testing how type, color, and composition can carry a visual story on their own.',
     tags: ['Art Direction', 'Visual Design'],
     motif: 'form',
     previewAction: 'Preview concept',

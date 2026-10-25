@@ -4,10 +4,12 @@ import './Hero.css'
 
 export default function Hero() {
   return (
-    <section className="hero section" aria-label="Introduction">
+    <section className="hero section" aria-labelledby="hero-heading">
       <div className="container hero__inner">
         <div className="hero__copy">
-          <h1 className="hero__greeting">{hero.greeting}</h1>
+          <h1 id="hero-heading" className="hero__greeting">
+            {hero.greeting}
+          </h1>
           <p className="hero__tagline">{hero.tagline}</p>
           <p className="hero__context">{hero.context}</p>
           <div className="hero__actions">
