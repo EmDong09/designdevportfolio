@@ -1,11 +1,12 @@
 /** Central editable content. All projects and artwork below are placeholders. */
 window.portfolioContent = {
   name: 'Emily Dong', university: 'University of Michigan', majors: ['User Experience Design', 'Art and Design'],
-  email: null, linkedin: null, resume: null,
+  email: 'emdong@umich.edu', linkedin: null, instagram: null, resume: null,
   projects: [
     { id: 'campus', title: 'Campus Compass', category: 'digital', description: 'A placeholder concept for exploring campus resources.', tags: ['UX Research', 'Interaction Design'], overview: 'An illustrative starting point for a campus resource finder. Explore a sample resource category below. Real research, project process, and case study content have yet to be added.', sample: true },
     { id: 'ritual', title: 'Everyday Rituals', category: 'digital', description: 'A placeholder concept for a reflective daily interface.', tags: ['UI Design', 'Prototyping'], overview: 'A sample interface exploring a quieter moment in the day. Try the mood selector below to see the concept respond. Responses are temporary and are not collected or saved.', sample: true },
-    { id: 'form', title: 'Form & Feeling', category: 'visual', description: 'A placeholder exploration of typography, color, and visual storytelling.', tags: ['Art Direction', 'Visual Design'], overview: 'An original abstract placeholder exploring the relationship between type and shape. Switch palettes below to explore a different visual mood. This is a demonstration, not Emily’s submitted artwork.', sample: true }
+    { id: 'loop', title: 'Local Loop', category: 'digital', description: 'A sample concept for finding small moments of connection close to home.', tags: ['UX Design', 'Community'], overview: 'An illustrative neighborhood discovery concept. No research or outcomes are claimed.', sample: true },
+    { id: 'shelf', title: 'Open Shelf', category: 'digital', description: 'A sample exploration of a more personal way to discover your next read.', tags: ['UI Design', 'Interaction Design'], overview: 'An illustrative reading discovery interface. No research or outcomes are claimed.', sample: true },
   ]
 };
 
@@ -72,6 +73,32 @@ window.portfolioContent.playground = {
 
 /** Editable sample narratives. Questions and directions below are proposals, not research findings or completed work. */
 const sampleCaseStudies = {
+ loop: {
+  details: {projectType: 'Sample UX concept', team: null, tools: [], timeline: null},
+  slug: 'local-loop', headline: 'A little closer to your neighborhood.',
+  intro: 'A placeholder exploration of neighborhood discovery, using a simple interface to bring local possibilities into view.',
+  question: 'How might a local discovery interface make it easier to explore nearby?',
+  context: 'This sample is an early interface idea, not completed project work. Its purpose is to provide a structure for a future case study.',
+  questions: ['What information helps someone decide whether to explore a place?', 'How could an interface make local discovery approachable?', 'What access information would need to be verified?'],
+  direction: 'One possible direction pairs clear categories with concise place information. These ideas are proposals, rather than validated findings.',
+  principles: [{title:'Stay close',body:'Keep nearby possibilities easy to browse.'},{title:'Offer useful context',body:'Leave space for practical, verified details.'},{title:'Make room for everyone',body:'Explore ways to communicate access information clearly.'}],
+  flow: ['Explore nearby', 'Find a possibility', 'Learn more'],
+  concept: 'The illustrative screen uses neighborhood-inspired shapes and simple place cards. Listings are placeholders and do not represent real businesses or events.',
+  reflection: 'A real project would need research, verified listings, accessibility review, and testing. None of those activities or their outcomes are claimed in this sample.'
+ },
+ shelf: {
+  details: {projectType: 'Sample UI concept', team: null, tools: [], timeline: null},
+  slug: 'open-shelf', headline: 'Room for your next great read.',
+  intro: 'A placeholder visual and interaction concept for discovering books through an inviting, readable interface.',
+  question: 'How might a reading interface invite discovery without overwhelming the reader?',
+  context: 'This sample provides a starting structure for a future reading-related case study. It is not completed work or a claim of user research.',
+  questions: ['What information would help someone explore a book?', 'How could browsing feel more personal?', 'Which interface details would need usability testing?'],
+  direction: 'A proposed direction uses editorial typography, a small set of categories, and a flexible reading collection. These choices have not been validated.',
+  principles: [{title:'Invite curiosity',body:'Give a small amount of information room to breathe.'},{title:'Keep type readable',body:'Explore hierarchy and contrast before decoration.'},{title:'Support a next step',body:'Make the path from browsing to learning more clear.'}],
+  flow: ['Browse a collection', 'Explore a title', 'Consider a next read'],
+  concept: 'The abstract book covers and interface elements below are original placeholders, with no real catalog or recommendation data behind them.',
+  reflection: 'Future work could replace these placeholders with actual exploration, feedback, and reflections. No testing results, client outcomes, or product impact are claimed.'
+ },
  campus: {
   details: {projectType: 'Sample UX concept', team: null, tools: [], timeline: null},
   slug: 'campus-compass', headline: 'A little direction. A lot to discover.',
@@ -98,19 +125,6 @@ const sampleCaseStudies = {
   concept: 'A sample check-in shows how a selected mood could change the interface response. The choice stays on this page only and is cleared when you leave or refresh.',
   reflection: 'Before becoming a real product, the concept would need a clearer purpose, feedback on tone and usability, and careful decisions about privacy. This sample includes no completed testing or measured outcomes.'
  },
- form: {
-  details: {projectType: 'Sample visual exploration', team: null, tools: [], timeline: null},
-  slug: 'form-and-feeling', headline: 'Where form finds a feeling.',
-  intro: 'An original placeholder study in typography, color, and visual storytelling, built from simple shapes and a few expressive contrasts.',
-  question: 'How can the same composition express a different visual mood?',
-  context: 'This sample is a visual exploration created for the portfolio infrastructure. It is not presented as Emily’s submitted artwork or a commissioned identity.',
-  questions: ['How does scale change the relationship between words and shapes?', 'What happens when a palette changes but the layout stays the same?', 'Where can expressive typography still remain readable?'],
-  direction: 'The proposed visual system pairs a large serif treatment with a circle, an asterisk, and a restrained palette. Repeated elements make it possible to compare variations without changing everything at once.',
-  principles: [{title:'Work with contrast',body:'Compare large expressive forms with small, precise supporting labels.'},{title:'Keep a common thread',body:'Repeat core shapes to connect different compositions.'},{title:'Change one variable',body:'Explore palette variations while keeping the structure consistent.'}],
-  flow: ['Choose a form','Explore contrast','Compare a variation'],
-  concept: 'Switch between the two illustrative palettes below to compare how the same shapes and typography can read differently.',
-  reflection: 'Future personal work can replace these placeholders with original artwork, sketches, and a discussion of actual choices. There are no client results, awards, or external endorsements attached to this sample.'
- }
 };
 window.portfolioContent.projects.forEach(project => { project.caseStudy = sampleCaseStudies[project.id]; });
 

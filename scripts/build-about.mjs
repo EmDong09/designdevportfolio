@@ -1,3 +1,4 @@
+import {headerFor} from './header.mjs';
 import {themeLink} from './theme.mjs';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import vm from 'node:vm';
@@ -7,7 +8,6 @@ const context = {window: {}};
 vm.runInNewContext(await readFile(`${root}site/content.js`, 'utf8'), context);
 const content = context.window.portfolioContent;
 const about = content.about;
-const home = await readFile(`${root}site/index.html`, 'utf8');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const text = value => escape(value ?? '');
 const url = value => {
@@ -17,12 +17,9 @@ const url = value => {
   throw new Error('Use a local path or an https/http URL for content links and assets.');
 };
 // Reuse the existing homepage shell to avoid a separate navigation/footer design.
-const header = home.match(/<header\b[\s\S]*?<\/header>/)[0]
-  .replace('href="#top"', 'href="/"').replace('Emily Dong, back to top', 'Emily Dong, home')
-  .replace('href="#work"', 'href="/#work"').replace('href="#contact"', 'href="/#contact"')
-  .replace('href="/about/"', 'href="/about/" aria-current="page"');
-const footer = home.match(/<footer\b[\s\S]*?<\/footer>/)[0];
-const contact = home.match(/<section class="contact\b[\s\S]*?<\/section>/)[0];
+const header=headerFor('about');
+const footer=await readFile(`${root}scripts/templates/shared-footer.html`,'utf8');
+const contact=await readFile(`${root}scripts/templates/shared-contact.html`,'utf8');
 function image(item, index) {
   if (!item) return '';
   const source = url(item.src);
@@ -45,5 +42,5 @@ function education() {
 }
 await mkdir(`${root}site/about`, {recursive:true});
 await writeFile(`${root}site/about/index.html`, `<!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About Emily Dong</title><meta name="description" content="Meet Emily Dong, a University of Michigan student studying User Experience Design and Art and Design."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=6"><link rel="stylesheet" href="/about.css"><script src="/content.js" defer></script><script src="/shared.js" defer></script>${themeLink}</head><body class="about-page" id="top"><a class="skip" href="#main">Skip to content</a>${header}<main id="main">${intro()}${faqs()}${tools()}${education()}<section class="about-closing wrap"><p>${text(about.closing)}</p><a class="primary" href="/work/">Explore my work</a></section>${contact}</main>${footer}</body></html>\n`);
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About Emily Dong</title><meta name="description" content="Meet Emily Dong, a University of Michigan student studying User Experience Design and Art and Design."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=6"><link rel="stylesheet" href="/about.css"><script src="/content.js" defer></script><script src="/shared.js" defer></script>${themeLink}</head><body class="about-page" id="top"><a class="skip" href="#main">Skip to content</a>${header}<main id="main">${intro()}${faqs()}${tools()}${education()}<section class="about-closing wrap"><p>${text(about.closing)}</p><a class="primary" href="/#work">Explore my work</a></section>${contact}</main>${footer}</body></html>\n`);
 console.log('Built /about/ from content.js and the shared homepage shell.');

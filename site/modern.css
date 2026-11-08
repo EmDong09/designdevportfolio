@@ -46,3 +46,44 @@ dialog,#study-dialog{background:#f5f5f1;border:1px solid #fff;border-radius:12px
 .modern-hero .is-typing .type-current::after{content:'';position:absolute;left:100%;top:.12em;width:1px;height:.8em;background:currentColor;animation:hero-caret .7s step-end infinite;pointer-events:none}
 @keyframes hero-caret{0%,48%{opacity:1}49%,100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.modern-hero .type-unit{visibility:visible}.modern-hero .type-current::after{display:none}.modern-hero .is-entering .intro-capsule{transition:none}}
+
+/* Reveal the supporting copy with the pills after the typing finishes. */
+.modern-hero .hero-description{opacity:1;transition:opacity .5s ease}
+.modern-hero .hero-description.hero-description-pending{opacity:0}
+@media(prefers-reduced-motion:reduce){.modern-hero .hero-description{transition:none}.modern-hero .hero-description.hero-description-pending{opacity:1}}
+
+/* Keep homepage section headings free of the small overline labels. */
+.home-page #contact>.eyebrow{display:none}
+
+/* The remaining homepage appears in the same fade as the supporting copy. */
+.home-page .home-entry-target{opacity:1;transition:opacity .5s ease}
+.home-page.home-entry-pending .home-entry-target{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.home-page .home-entry-target{transition:none}.home-page.home-entry-pending .home-entry-target{opacity:1;pointer-events:auto}}
+
+/* Give the hero description a more readable size on desktop and phones. */
+.modern-hero .hero-description{font-size:16px;max-width:570px;line-height:1.75}
+@media(max-width:700px){.modern-hero .hero-description{font-size:14px;max-width:350px;line-height:1.8}}
+
+/* Two-column footer, shared by the homepage and secondary pages. */
+footer.site-footer.wrap{display:block;padding-top:65px;padding-bottom:25px;margin-top:50px;border-top:1px solid var(--line);color:var(--ink)}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;padding-bottom:65px}.footer-column h2{font:400 17px/1.5 Arial,Helvetica,sans-serif;letter-spacing:0;margin:0 0 22px;color:#1e201e}.footer-column nav{display:flex;flex-direction:column;align-items:start;gap:8px}.footer-column nav>a,.footer-placeholder,.footer-email{display:flex;align-items:center;min-height:44px;font:400 20px/1.6 Arial,Helvetica,sans-serif;letter-spacing:-.35px;color:#626663}.footer-column a:hover{color:#171917}.footer-placeholder{gap:12px}.footer-placeholder small{font-size:10px;letter-spacing:0;color:#747870}.footer-socials{display:flex;gap:14px;margin-top:15px}.footer-socials[hidden]{display:none}.footer-socials a{display:grid;place-items:center;width:44px;height:44px;color:#626663}.footer-socials svg{width:29px;height:29px;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;font:400 10px/1.6 Arial,Helvetica,sans-serif;color:#6b6b65}.footer-bottom a{display:flex;align-items:center;min-height:44px}
+/* Original illustrations for the two new sample projects. */
+.loop-art,.shelf-art{position:relative;overflow:hidden}.loop-art{background:#d7d4e5}.loop-street{position:absolute;width:150%;height:50px;background:#f5f2e9;left:-20%;transform:rotate(-30deg)}.street-a{top:30%}.street-b{top:75%;transform:rotate(28deg)}.loop-building{position:absolute;border:6px solid #efedf5;background:#b9b3cb;border-radius:5px}.building-a{width:20%;height:24%;left:10%;bottom:10%;transform:rotate(-30deg)}.building-b{width:22%;height:14%;right:5%;top:6%;transform:rotate(28deg)}.building-c{width:17%;height:20%;left:38%;bottom:12%;background:#c1caa9;transform:rotate(28deg)}.loop-copy,.shelf-copy{position:absolute;left:7%;top:10%;font:400 clamp(24px,2.8vw,42px)/1.1 var(--display);letter-spacing:-1px;color:#353344}.loop-copy em,.shelf-copy em{font-weight:400}.loop-screen{position:absolute;width:38%;height:78%;right:9%;top:14%;padding:16px;background:#faf9f3;border:5px solid #3a3546;border-radius:18px;transform:rotate(8deg);box-shadow:12px 20px 25px #29233424}.loop-brand{display:flex;justify-content:space-between;font-size:10px;letter-spacing:-.3px}.loop-brand b{font-weight:400;color:#79688c}.loop-screen>p{font:400 22px/1.1 var(--display);letter-spacing:-.6px;margin:18px 0 14px}.loop-map{height:32%;position:relative;background:repeating-linear-gradient(35deg,transparent 0 19px,#fff 20px 24px,transparent 25px 45px),#dad8e7;border-radius:6px}.loop-map i{position:absolute;top:28%;left:38%;width:11px;height:11px;background:#766387;border:2px solid white;border-radius:50%}.loop-map i:nth-child(2){top:60%;left:68%;background:#8b986d}.loop-map i:nth-child(3){top:65%;left:18%;background:#aa7c6f}.loop-chip{display:block;font-size:6px;margin-top:10px;background:#eae5ef;border-radius:15px;width:fit-content;padding:6px}.loop-list{font-size:6px;display:flex;flex-direction:column;gap:8px;margin-top:12px}.loop-note,.shelf-note{position:absolute;bottom:6%;left:6%;font-size:6px;letter-spacing:1px}.shelf-art{background:#d9c9b6}.shelf-copy{color:#554333}.shelf-book{position:absolute;width:23%;height:50%;border-radius:3px 7px 7px 3px;box-shadow:5px 9px 12px #5a48332b;overflow:hidden}.book-a{background:#4e665c;left:9%;bottom:10%;transform:rotate(-12deg);color:#f3e4c8}.book-b{background:#eadcbb;left:28%;bottom:3%;transform:rotate(9deg);color:#5f5747}.shelf-book>span{position:absolute;top:12%;left:12%;font:400 24px/1 var(--display);letter-spacing:-1px;z-index:1}.shelf-book i{position:absolute;width:80%;height:70%;border:12px solid #d6c3a5;border-radius:50%;left:35%;top:43%}.book-b i{border-color:#ac735c;left:-30%;top:35%}.shelf-screen{position:absolute;width:38%;height:78%;right:7%;top:12%;background:#f9f4e9;border:5px solid #544b42;border-radius:18px;padding:17px;transform:rotate(6deg);box-shadow:10px 20px 25px #3f302829}.shelf-brand{font:italic 15px var(--display)}.shelf-screen>p{font:400 23px/1.1 var(--display);letter-spacing:-.5px;margin:25px 0}.mini-books{display:flex;align-items:end;gap:7%;height:30%}.mini-books i{width:29%;height:90%;background:#627a6e;border-radius:2px}.mini-books i:nth-child(2){height:78%;background:#c1a278}.mini-books i:nth-child(3){height:100%;background:#967d74}.shelf-screen>span{display:block;border-top:1px solid #d3c6b1;margin-top:18px;padding-top:12px;font-size:6px}.case-art .loop-copy,.case-art .shelf-copy{font-size:clamp(28px,3.5vw,48px)}.case-art .loop-screen,.case-art .shelf-screen{width:30%;height:80%;right:15%;padding:22px}.case-art .loop-screen>p,.case-art .shelf-screen>p{font-size:30px}.case-related-project .loop-screen,.case-related-project .shelf-screen{width:38%;right:8%;padding:12px}.case-related-project .loop-copy,.case-related-project .shelf-copy{font-size:24px}.case-related-project .loop-screen>p,.case-related-project .shelf-screen>p{font-size:19px}.case-related-project .loop-brand{font-size:8px}
+@media(max-width:1000px){.loop-screen,.shelf-screen{padding:12px;width:40%;right:8%}.loop-screen>p,.shelf-screen>p{font-size:18px}.shelf-screen>p{margin-block:20px}.shelf-book>span{font-size:20px}.loop-copy,.shelf-copy{font-size:28px}}
+@media(max-width:700px){footer.site-footer.wrap{padding-top:40px;margin-top:25px}.footer-grid{grid-template-columns:1fr;gap:30px;padding-bottom:35px}.footer-column h2{font-size:15px;margin-bottom:12px}.footer-column nav>a,.footer-placeholder,.footer-email{font-size:18px}.footer-placeholder small{font-size:9px}.footer-socials{margin-top:10px}.loop-copy,.shelf-copy,.case-art .loop-copy,.case-art .shelf-copy{font-size:26px}.loop-screen,.shelf-screen,.case-art .loop-screen,.case-art .shelf-screen{padding:12px 9px;width:39%;height:78%;right:8%;border-width:4px}.loop-screen>p,.shelf-screen>p,.case-art .loop-screen>p,.case-art .shelf-screen>p{font-size:18px}.loop-brand{font-size:8px}.shelf-brand{font-size:13px}.loop-chip,.loop-list,.shelf-screen>span{font-size:5px}.loop-note,.shelf-note{font-size:5px}.shelf-book>span{font-size:20px}.shelf-book i{border-width:8px}.shelf-screen>p{margin-block:20px}.loop-list{margin-top:9px;gap:6px}}
+
+/* Keep the full hero introduction upright. */
+.modern-hero h1,.modern-hero h1 em{font-style:normal}
+
+/* Omit the numbered project overlines on the homepage cards. */
+.home-page .project-number{display:none}
+
+/* Homepage thumbnails extend to the card edge, without a white frame. */
+.home-page .project-preview{padding:0;border:0;background:transparent}
+.home-page .project-preview>div{border-radius:inherit}
+
+/* Stagger the rest of the homepage in reading order after the headline. */
+.home-page .home-entry-target{transition:opacity .5s ease var(--home-entry-delay,0ms)}
+.home-page.home-entry-pending .home-entry-target{transition:none}
+.home-page.home-entry-instant .home-entry-target,.home-page.home-entry-instant .hero-description{transition:none!important}
+@media(prefers-reduced-motion:reduce){.home-page .home-entry-target{transition:none!important}}

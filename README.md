@@ -1,6 +1,6 @@
 # Emily Dong — portfolio
 
-The current portfolio for Emily Dong, a University of Michigan student studying User Experience Design + Art and Design. It includes Home, Work, Playground, About, and three dedicated sample case-study pages.
+The current portfolio for Emily Dong, a University of Michigan student studying User Experience Design + Art and Design. It includes Home, Work, Playground, About, and four dedicated sample case-study pages.
 
 This version uses HTML, CSS, and JavaScript with original SVG/CSS artwork. It has no runtime or development dependencies. The earlier React application has been removed from the current source tree.
 
@@ -25,12 +25,12 @@ The preview is local to your computer. These commands and GitHub pushes do not p
 
 ## Source structure
 
-- `site/index.html`: editable homepage and shared navigation/contact/footer shell.
-- `site/content.js`: editable identity, sample projects, About copy, FAQs, tools, case-study narratives/metadata, and Playground studies. Optional contact and resume destinations remain empty until real details are supplied.
+- `site/index.html`: editable homepage. Shared navigation, contact and footer markup live in `scripts/templates/`.
+- `site/content.js`: editable identity, sample projects, About copy, FAQs, tools, case-study narratives/metadata, and Playground studies. The supplied email is configured; optional résumé and social URLs remain empty until provided.
 - `site/modern.css`: shared modern visual theme, loaded after structural styles. Includes reduced card radii, black pill buttons, centered serif headings, and hover tilts for the hero pills.
 - `site/style.css`: shared structure and original artwork styling.
 - `site/hero-typewriter.js`: headline entrance. Text types at a continuous pace, then the pills fade and expand into the lines; reduced-motion preferences skip the animation.
-- `site/project-art.js` and `site/app.js`: shared artwork, project links, filters, and homepage study dialogs.
+- `site/project-art.js` and `site/app.js`: shared artwork, project links and collection filters.
 - `site/about.css`, `site/work.css`, `site/playground.css`, and `site/case-study.css`: page-specific structure.
 - `scripts/build-*.mjs`: generators for About, Work, Playground, and case-study pages.
 - `scripts/templates/playground-experiments.html`: interactive panels for the gallery previews.
@@ -40,11 +40,11 @@ After editing shared copy, navigation, templates, or styles, run `npm run build`
 
 ## Routes and interactions
 
-- `/`: landing page, selected work and visual studies.
+- `/`: animated introduction, all four case-study cards and shared footer.
 - `/work/`: filterable project collection.
 - `/playground/`: masonry gallery with filters and accessible enlarged previews.
 - `/about/`: introduction, independent native FAQ accordions, sample toolkit, and education.
-- `/work/campus-compass/`, `/work/everyday-rituals/`, `/work/form-and-feeling/`: sample case studies, project metadata, section-title sidebar, interactive concept demonstrations, and related projects.
+- `/work/campus-compass/`, `/work/everyday-rituals/`, `/work/local-loop/`, `/work/open-shelf/`: sample case studies, project metadata, section-title sidebar, interactive concept demonstrations, and related projects.
 
 The top navigation scrolls offscreen. Case-study section navigation enters beside the introduction and stays fixed thereafter; mobile layouts use labeled tabs. Its Back link aligns with the section text. Projects open full pages rather than project dialogs.
 
@@ -60,4 +60,9 @@ Artwork is original CSS/SVG. Display fonts use local Bodoni/Didot with serif fal
 
 The broad design references were belleduffner.com, jessicahsu.design/about, and a user-supplied landing-page image. Their assets and copy were not reproduced.
 
-Build and JavaScript syntax checks pass. Local route and asset checks cover all seven pages. Sidebar state was checked in code for its reveal, section selection, footer and mobile behavior. Visual/keyboard browser and viewport QA remain unverified because local browser-agent access was blocked by a saved permission setting; these checks are not an accessibility certification.
+Build and JavaScript syntax checks pass. Local route and asset checks cover all eight pages. Sidebar state was checked in code for its reveal, section selection, footer and mobile behavior. Visual/keyboard browser and viewport QA remain unverified because local browser-agent access was blocked by a saved permission setting; these checks are not an accessibility certification.
+
+
+The shared footer uses `scripts/templates/shared-footer.html` for its Links and Contact columns. Its email is supplied in `site/content.js`; optional résumé, LinkedIn and Instagram URLs populate real links only when provided. The homepage has its hero, full case-study card grid and footer. All four sample project images and titles open dedicated pages, with no overlay buttons.
+
+The hero entrance replays on homepage refresh and direct entry. Internal navigation returns to a fully loaded page. Once typing finishes, the pills, individual cards and footer reveal in a top-to-bottom cascade. Work in the main navigation points to `/#work`.
