@@ -110,14 +110,14 @@ footer.site-footer.wrap{display:block;padding-top:65px;padding-bottom:25px;margi
 .header nav a[data-nav-label]>span{grid-area:label}
 
 /* About toolkit: a compact grid of icon-and-description cards. */
-.about-tools-section{display:block}
+.about-tools-section{display:block;border-top:0}
 .about-tools-section .about-section-heading{margin-bottom:30px}
-.about-tools-section .about-section-heading h2{margin-top:0;font-size:38px;line-height:1.15;letter-spacing:-1.2px}
-.about-tools-section .about-section-heading h2>span{color:#777b77;font-style:normal}
+.about-tools-section .about-section-heading h2{margin-top:0;font-size:38px;line-height:1.15;letter-spacing:-1.2px;color:#161616}
+.about-tools-section .about-section-heading h2>span{color:inherit;font-style:normal}
 .about-tools-section .about-section-heading>.toolkit-note{font-size:10px;margin-top:12px;color:#6b6b65}
 .about-tools-section .tool-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.about-tools-section .tool-list li{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:15px;padding:17px;border:1px solid #fff;background:#e7e8e480;border-radius:12px;min-width:0}
-.about-tools-section .tool-list .tool-icon{grid-row:auto;align-self:center;width:48px;height:48px;border-radius:8px;box-shadow:none;font:500 23px/1 Arial,Helvetica,sans-serif}
+.about-tools-section .tool-list li{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:15px;padding:17px;border:3px solid transparent;--capsule-fill:#e9ebee;border-radius:999px;min-width:0}
+.about-tools-section .tool-list .tool-icon{grid-row:auto;align-self:center;width:48px;height:48px;border-radius:50%;overflow:hidden;box-shadow:none;font:500 23px/1 Arial,Helvetica,sans-serif}
 .about-tools-section .tool-list .tool-icon[data-tool="figma"]{background:#161616;color:white;border:0}
 .about-tools-section .tool-icon svg{display:block;width:24px;height:35px}
 .about-tools-section .tool-list .tool-icon[data-tool="figjam"]{background:#e3dcf2;color:#66528c;border:0;font-size:20px}
@@ -129,7 +129,7 @@ footer.site-footer.wrap{display:block;padding-top:65px;padding-bottom:25px;margi
 .about-tools-section .tool-description h3{font:400 16px/1.4 Arial,Helvetica,sans-serif;letter-spacing:-.35px;overflow-wrap:anywhere}
 .about-tools-section .tool-description p{font-size:12px;line-height:1.6;margin:4px 0 0;color:#727772;max-width:none}
 @media(max-width:1050px){.about-tools-section .tool-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){.about-tools-section .about-section-heading h2{font-size:32px}.about-tools-section .about-section-heading{margin-bottom:24px}.about-tools-section .tool-list{grid-template-columns:1fr;gap:12px}.about-tools-section .tool-list li{padding:15px;gap:15px;border-radius:10px}.about-tools-section .tool-description h3{font-size:16px}.about-tools-section .tool-description p{font-size:12px}}
+@media(max-width:650px){.about-tools-section .about-section-heading h2{font-size:32px}.about-tools-section .about-section-heading{margin-bottom:24px}.about-tools-section .tool-list{grid-template-columns:1fr;gap:12px}.about-tools-section .tool-list li{padding:15px;gap:15px;border-radius:999px}.about-tools-section .tool-description h3{font-size:16px}.about-tools-section .tool-description p{font-size:12px}}
 
 /* Keep the shared navigation visible and account for it at section anchors. */
 .header.wrap{position:sticky;top:0;z-index:30;background:#f7f8fa}
@@ -229,5 +229,19 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .capsule-interface .capsule-landscape-image{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
 
 /* A continuous shaded rim keeps the glass finish smooth and the images sharp. */
-.intro-capsule{border-color:transparent;background:linear-gradient(#242a27,#242a27) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box;box-shadow:0 4px 10px rgba(20,28,23,.18)}
+.intro-capsule,.about-tools-section .tool-list li{border-color:transparent;background:linear-gradient(var(--capsule-fill,#242a27),var(--capsule-fill,#242a27)) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box;box-shadow:0 4px 10px rgba(20,28,23,.18)}
 .modern-hero .capsule-art{background:linear-gradient(#d5bfc5,#d5bfc5) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box}
+
+/* A brief hover wobble returns toolkit pills to their resting position. */
+.about-tools-section .tool-list li{--tool-jiggle-angle:2deg;transform-origin:center}
+.about-tools-section .tool-list li:nth-child(even){--tool-jiggle-angle:-2deg}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.about-tools-section .tool-list li:hover,.about-tools-section .tool-list li:focus-within{animation:tool-pill-jiggle .55s ease-in-out}}
+@keyframes tool-pill-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(var(--tool-jiggle-angle))}65%{transform:rotate(calc(var(--tool-jiggle-angle)*-.6))}85%{transform:rotate(calc(var(--tool-jiggle-angle)*.25))}}
+
+/* Case-study sections use shaded pills instead of a vertical progress track. */
+.case-page .case-contents{gap:8px}
+.case-page .case-contents>a:not(.case-back){min-height:42px;padding:10px 18px;border:0;border-radius:999px;background:transparent;box-shadow:none;color:#73777d;font-weight:400}
+.case-page .case-contents>a:not(.case-back):hover{background:#e9edf2;color:#24282d}
+.case-page .case-contents>a[aria-current="location"]{background:#dfe5ed;color:#20252b;font-weight:400;box-shadow:none}
+.case-page .case-contents .case-back{padding-left:18px;border:0}
+@media(max-width:700px){.case-page{--case-tabs-height:64px}.case-page .case-contents{display:flex;flex-direction:row;align-items:center;height:64px;padding:10px 16px;overflow-x:auto;overflow-y:hidden;border:0}.case-page .case-contents>a{flex:0 0 auto;white-space:nowrap}.case-page .case-contents>a:not(.case-back){font-size:11px}.case-page .case-contents .case-back{padding:10px 4px;margin:0 6px 0 0}}

@@ -48,3 +48,6 @@
 
 /* A quiet dot grid scoped to the playground interaction. */
 .playground-page .arc-gallery{background-image:radial-gradient(circle,rgba(77,88,105,.23) 1px,transparent 1.2px);background-size:24px 24px;background-position:center top}
+
+/* Keep the hover wobble separate from the gallery's path transform and hit area. */
+.playground-page .arc-track .pin-image{transform-origin:50% 50%;backface-visibility:hidden}
