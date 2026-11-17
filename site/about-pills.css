@@ -18,12 +18,10 @@
 /* The heading uses the homepage typing rhythm; body copy follows in a cascade. */
 .about-is-typing .about-type-unit{visibility:hidden}
 .about-is-typing .about-type-unit.is-typed{visibility:visible}
-.about-type-current{position:relative}
-.about-type-current::after{content:'';position:absolute;left:100%;top:.12em;width:1px;height:.8em;background:currentColor}
 .about-landing-copy .about-entry-target{opacity:1;transform:translateY(0);transition:opacity .5s ease var(--about-entry-delay,0ms),transform .5s ease var(--about-entry-delay,0ms)}
 .about-landing-copy.about-entry-pending .about-entry-target{opacity:0;transform:translateY(8px);transition:none}
 .about-landing-copy.about-entry-instant .about-entry-target{transition:none}
-@media(prefers-reduced-motion:reduce){.about-landing-copy .about-entry-target{opacity:1;transform:none;transition:none}.about-is-typing .about-type-unit{visibility:visible}.about-type-current::after{display:none}}
+@media(prefers-reduced-motion:reduce){.about-landing-copy .about-entry-target{opacity:1;transform:none;transition:none}.about-is-typing .about-type-unit{visibility:visible}}
 
 /* Hover may wobble briefly, but must return to the actual supported resting pose. */
 @keyframes about-pill-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(var(--hover-tilt))}65%{transform:rotate(calc(var(--hover-tilt)*-.6))}85%{transform:rotate(calc(var(--hover-tilt)*.25))}}

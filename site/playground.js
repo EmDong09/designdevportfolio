@@ -91,7 +91,7 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
  function next(){
   if(index===characters.length){finish();return;}
   const span=characters[index++];span.classList.add('is-typed');
-  timer=setTimeout(next,/[,.!?]/.test(span.textContent)?55:span.textContent===' '?27:38);
+  timer=setTimeout(next,/[,.!?]/.test(span.textContent)?90:span.textContent===' '?44:65);
  }
  document.addEventListener('keydown',onKey);
  document.addEventListener('visibilitychange',onVisibility);
