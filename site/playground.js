@@ -40,6 +40,16 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
   panels.forEach(panel=>panel.hidden=panel.getAttribute('aria-labelledby')!==experimentId);
   if(study.category==='color')setPalette(study.palette);
   if(study.category==='type'){words.value=study.words.replaceAll('\n',' ');updateType();}
+  // Show the already loaded thumbnail immediately, then upgrade just this preview.
+  // Keep the thumbnail if the full-size image cannot be fetched.
+  if(study.src){
+   const image=preview.querySelector('img');
+   const fullSize=new Image();fullSize.decoding='async';fullSize.src=study.src;
+   fullSize.decode().then(()=>{
+    if(!image.isConnected)return;
+    image.removeAttribute('srcset');image.src=study.src;
+   }).catch(()=>{});
+  }
   dialog.showModal();document.body.classList.add('dialog-open');document.querySelector('#close-study').focus();
  }));
  document.querySelector('#close-study').addEventListener('click',()=>dialog.close());

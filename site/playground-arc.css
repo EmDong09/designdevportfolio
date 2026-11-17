@@ -45,3 +45,6 @@
 /* Clip artwork at the navigation line; space the content inside the scene. */
 .playground-page .gallery-section{display:flow-root}
 .arc-gallery{margin-top:0}
+
+/* A quiet dot grid scoped to the playground interaction. */
+.playground-page .arc-gallery{background-image:radial-gradient(circle,rgba(77,88,105,.23) 1px,transparent 1.2px);background-size:24px 24px;background-position:center top}

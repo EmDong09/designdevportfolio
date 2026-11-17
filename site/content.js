@@ -22,9 +22,7 @@ window.portfolioContent.about = {
   pills: [
     {id:'pill-1',src:null,alt:'',fill:'#bdc9da'},
     {id:'pill-2',src:null,alt:'',fill:'#d4c8df'},
-    {id:'pill-3',src:null,alt:'',fill:'#aebfc0'},
-    {id:'pill-4',src:null,alt:'',fill:'#c3cbdc'},
-    {id:'pill-5',src:null,alt:'',fill:'#d5d9e2'}
+    {id:'pill-3',src:null,alt:'',fill:'#aebfc0'}
   ],
   lead: 'Hi, I’m Emily — exploring where thoughtful experiences meet visual expression.',
   paragraphs: [

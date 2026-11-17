@@ -1,42 +1,66 @@
 // Pure scene construction shared by the browser controller and physics validation.
-window.createAboutPillScene=(Matter,width,height,random=Math.random)=>{
- const {Engine,Bodies,Body,Composite,Sleeping}=Matter;
- const engine=Engine.create({enableSleeping:true,positionIterations:10,velocityIterations:8});
- engine.gravity.y=1;engine.gravity.scale=.001;
- const scale=Math.min(1,width/600,height/650);
- const sizes=[[210,116],[240,130],[310,164],[200,110],[260,142]].map(([w,h])=>({width:w*scale,height:h*scale}));
- const angles=[-15,15,0,10,0],xs=[.45,.48,.46,.67,.38];
- const order=[4,3,2,1,0];
- const bodies=Array(5).fill(null);let time=0,next=0;
+window.createAboutPillScene=(Matter,width,height,random=Math.random,floorY=height*.76+20)=>{
+ const {Engine,Bodies,Body,Composite,Sleeping,Query}=Matter;
+ const engine=Engine.create({enableSleeping:true,positionIterations:12,velocityIterations:10});
+ engine.gravity.y=.4;engine.gravity.scale=.001;
+ // One shared size for all three capsules; only their drop positions and angles vary.
+ const PILL_WIDTH=Math.min(305,width*.48),PILL_HEIGHT=PILL_WIDTH*.46;
+ const sizes=Array.from({length:3},()=>({width:PILL_WIDTH,height:PILL_HEIGHT}));
+ const drops=[{x:.55,angle:-8},{x:.54,angle:10},{x:.56,angle:-6}];
+ const bodies=Array(3).fill(null),quietTimes=Array(3).fill(0);let time=0,next=0,nextDrop=80;
  Composite.add(engine.world,[
-  Bodies.rectangle(width/2,height+50,width+200,100,{isStatic:true,friction:1}),
-  Bodies.rectangle(-50,height/2,100,height+2000,{isStatic:true}),
-  Bodies.rectangle(width+50,height/2,100,height+2000,{isStatic:true})
+  Bodies.rectangle(width/2,floorY+50,width+200,100,{isStatic:true,friction:.3,frictionStatic:.4}),
+  Bodies.rectangle(-50,height/2,100,height+2000,{isStatic:true,friction:.3,frictionStatic:.4}),
+  Bodies.rectangle(width+50,height/2,100,height+2000,{isStatic:true,friction:.3,frictionStatic:.4})
  ]);
  function spawn(index){
-  const size=sizes[index],r=size.height/2,segment=(size.width-size.height)/2,vertices=[];
+  const r=PILL_HEIGHT/2,segment=(PILL_WIDTH-PILL_HEIGHT)/2,vertices=[];
   for(let i=0;i<=16;i++){const a=-Math.PI/2+i*Math.PI/16;vertices.push({x:segment+r*Math.cos(a),y:r*Math.sin(a)});}
   for(let i=0;i<=16;i++){const a=Math.PI/2+i*Math.PI/16;vertices.push({x:-segment+r*Math.cos(a),y:r*Math.sin(a)});}
-  const x=Math.max(size.width/2+8,Math.min(width-size.width/2-8,width*xs[index]));
-  const highest=Math.min(0,...bodies.filter(Boolean).map(body=>body.bounds.min.y));
-  const y=Math.min(-size.height/2-8,highest-size.height/2-12);
-  const body=Bodies.fromVertices(x,y,vertices,{restitution:.18,friction:.85,frictionStatic:1,frictionAir:.025,density:.002,sleepThreshold:90});
+  const x=Math.max(PILL_WIDTH/2+4,Math.min(width-PILL_WIDTH/2-4,width*(drops[index].x+(random()-.5)*.02)));
+  const body=Bodies.fromVertices(x,-PILL_HEIGHT,vertices,{restitution:.5,friction:.3,frictionStatic:.4,frictionAir:.02,density:.0005,sleepThreshold:Infinity});
   Body.setInertia(body,body.inertia*3);
-  Body.setAngle(body,(angles[index]+(random()-.5)*4)*Math.PI/180);
+  Body.setAngle(body,drops[index].angle*Math.PI/180);
+  Body.setAngularVelocity(body,(random()-.5)*.06);
   const halfHeight=(body.bounds.max.y-body.bounds.min.y)/2;
-  Body.setPosition(body,{x,y:Math.min(-halfHeight-8,highest-halfHeight-12)});
-  Body.setAngularVelocity(body,(random()-.5)*.004);
+  Body.setPosition(body,{x,y:-halfHeight-8});
+  // Staggered airborne pills may share horizontal space. Start the new pill above
+  // any intersection so the solver never has to eject an overlapping spawn.
+  while(Query.collides(body,bodies.filter(Boolean)).length)Body.translate(body,{x:0,y:-PILL_HEIGHT*.2});
   bodies[index]=body;Composite.add(engine.world,body);
  }
  function update(dt=1000/60){
   time+=dt;
-  while(next<order.length&&time>=100+next*250)spawn(order[next++]);
+  // Closely staggered drops let the lightweight capsules bounce together.
+  if(next<drops.length&&time>=nextDrop){
+   spawn(next++);nextDrop=time+200;
+  }
+  // A gentle rotational resistance keeps a capsule from tipping upright.
+  // Positions and contact forces still come entirely from Matter collisions.
+  for(const body of bodies.filter(Boolean)){
+   if(body.isSleeping)continue;
+   const limit=22*Math.PI/180;
+   const excess=body.angle-Math.max(-limit,Math.min(limit,body.angle));
+   body.torque-=excess*body.inertia*.00012;
+  }
   Engine.update(engine,dt);
+  // Freeze only supported bodies that have stayed quiet for half a second.
+  // Matter can still wake an earlier pill when a later one lands on it.
+  bodies.forEach((body,index)=>{
+   if(!body||body.isSleeping)return;
+   const supported=engine.pairs.list.some(pair=>pair.isActive&&(pair.bodyA===body||pair.bodyB===body));
+   const quiet=supported&&body.speed<.15&&body.angularSpeed<.006;
+   quietTimes[index]=quiet?quietTimes[index]+dt:0;
+   if(quietTimes[index]>=500){
+    Body.setVelocity(body,{x:0,y:0});Body.setAngularVelocity(body,0);Sleeping.set(body,true);
+    quietTimes[index]=0;
+   }
+  });
  }
- const settled=()=>next===5&&bodies.every(body=>body.isSleeping);
+ const settled=()=>next===drops.length&&bodies.every(body=>body.isSleeping);
  function settle(){
   for(let i=0;i<2400&&!settled();i++)update();
   bodies.forEach(body=>{Body.setVelocity(body,{x:0,y:0});Body.setAngularVelocity(body,0);Sleeping.set(body,true);});
  }
- return {engine,bodies,sizes,update,settled,settle,dispose(){Engine.clear(engine);Composite.clear(engine.world,false);}};
+ return {engine,bodies,sizes,floorY,update,settled,settle,dispose(){Engine.clear(engine);Composite.clear(engine.world,false);}};
 };

@@ -1,7 +1,13 @@
 /* Layout only: the capsules inherit the homepage's border, rim, and shadow. */
-.about-landing{position:relative;display:grid;grid-template-columns:45% 55%;min-height:min(740px,max(640px,calc(100svh - var(--site-header-height))));isolation:isolate}
+.about-landing{position:relative;display:grid;grid-template-columns:45% 55%;min-height:max(640px,calc(100svh - var(--site-header-height)));isolation:isolate}
 .about-pill-stage{position:absolute;left:0;top:0;bottom:0;width:45%;overflow:hidden;pointer-events:none}
-.about-pill-stage .about-physics-pill{position:absolute;left:0;top:0;width:var(--physics-width,220px);height:var(--physics-height,120px);margin:0;vertical-align:initial;visibility:hidden;transform-origin:center;transition:none}
+.about-pill-stage .about-pill-body{position:absolute;left:0;top:0;width:var(--physics-width,220px);height:var(--physics-height,120px);visibility:hidden;transform-origin:center;--hover-tilt:9deg}
+.about-pill-stage .about-pill-body:nth-child(2){--hover-tilt:-8deg}
+.about-pill-stage .about-physics-pill{display:block;width:100%;height:100%;margin:0;vertical-align:initial;transform:rotate(0deg);transform-origin:center;transition:transform .25s ease}
+/* Keep the sleeping collision bodies fixed; tilt only their visible capsules. */
+.about-pill-stage.is-settled .about-pill-body{pointer-events:auto}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.about-pill-stage.is-settled .about-pill-body:hover .about-physics-pill{transform:rotate(var(--hover-tilt))}}
+@media(prefers-reduced-motion:reduce){.about-pill-stage .about-physics-pill{transition:none}}
 .about-pill-stage .about-pill-fill{position:absolute;inset:0;display:block;width:100%;height:100%;background:var(--pill-fill);object-fit:cover}
 .about-landing-copy{grid-column:2;align-self:center;width:100%;max-width:690px;padding:64px clamp(28px,5vw,90px) 64px clamp(32px,4vw,72px)}
 .about-landing-copy h1{font-family:var(--display);font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:-2.5px;line-height:1.08;margin:0 0 28px}

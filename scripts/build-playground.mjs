@@ -13,7 +13,13 @@ let experiments=await readFile(`${root}scripts/templates/playground-experiments.
 experiments=experiments.replaceAll('class="experiment wrap"','class="experiment" hidden');
 // Repeat the uploaded sequence so the hidden return never creates an empty seam.
 function pin(study){
- if(study.src)return `<article class="gallery-pin" data-category="art"><button class="pin-button" data-study-id="${t(study.id)}" aria-label="Open ${t(study.title)}"><span class="pin-art pin-image"><img src="${t(study.src)}" alt="${t(study.alt)}" width="${study.width}" height="${study.height}" loading="lazy"></span></button></article>`;
+ if(study.src){
+  const thumbnail=study.src.replace(/\.[^.]+$/,'-thumb.webp');
+  const retina=study.src.replace(/\.[^.]+$/,'-thumb-2x.webp');
+  // Start small gallery assets immediately; the duplicate loop shares cached URLs.
+  // Full-size artwork is requested only when its enlarged preview is opened.
+  return `<article class="gallery-pin" data-category="art"><button class="pin-button" data-study-id="${t(study.id)}" aria-label="Open ${t(study.title)}"><span class="pin-art pin-image"><img src="${t(thumbnail)}" srcset="${t(thumbnail)} 1x, ${t(retina)} 2x" alt="${t(study.alt)}" width="${study.width}" height="${study.height}" loading="eager" decoding="async"></span></button></article>`;
+ }
 
  const palette=p.palettes.find(item=>item.id===study.palette);
  return `<article class="gallery-pin" data-category="${study.category}"><button class="pin-button" data-study-id="${t(study.id)}" aria-label="Open ${t(study.title)}, placeholder visual study"><span class="pin-art pin-${t(study.art)}" style="--pin-ratio:${study.ratio};${palette.colors.map((color,i)=>`--pin-${i}:${color}`).join(';')}" aria-hidden="true">${study.art==='type'?`<span class="pin-type">${t(study.words)}</span>`:'<i></i><i></i><i></i><i></i>'}</span></button></article>`;
