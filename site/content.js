@@ -66,7 +66,7 @@ window.portfolioContent.work = {
 /** @type {{eyebrow:string, title:string, description:string, notice:string, palettes:Array<{id:string,name:string,colors:string[]}>}} */
 window.portfolioContent.playground = {
   eyebrow: 'SMALL EXPERIMENTS / OPEN POSSIBILITIES',
-  title: 'Made for the fun of it',
+  title: 'Playground',
   description: 'An interactive space for color, form, and type. Change a setting, follow a curiosity, see what happens.',
   notice: 'Interactive placeholder studies created for this portfolio, ready to be replaced with personal explorations.',
   palettes: [

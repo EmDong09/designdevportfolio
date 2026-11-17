@@ -19,7 +19,6 @@ const url = value => {
 // Reuse the existing homepage shell to avoid a separate navigation/footer design.
 const header=headerFor('about');
 const footer=await readFile(`${root}scripts/templates/shared-footer.html`,'utf8');
-const contact=await readFile(`${root}scripts/templates/shared-contact.html`,'utf8');
 function image(item, index) {
   if (!item) return '';
   const source = url(item.src);
@@ -29,9 +28,6 @@ function image(item, index) {
 }
 function intro() {
   return `<section class="about-landing" aria-labelledby="about-heading"><div class="about-pill-stage" aria-hidden="true">${about.pills.map((pill,i)=>`<div class="about-pill-body" data-about-pill="${i}" style="--pill-fill:${text(pill.fill)}"><div class="intro-capsule about-physics-pill">${pill.src?`<img class="about-pill-fill" src="${url(pill.src)}" alt="${text(pill.alt)}">`:'<span class="about-pill-fill"></span>'}</div></div>`).join('')}</div><div class="about-landing-copy"><h1 id="about-heading">${text(about.title)}</h1><p class="about-lead">${text(about.lead)}</p><div class="intro-paragraphs">${about.paragraphs.map(p=>`<p>${text(p)}</p>`).join('')}</div></div></section>`;
-}
-function faqs() {
-  return `<section class="about-detail-section wrap" aria-labelledby="faq-heading"><div class="about-section-heading"><p class="eyebrow">01 / A FEW MORE THINGS</p><h2 id="faq-heading">More <span class="serif">about me.</span></h2><p>Questions, curiosities,<br>and a little context.</p></div><div class="faq-list">${about.faqs.map((faq, i) => `<details id="faq-${text(faq.id)}"${i === 0 ? ' open' : ''}><summary>${text(faq.question)}<span class="faq-indicator" aria-hidden="true"></span></summary><p>${text(faq.answer)}</p></details>`).join('')}</div></section>`;
 }
 function tools() {
   const figmaIcon='<svg viewBox="0 0 30 44" aria-hidden="true"><path fill="#f24e1e" d="M8 1a7 7 0 0 0 0 14h7V1Z"/><path fill="#ff7262" d="M15 1h7a7 7 0 0 1 0 14h-7Z"/><path fill="#a259ff" d="M8 15a7 7 0 0 0 0 14h7V15Z"/><circle fill="#1abcfe" cx="22" cy="22" r="7"/><path fill="#0acf83" d="M8 29a7 7 0 1 0 7 7v-7Z"/></svg>';
@@ -44,5 +40,5 @@ function education() {
 }
 await mkdir(`${root}site/about`, {recursive:true});
 await writeFile(`${root}site/about/index.html`, `<!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About Emily Dong</title><meta name="description" content="Meet Emily Dong, a University of Michigan student studying User Experience Design and Art and Design."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=6"><link rel="stylesheet" href="/about.css"><script src="/content.js" defer></script><script src="/shared.js" defer></script>${themeLink}<link rel="stylesheet" href="/about-pills.css"><script src="/vendor/matter/matter.min.js" defer></script><script src="/about-pill-physics.js" defer></script><script src="/about-entry.js" defer></script><script src="/about-pills.js" defer></script></head><body class="about-page" id="top"><a class="skip" href="#main">Skip to content</a>${header}<main id="main">${intro()}${faqs()}${tools()}<section class="about-closing wrap"><p>${text(about.closing)}</p><a class="primary" href="/#work">Explore my work</a></section>${contact}</main>${footer}</body></html>\n`);
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About Emily Dong</title><meta name="description" content="Meet Emily Dong, a University of Michigan student studying User Experience Design and Art and Design."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=6"><link rel="stylesheet" href="/about.css"><script src="/content.js" defer></script><script src="/shared.js" defer></script>${themeLink}<link rel="stylesheet" href="/about-pills.css"><script src="/vendor/matter/matter.min.js" defer></script><script src="/about-pill-physics.js" defer></script><script src="/about-entry.js" defer></script><script src="/about-pills.js" defer></script></head><body class="about-page" id="top"><a class="skip" href="#main">Skip to content</a>${header}<main id="main">${intro()}${tools()}</main>${footer}</body></html>\n`);
 console.log('Built /about/ from content.js and the shared homepage shell.');
