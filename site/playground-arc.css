@@ -56,3 +56,4 @@
 .arc-controls{opacity:1;transition:opacity .85s ease .25s}
 .arc-controls.play-controls-pending{opacity:0;transition:none;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.arc-controls{transition:none}.arc-controls.play-controls-pending{opacity:1;pointer-events:auto}}
+@media(hover:hover) and (pointer:fine){.arc-track .pin-button{cursor:none}.arc-viewport.is-dragging .pin-button{cursor:grabbing}}

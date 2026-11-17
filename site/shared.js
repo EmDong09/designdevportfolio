@@ -1,3 +1,17 @@
+// Wordmark navigation always opens the full landing view, without an anchor offset.
+{
+ try{
+  const home=location.pathname==='/'||location.pathname==='/index.html';
+  if(home&&sessionStorage.getItem('emily-portfolio:home-top')==='1'){
+   sessionStorage.removeItem('emily-portfolio:home-top');
+   history.scrollRestoration='manual';
+   const top=()=>window.scrollTo({top:0,left:0,behavior:'instant'});
+   top();
+   window.addEventListener('load',top,{once:true});
+  }
+ }catch{}
+}
+
 // The wordmark explicitly replays the homepage entrance, including from home itself.
 {
  const wordmark=document.querySelector('.header .wordmark');
@@ -6,11 +20,12 @@
   try{
    sessionStorage.removeItem('emily-portfolio:skip-intro');
    sessionStorage.setItem('emily-portfolio:replay-intro','1');
+   sessionStorage.setItem('emily-portfolio:home-top','1');
   }catch{}
   if(window.location.pathname==='/'||window.location.pathname==='/index.html'){
    event.preventDefault();
-   history.replaceState(null,'','/#top');
-   window.scrollTo(0,0);
+   history.replaceState(null,'','/');
+   window.scrollTo({top:0,left:0,behavior:'instant'});
    window.location.reload();
   }
  });

@@ -29,25 +29,27 @@
 @keyframes about-pill-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(var(--hover-tilt))}65%{transform:rotate(calc(var(--hover-tilt)*-.6))}85%{transform:rotate(calc(var(--hover-tilt)*.25))}}
 
 /* Campus roles share the site's neutral surfaces, serif headings, and pill details. */
-.campus-section{padding-block:52px 64px}
-.campus-section h2{font:400 38px/1.15 var(--display);letter-spacing:-1.2px;color:#161616;margin:0 0 30px}
+.campus-section{padding-block:100px 64px}
+.campus-section h2{font:400 38px/1.15 var(--display);letter-spacing:-1.2px;color:#161616;margin:0 0 62px;text-align:center}
 .campus-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:0}
-.campus-card{padding:26px;border:1px solid #fff;border-radius:12px;background:#ffffff50;box-shadow:0 4px 18px #28323f04;min-width:0}
-.campus-card-header{display:flex;align-items:center;gap:15px;margin-bottom:24px}
+.campus-card{padding:0;border:0;background:transparent;min-width:0;text-align:left}
+.campus-card-header{margin:22px 0 16px}
 .campus-card-header>div{min-width:0}
-.campus-logo{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;overflow:hidden;border-radius:50%;background:#dfe5ec}
-.campus-card:nth-child(2) .campus-logo{background:#e5e1ed}
-.campus-card:nth-child(3) .campus-logo{background:#dce7e6}
-.campus-logo img{width:100%;height:100%;object-fit:cover}
-.campus-logo-placeholder::after{content:'';width:15px;height:15px;border:1px solid #788694;border-radius:4px;transform:rotate(45deg)}
-.campus-card h3{font:400 17px/1.4 Arial,Helvetica,sans-serif;letter-spacing:-.3px;margin:0;overflow-wrap:anywhere}
+.campus-thumbnail{aspect-ratio:1.4;overflow:hidden;border-radius:8px;box-shadow:var(--soft-shadow);background:#dfe5ec}
+.campus-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}
+.campus-thumbnail-placeholder{width:100%;height:100%;background:#dfe5ec}
+.campus-card:nth-child(2) .campus-thumbnail-placeholder{background:#e5e1ed}
+.campus-card:nth-child(3) .campus-thumbnail-placeholder{background:#dce7e6}
+.campus-card h3{font:400 23px/1.25 Arial,Helvetica,sans-serif;letter-spacing:-.3px;margin:0;overflow-wrap:anywhere}
 .campus-card h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 .campus-dates{font:400 11px/1.6 Arial,Helvetica,sans-serif;color:var(--muted);margin:4px 0 0}
 .campus-role{display:inline-block;padding:6px 12px;border:1px solid #d2d8e0;border-radius:999px;font:400 11px/1.4 Arial,Helvetica,sans-serif;color:#5a626c}
 .campus-description{font:400 13px/1.8 Arial,Helvetica,sans-serif;color:var(--muted);margin:16px 0 0}
-@media(max-width:900px){.campus-list{grid-template-columns:1fr}.campus-card{padding:24px}.campus-card-header{margin-bottom:18px}}
-@media(max-width:650px){.campus-section{padding-block:36px 44px}.campus-section h2{font-size:32px;margin-bottom:24px}}
+@media(max-width:900px){.campus-list{grid-template-columns:1fr}.campus-card{padding:0}.campus-card-header{margin-bottom:18px}}
+@media(max-width:650px){.campus-section{padding-block:72px 44px}.campus-section h2{font-size:32px;margin-bottom:56px}}
 
-.campus-roles{display:flex;flex-direction:column;gap:12px;list-style:none;margin:0;padding:0}
+.campus-roles{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .campus-roles>li{display:flex;flex-wrap:wrap;align-items:center;gap:7px 10px}
 .campus-roles .campus-dates{margin:0}
+
+@media(max-height:600px) and (min-width:768px){.campus-section h2{margin-bottom:60px}}

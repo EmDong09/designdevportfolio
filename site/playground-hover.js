@@ -28,3 +28,36 @@
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAll();});
  window.addEventListener('pagehide',stopAll);
 })();
+
+// Reuse the case-study cursor pill without interrupting artwork dragging.
+(()=>{
+ const viewport=document.querySelector('.arc-viewport');
+ if(!viewport)return;
+ const finePointer=matchMedia('(hover:hover) and (pointer:fine)');
+ const pill=document.createElement('span');
+ pill.className='project-cursor-pill';
+ pill.textContent='View';
+ pill.setAttribute('aria-hidden','true');
+ document.body.append(pill);
+ let pressed=false;
+ const hide=()=>pill.classList.remove('is-visible');
+ const follow=event=>{
+  if(!finePointer.matches||event.pointerType!=='mouse'||pressed||event.buttons||document.querySelector('#study-dialog[open]'))return hide();
+  pill.style.left=`${Math.max(40,Math.min(innerWidth-40,event.clientX))}px`;
+  pill.style.top=`${Math.max(24,Math.min(innerHeight-24,event.clientY))}px`;
+  pill.classList.add('is-visible');
+ };
+ viewport.querySelectorAll('.pin-button').forEach(button=>{
+  button.addEventListener('pointerenter',follow);
+  button.addEventListener('pointermove',follow);
+  button.addEventListener('pointerleave',hide);
+  button.addEventListener('pointerdown',()=>{pressed=true;hide();});
+  button.addEventListener('click',hide);
+ });
+ window.addEventListener('pointerup',()=>{pressed=false;});
+ window.addEventListener('pointercancel',()=>{pressed=false;hide();});
+ window.addEventListener('scroll',hide,{passive:true});
+ window.addEventListener('blur',()=>{pressed=false;hide();});
+ document.addEventListener('visibilitychange',hide);
+ finePointer.addEventListener('change',hide);
+})();

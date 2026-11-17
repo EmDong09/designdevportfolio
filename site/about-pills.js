@@ -14,7 +14,7 @@
  }
  function tick(now){
   frame=0;
-  accumulator+=(lastTime?Math.min(80,now-lastTime):1000/60);lastTime=now;
+  accumulator+=(lastTime?Math.min(80,now-lastTime):1000/60)*1.18;lastTime=now;
   while(accumulator>=1000/60){scene.update();accumulator-=1000/60;}
   paint();
   if(!scene.settled()&&!document.hidden)frame=requestAnimationFrame(tick);
