@@ -1,15 +1,124 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Emily Dong — UI/UX & Art + Design</title><meta name="description" content="Emily Dong studies User Experience Design and Art and Design at the University of Michigan. Explore sample concepts in digital experiences and visual expression."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=7517bb1878c5"><script src="/content.js?v=94aa1f345ee7" defer></script><script src="/project-art.js?v=c208ec2e7092" defer></script><script src="/app.js?v=c65ce40000c4" defer></script><script src="/shared.js?v=062ecf315d3a" defer></script><script src="/hero-typewriter.js?v=f5af73224b5b" defer></script><link rel="stylesheet" href="/modern.css?v=536ab7451f38"></head>
-<body class="home-page"><a class="skip" href="#main">Skip to content</a><header class="header wrap"><a class="wordmark" href="/#top" aria-label="Emily Dong, home">emily dong<span class="wordmark-dot">✳</span></a><nav aria-label="Main navigation"><a href="/#work" aria-current="page">Work</a><a href="/playground/">Playground</a><a href="/about/">About</a></nav></header>
-<main id="main"><section class="hero wrap modern-hero" id="top" aria-labelledby="hero-title">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Emily Dong — UI/UX & Art + Design</title><meta name="description" content="Emily Dong studies User Experience Design and Art and Design at the University of Michigan. Explore sample concepts in digital experiences and visual expression."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=7517bb1878c5"><script src="/content.js?v=ce208e38c5fe" defer></script><script src="/project-art.js?v=c208ec2e7092" defer></script><script src="/app.js?v=695348cd817f" defer></script><script src="/shared.js?v=274015ac8639" defer></script><script src="/hero-typewriter.js?v=42d2488f569f" defer></script><link rel="stylesheet" href="/modern.css?v=7f01aeb1e170"></head>
+<body class="home-page" id="top"><a class="skip" href="#main">Skip to content</a><header class="header wrap"><a class="wordmark" href="/#top" aria-label="Emily Dong, home">emily dong<span class="wordmark-dot">✳</span></a><nav aria-label="Main navigation"><a href="/#work" data-nav-label="Work"><span>Work</span></a><a href="/playground/" data-nav-label="Playground"><span>Playground</span></a><a href="/about/" data-nav-label="About"><span>About</span></a></nav></header>
+<main id="main"><section class="hero wrap modern-hero" aria-labelledby="hero-title">
   <h1 id="hero-title">
-    <span class="hero-line">I'm Emily Dong <button class="intro-capsule capsule-orbit" id="sculpture" aria-label="Rearrange the abstract composition"><svg class="caps-shape" viewBox="0 0 120 72" aria-hidden="true"><defs><radialGradient id="silver"><stop stop-color="#f6f6f4"/><stop offset=".5" stop-color="#929896"/><stop offset="1" stop-color="#303a38"/></radialGradient></defs><rect width="120" height="72" fill="#171d1b"/><circle cx="60" cy="36" r="27" fill="url(#silver)"/><ellipse cx="60" cy="36" rx="46" ry="13" fill="none" stroke="#d8dfd9" stroke-width="1.5" transform="rotate(-27 60 36)"/><circle cx="98" cy="17" r="4" fill="#eac3ae"/></svg></button>,</span>
-    <span class="hero-line">an artist <a class="intro-capsule capsule-interface" href="/#work" aria-label="Explore my design work"><span class="caps-window" aria-hidden="true"><i></i><i></i><i></i></span></a> + UX designer</span>
+    <span class="hero-line">I'm Emily Dong <a class="intro-capsule capsule-orbit capsule-portrait" href="/about/" aria-label="More about Emily Dong"><img src="/assets/emily-dong-portrait.jpg" alt="Emily Dong" width="509" height="412" fetchpriority="high"></a>,</span>
+    <span class="hero-line">an artist <a class="intro-capsule capsule-interface" href="/#work" aria-label="Explore my design work"><img class="capsule-landscape-image" src="/assets/emily-dong-landscape.jpg" alt="Colorful landscape artwork by Emily Dong" width="1566" height="1239"></a> + UX designer</span>
     <span class="hero-line">at the University of Michigan <a class="intro-capsule capsule-art" href="/playground/" aria-label="Explore the Playground"><span aria-hidden="true"><i></i><i></i><i></i></span></a>.</span>
   </h1>
   <span id="play-caption" class="visually-hidden" aria-live="polite">Composition 01</span>
 </section>
-<section class="work wrap section" id="work" aria-labelledby="work-title"><h2 id="work-title" class="visually-hidden">Case studies</h2><div id="projects" class="project-grid"></div></section></main><footer class="site-footer wrap"><div class="footer-grid"><div class="footer-column"><h2>Links</h2><nav aria-label="Footer navigation"><a href="/#work">Projects</a><a href="/about/">About</a><span class="footer-placeholder" data-footer-resume>Resume <small>Coming soon</small></span></nav></div><div class="footer-column"><h2>Contact</h2><a class="footer-email" data-footer-email href="mailto:emdong@umich.edu">emdong@umich.edu</a><div class="footer-socials" data-footer-socials hidden></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Emily Dong</span><a href="#top">Back to top</a></div></footer>
+<section class="work wrap section" id="work" aria-labelledby="work-title"><h2 id="work-title" class="visually-hidden">Case studies</h2><div id="projects" class="project-grid"></div></section></main><footer class="site-footer wrap"><div class="footer-grid"><div class="footer-column"><h2>Explore</h2><nav aria-label="Footer navigation"><a href="/#top">Home</a><a href="/#work">Work</a><a href="/playground/">Playground</a><a href="/about/">About</a></nav></div><div class="footer-column"><h2>Contact</h2><nav aria-label="Contact links"><span class="footer-placeholder" data-footer-link="linkedin" aria-label="LinkedIn, link coming soon">LinkedIn</span><span class="footer-placeholder" data-footer-link="github">GitHub</span><span class="footer-placeholder" data-footer-link="instagram" aria-label="Instagram, link coming soon">Instagram</span><button type="button" class="footer-email" data-footer-email aria-label="Copy email address" title="Copy email address">Email</button><span class="visually-hidden" data-footer-copy-status role="status"></span></nav></div></div></footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

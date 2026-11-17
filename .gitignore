@@ -6,3 +6,5 @@ dist/
 .env.*
 !.env.example
 .openai/
+
+site/vendor/matter/

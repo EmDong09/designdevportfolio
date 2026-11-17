@@ -10,5 +10,8 @@
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs --production"
+  },
+  "dependencies": {
+    "matter-js": "^0.20.0"
   }
 }

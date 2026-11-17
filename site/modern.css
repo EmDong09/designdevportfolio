@@ -1,8 +1,8 @@
 /* Shared visual language: soft silver surfaces, expressive serif type, black controls.
    Loaded last on every page. Project artwork retains its own original palette. */
-:root{--paper:#efefed;--ink:#171717;--muted:#646461;--blue:#242424;--line:#d6d6d2;--radius:12px;--display:'Bodoni 72',Didot,'Times New Roman',serif;--surface:#fafaf8;--soft-shadow:0 12px 35px #20282008,0 1px 3px #20282005}
+:root{--paper:#eff1f4;--ink:#171717;--muted:#646461;--blue:#242424;--line:#d7dae0;--radius:12px;--display:'Bodoni 72',Didot,'Times New Roman',serif;--surface:#fafbfc;--soft-shadow:0 12px 35px #20282008,0 1px 3px #20282005}
 body{background:radial-gradient(ellipse at 25% 0%,#fff 0,transparent 48%),var(--paper);color:var(--ink)}
-body.case-page{--paper:#efefed;--ink:#171717;--muted:#646461;--line:#d6d6d2;background:radial-gradient(ellipse at 25% 0%,#fff 0,transparent 48%),var(--paper)}
+body.case-page{--paper:#eff1f4;--ink:#171717;--muted:#646461;--line:#d7dae0;background:radial-gradient(ellipse at 25% 0%,#fff 0,transparent 48%),var(--paper)}
 ::selection{background:#ccd2c7;color:#151815}a,button,input,summary{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline-color:#363633}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .header.wrap{background:transparent;border-bottom:0;position:relative;top:auto;color:var(--ink)}.header .wordmark{font-family:var(--display);font-size:25px;font-style:italic;font-weight:400;letter-spacing:-1px;color:var(--ink)}.header .wordmark-dot{display:none}.header nav a{font-size:13px;color:#62625e}.header nav a[aria-current="page"]{color:var(--ink);text-decoration-color:var(--ink);text-underline-offset:6px}.header nav a:hover{color:#111}.header a:focus-visible{outline-color:#363633}
@@ -12,11 +12,11 @@ h1,h2{font-family:var(--display);font-weight:400}.serif{font-family:var(--displa
 /* Framed work imagery and a quieter hierarchy. */
 .section{padding-block:80px}.home-page .work.section{padding-top:30px}.section-top h2,.collection-toolbar h2{font-family:var(--display);font-size:38px;letter-spacing:-1.4px;line-height:1.1}.section-top .eyebrow{font-size:8px;margin-bottom:12px}.sample-note{font-size:10px;color:#6b6b65}.filters{gap:5px}.filters button{font-size:10px;min-height:42px;border-radius:100px;padding:10px 18px;color:#666660}.filters button.active{background:#20201e;color:#fff}.filters button:hover{border-color:#939f8b}.project-grid{gap:50px 28px}.project-preview{padding:24px;border:1px solid #ffffffd9;border-radius:13px;background:#ffffff60;box-shadow:var(--soft-shadow)}.project-preview>div{border-radius:8px;overflow:hidden}.preview-link{background:#fcfdf7;color:#242c20;border-radius:100px;padding:12px 17px;bottom:40px;right:40px;font-size:10px;box-shadow:0 3px 12px #0001}.project-meta{margin:20px 6px 10px;align-items:end}.project-meta h3{font-size:23px;font-weight:400;letter-spacing:-.7px;color:#252523}.project-number{font-size:8px;color:#6b6b65;letter-spacing:1.1px}.project-tags{font-size:9px;color:#6b6b65}.project-description{margin-inline:6px;font-size:12px;color:#6b6b65;line-height:1.8}.project-preview .campus-art{background:#1d2c28}.project-preview .map-grid{opacity:.17}.project-preview .campus-type{color:#e6ede2}.project-preview .map-path{opacity:.4}.project-preview .ritual-art{background:#28312c}.project-preview .ritual-circle{background:#465348}.project-preview .ritual-heading{color:#eeebe0}.project-preview .form-art{background:#292b32;color:#d6d1e4}.project-preview .form-disc{background:#8f817b}.project-preview .form-star{color:#a1a8bb}.project-preview .preview-small{color:#d0d6cb}.project-preview:hover>div{filter:saturate(1.06)}
 /* Shared closing and footer. */
-.about{background:#e6e6e16b;border-block:1px solid #fff7}.about h2,.contact h2{font-family:var(--display);font-weight:400}.about-star{color:#707069}.about-copy p{font-size:16px;line-height:1.8}.about-copy p+p{color:#6e6e68}.about-tags span{background:#f6f8f099;border-color:#d9d9d3;color:#66665e}.study-art{border-radius:9px;box-shadow:var(--soft-shadow);filter:saturate(.7)}.study-caption{font-size:12px;color:#3b3b36}.study small{color:#6b6b65}.contact{border-color:#d9d9d3;text-align:center;padding-top:65px}.contact-row{display:block}.contact h2{font-size:clamp(42px,6vw,80px);line-height:1.06;letter-spacing:-3px;margin-top:20px}.contact .serif{color:#7c7c74}.contact-arrow{display:none}.contact>p:last-child{margin-top:25px;color:#6b6b65;font-size:11px}footer.wrap{border-color:#d9d9d3;padding-block:28px}footer .wordmark{font:italic 23px var(--display);letter-spacing:-1px}footer .wordmark-dot{display:none}footer>span,footer>a:last-child{font-size:10px;color:#6b6b65}
+.about{background:#e5e8ee6b;border-block:1px solid #fff7}.about h2,.contact h2{font-family:var(--display);font-weight:400}.about-star{color:#707069}.about-copy p{font-size:16px;line-height:1.8}.about-copy p+p{color:#6e6e68}.about-tags span{background:#f6f8f099;border-color:#d9d9d3;color:#66665e}.study-art{border-radius:9px;box-shadow:var(--soft-shadow);filter:saturate(.7)}.study-caption{font-size:12px;color:#3b3b36}.study small{color:#6b6b65}.contact{border-color:#d9d9d3;text-align:center;padding-top:65px}.contact-row{display:block}.contact h2{font-size:clamp(42px,6vw,80px);line-height:1.06;letter-spacing:-3px;margin-top:20px}.contact .serif{color:#7c7c74}.contact-arrow{display:none}.contact>p:last-child{margin-top:25px;color:#6b6b65;font-size:11px}footer.wrap{border-color:#d9d9d3;padding-block:28px}footer .wordmark{font:italic 23px var(--display);letter-spacing:-1px}footer .wordmark-dot{display:none}footer>span,footer>a:last-child{font-size:10px;color:#6b6b65}
 /* Work index follows the landing page's centered rhythm and framed cards. */
 .work-intro{padding-top:42px;padding-bottom:48px;text-align:center}.work-intro-grid{display:block;margin-top:20px}.work-intro h1{font-family:var(--display);font-weight:400;font-size:clamp(62px,7vw,94px);line-height:1.02;letter-spacing:-4px;max-width:900px;margin-inline:auto}.work-intro h1 .serif{color:#78786f}.work-introduction{font-size:13px;line-height:1.9;max-width:400px;margin:24px auto 0}.work-margin{border:0;padding:0;margin:26px auto 0;max-width:none;display:flex;flex-direction:column;align-items:center;gap:10px}.work-mark,.work-margin>.eyebrow{display:none}.work-margin ul{display:flex;gap:20px;justify-content:center;margin:0;font-size:10px;color:#707068;line-height:1.8}.work-jump{font-size:10px;min-height:40px}.work-collection{border-top:1px solid #d9d9d3;padding-top:28px}.collection-status{margin-top:18px;margin-bottom:28px}.work-page .project-grid{grid-template-columns:1fr 1fr;gap:44px 28px}.work-page .project{display:block}.work-page .project-form{grid-column:1/-1}.work-page .project-preview>div{aspect-ratio:1.3}.work-page .project-form .project-preview>div{aspect-ratio:2.5}.work-page .project-meta{margin:20px 6px 0;padding:0}.work-page .project-meta h3{font-size:26px;line-height:1.2}.work-page .project-number{margin-bottom:9px;font-size:8px}.work-page .project-tags{margin-top:10px;font-size:9px}.work-page .project-description{margin:12px 6px 0;max-width:none;font-size:12px}.work-page .preview-link{right:40px;bottom:40px;font-size:10px}.work-page .campus-type,.work-page .ritual-heading{font-size:clamp(25px,2.5vw,36px)}.work-page .form-word{font-size:clamp(100px,15vw,205px);left:14%;top:7%}.work-page .form-star{font-size:190px}.work-page .form-disc{width:43%;top:7%}.work-page .form-caption{font-size:8px}.work-next{padding-top:20px;padding-bottom:60px}.work-next>div>p:last-child{font-family:var(--display);font-size:35px;font-weight:400}.work-next .text-link{font-size:11px}
 /* About: calm surfaces and consistent serif headings. */
-.about-intro{padding-top:55px;padding-bottom:85px;column-gap:90px}.about-intro h1{font-family:var(--display);font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:-2.5px;line-height:1.06}.about-intro h1 .serif{color:#78786f}.about-lead{font-size:20px;line-height:1.6}.intro-paragraphs p{font-size:13px;line-height:1.95;color:#6b6b65}.about-image-0{padding:16px;background:#ffffff6e;border:1px solid #fff;border-radius:12px;box-shadow:var(--soft-shadow)}.about-image-0 .image-placeholder,.about-image-0 img{border-radius:6px}.image-placeholder.placeholder-0{background:linear-gradient(145deg,#e3e3df,#cdcdc6)}.placeholder-0 .placeholder-form{background:#b8b8ad}.placeholder-0 .placeholder-spark{color:#68685f}.about-image-0 figcaption{padding:12px 2px 0;font-size:9px}.about-image-1{background:#fafaf8;border-radius:6px;box-shadow:0 8px 30px #20282012}.about-detail-section{border-color:#d9d9d3}.about-section-heading h2{font-family:var(--display);font-size:38px;font-weight:400;line-height:1.1}.faq-list details{border-color:#d9d9d3}.faq-list details:first-child{border-color:#d9d9d3}.faq-list summary{font-size:14px}.faq-list details[open] summary{color:#242420}.faq-list details>p{color:#6b6b63}.tool-list li{border-color:#d9d9d3}.tool-list .tool-icon,.tool-list li:nth-child(2n) .tool-icon,.tool-list li:nth-child(3n) .tool-icon{background:#ffffff88;color:#494940;border:1px solid #fff;border-radius:6px}.tool-description h3{font-size:15px}.tool-description p,.tool-category{color:#6b6b65}.education-glyph{border-color:#bdbdb2;color:#555549}.about-closing>p{font-family:var(--display);font-size:32px;font-weight:400}.page-notice{border-color:#d9d9d0}.page-notice>span{color:#67675a}
+.about-intro{padding-top:55px;padding-bottom:65px;column-gap:90px}.about-intro h1{font-family:var(--display);font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:-2.5px;line-height:1.06}.about-intro h1 .serif{color:#78786f}.about-lead{font-size:20px;line-height:1.6}.intro-paragraphs p{font-size:13px;line-height:1.95;color:#6b6b65}.about-image-0{padding:16px;background:#ffffff6e;border:1px solid #fff;border-radius:12px;box-shadow:var(--soft-shadow)}.about-image-0 .image-placeholder,.about-image-0 img{border-radius:6px}.image-placeholder.placeholder-0{background:linear-gradient(145deg,#e3e3df,#cdcdc6)}.placeholder-0 .placeholder-form{background:#b8b8ad}.placeholder-0 .placeholder-spark{color:#68685f}.about-image-0 figcaption{padding:12px 2px 0;font-size:9px}.about-image-1{background:#fafbfc;border-radius:6px;box-shadow:0 8px 30px #20282012}.about-detail-section{border-color:#d9d9d3}.about-section-heading h2{font-family:var(--display);font-size:38px;font-weight:400;line-height:1.1}.faq-list details{border-color:#d9d9d3}.faq-list details:first-child{border-color:#d9d9d3}.faq-list summary{font-size:14px}.faq-list details[open] summary{color:#242420}.faq-list details>p{color:#6b6b63}.tool-list li{border-color:#d9d9d3}.tool-list .tool-icon,.tool-list li:nth-child(2n) .tool-icon,.tool-list li:nth-child(3n) .tool-icon{background:#ffffff88;color:#494940;border:1px solid #fff;border-radius:6px}.tool-description h3{font-size:15px}.tool-description p,.tool-category{color:#6b6b65}.education-glyph{border-color:#bdbdb2;color:#555549}.about-closing>p{font-family:var(--display);font-size:32px;font-weight:400}.page-notice{border-color:#d9d9d0}.page-notice>span{color:#67675a}
 /* Playground keeps its masonry layout, with gallery-like framing. */
 .gallery-intro{text-align:center;padding-top:45px;padding-bottom:30px}.gallery-intro h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,5.5vw,74px);letter-spacing:-2.8px}.gallery-intro h1 .serif{color:#77776c}.gallery-intro>p{margin-inline:auto}.gallery-intro>p:not(.eyebrow){font-size:12px;line-height:1.9;color:#6b6b65}.gallery-toolbar{margin-bottom:25px}.pin-button{padding:12px;background:#ffffff75;border:1px solid #fff;border-radius:12px;box-shadow:var(--soft-shadow)}.pin-art{border-radius:7px;filter:saturate(.8)}.pin-button:hover .pin-art{filter:saturate(1)}.pin-caption{padding:12px 3px 3px}.pin-caption strong{font-size:12px;color:#3b3b36}.pin-caption>span{color:#6b6b65}.gallery-closing>p{font-family:var(--display);font-size:28px;font-weight:400}.gallery-closing>span{color:#767669}
 /* Case-study structure and scrolling behavior are preserved, with the shared theme. */
@@ -26,7 +26,7 @@ dialog,#study-dialog{background:#f5f5f1;border:1px solid #fff;border-radius:12px
 @media(min-width:1500px){.modern-hero{padding-top:70px;padding-bottom:80px}}
 @media(max-width:1100px){.case-project-details{gap:25px 30px}}
 @media(max-width:1000px){.modern-hero h1{font-size:clamp(43px,6.3vw,68px);letter-spacing:-2.8px}.project-preview{padding:18px}.preview-link,.work-page .preview-link{right:30px;bottom:30px}.work-page .project-preview>div{aspect-ratio:1.2}.work-page .form-star{font-size:150px}.about-intro{column-gap:45px}.case-banner{width:calc(100% - 48px);margin-inline:24px}.case-opening>h2{font-size:clamp(43px,5.8vw,65px)}.case-story h2{font-size:32px}.case-question h2{font-size:34px}.case-cover .case-art{padding:15px}}
-@media(max-width:700px){.header .wordmark{font-size:23px}.header nav a{font-size:11px}.modern-hero{padding-top:40px;padding-bottom:45px}.modern-hero h1{font-size:clamp(31px,6.75vw,46px);line-height:1.27;letter-spacing:-1.5px;max-width:520px}.hero-line{display:block}.intro-capsule{border-width:2px;margin-bottom:.1em;width:1.3em;height:.78em}.modern-hero .hero-description{font-size:11px;line-height:1.9;margin-top:24px;max-width:290px}.modern-hero .hero-links{margin-top:24px;gap:14px;flex-wrap:wrap}.modern-hero .primary{font-size:11px;padding:13px 18px;gap:15px;min-height:46px}.modern-hero .text-link{font-size:10px}.section{padding-block:55px}.home-page .work.section{padding-top:25px}.section-top h2,.collection-toolbar h2{font-size:32px;letter-spacing:-1.2px}.section-top .eyebrow{font-size:8px}.filters button{font-size:10px;padding:9px 15px;min-height:42px}.project-grid,.work-page .project-grid{grid-template-columns:1fr;gap:32px}.project-form,.work-page .project-form{grid-column:auto}.project-preview{padding:14px;border-radius:11px}.project-preview>div{border-radius:6px}.preview-link,.work-page .preview-link{bottom:26px;right:26px;font-size:9px;min-height:40px;padding:11px 13px;gap:15px}.project-meta{margin-top:17px;margin-left:2px;margin-right:2px}.project-meta h3,.work-page .project-meta h3{font-size:23px}.project-tags{font-size:8px}.project-description,.work-page .project-description{font-size:11px;margin-inline:2px}.about h2{font-size:36px}.about-copy p{font-size:15px}.about-copy p+p{font-size:12px}.studies{gap:25px}.study-art{border-radius:8px}.contact h2{font-size:clamp(38px,8.6vw,61px);letter-spacing:-1.8px}.contact>.eyebrow{font-size:8px}.contact>p:last-child{font-size:10px}.work-intro{padding-top:30px;padding-bottom:35px}.work-intro h1{font-size:clamp(56px,12vw,77px);letter-spacing:-2.4px}.work-introduction{font-size:12px;max-width:33ch;margin-top:20px}.work-margin{display:flex;gap:5px;margin-top:22px;padding:0;border:0}.work-margin ul{gap:12px;font-size:8px;flex-wrap:wrap}.work-jump{font-size:9px;min-height:38px}.work-collection{padding-top:25px}.work-page .project-meta{margin-top:17px}.work-page .project-preview>div,.work-page .project-form .project-preview>div{aspect-ratio:1.25}.work-page .form-word{font-size:clamp(82px,24vw,140px);top:19%;left:7%;letter-spacing:-6px}.work-page .form-star{font-size:90px}.work-page .form-disc{width:67%}.work-page .form-caption{font-size:5px}.work-next>div>p:last-child{font-size:28px}.about-intro{padding-top:35px;padding-bottom:55px;gap:30px}.about-intro h1{font-size:clamp(43px,10vw,60px);letter-spacing:-1.9px}.about-lead{font-size:18px}.intro-paragraphs p{font-size:12px}.about-image-0{padding:12px;border-radius:10px}.about-section-heading h2{font-size:32px}.faq-list summary{font-size:12px}.faq-list details>p{font-size:12px}.about-closing>p{font-size:27px}.gallery-intro{padding-top:30px;padding-bottom:25px}.gallery-intro h1{font-size:clamp(37px,8.4vw,56px);letter-spacing:-1.6px}.gallery-intro>p:not(.eyebrow){font-size:11px}.gallery-intro>p.gallery-notice{font-size:8px}.pin-button{padding:8px;border-radius:9px}.pin-art{border-radius:5px}.pin-caption{padding:9px 1px 2px}.pin-caption strong{font-size:10px}.pin-caption>span{font-size:8px}.gallery-closing>p{font-size:23px}.case-banner{width:calc(100% - 32px);margin:5px 16px 0;border-radius:11px;height:480px;min-height:440px;padding:90px 18px 100px}.case-banner h1{font-size:clamp(42px,10vw,66px);letter-spacing:-1.8px}.case-banner-scroll{bottom:35px;font-size:10px}.case-opening{padding-top:calc(35px + var(--case-tabs-height));padding-bottom:45px}.case-opening>h2{font-size:clamp(40px,9.5vw,58px);letter-spacing:-1.6px}.case-opening .case-lead{font-size:15px;line-height:1.85}.case-project-details{margin-bottom:45px;gap:22px}.case-project-details dt{font-size:10px}.case-project-details dd{font-size:15px}.case-cover .case-art{padding:11px;border-radius:9px}.case-cover .case-art>div{border-radius:5px}.case-visual-pair{gap:16px}.case-system-board,.case-detail-crop{border-radius:9px}.case-body{padding-top:45px}.case-story h2{font-size:29px;letter-spacing:-1px}.case-story>section>p:not(.eyebrow){font-size:12px}.case-story .case-question{padding:28px 22px;border-radius:10px}.case-question h2{font-size:32px}.case-flow>div{padding:20px;border:1px solid #fff}.case-demo-art{border-radius:9px}.case-related-project .case-art{padding:11px;border-radius:9px}.case-related-project>h2{font-size:24px}.case-contents{background:#efefed}.case-contents>a[aria-current="location"]{border-bottom-color:#272721}.case-page footer .wordmark{font:italic 23px var(--display)}dialog,#study-dialog{border-radius:10px}.dialog-copy h2,.study-dialog-header h2{font-size:28px}}
+@media(max-width:700px){.header .wordmark{font-size:23px}.header nav a{font-size:11px}.modern-hero{padding-top:40px;padding-bottom:45px}.modern-hero h1{font-size:clamp(31px,6.75vw,46px);line-height:1.27;letter-spacing:-1.5px;max-width:520px}.hero-line{display:block}.intro-capsule{border-width:2px;margin-bottom:.1em;width:1.3em;height:.78em}.modern-hero .hero-description{font-size:11px;line-height:1.9;margin-top:24px;max-width:290px}.modern-hero .hero-links{margin-top:24px;gap:14px;flex-wrap:wrap}.modern-hero .primary{font-size:11px;padding:13px 18px;gap:15px;min-height:46px}.modern-hero .text-link{font-size:10px}.section{padding-block:55px}.home-page .work.section{padding-top:25px}.section-top h2,.collection-toolbar h2{font-size:32px;letter-spacing:-1.2px}.section-top .eyebrow{font-size:8px}.filters button{font-size:10px;padding:9px 15px;min-height:42px}.project-grid,.work-page .project-grid{grid-template-columns:1fr;gap:32px}.project-form,.work-page .project-form{grid-column:auto}.project-preview{padding:14px;border-radius:11px}.project-preview>div{border-radius:6px}.preview-link,.work-page .preview-link{bottom:26px;right:26px;font-size:9px;min-height:40px;padding:11px 13px;gap:15px}.project-meta{margin-top:17px;margin-left:2px;margin-right:2px}.project-meta h3,.work-page .project-meta h3{font-size:23px}.project-tags{font-size:8px}.project-description,.work-page .project-description{font-size:11px;margin-inline:2px}.about h2{font-size:36px}.about-copy p{font-size:15px}.about-copy p+p{font-size:12px}.studies{gap:25px}.study-art{border-radius:8px}.contact h2{font-size:clamp(38px,8.6vw,61px);letter-spacing:-1.8px}.contact>.eyebrow{font-size:8px}.contact>p:last-child{font-size:10px}.work-intro{padding-top:30px;padding-bottom:35px}.work-intro h1{font-size:clamp(56px,12vw,77px);letter-spacing:-2.4px}.work-introduction{font-size:12px;max-width:33ch;margin-top:20px}.work-margin{display:flex;gap:5px;margin-top:22px;padding:0;border:0}.work-margin ul{gap:12px;font-size:8px;flex-wrap:wrap}.work-jump{font-size:9px;min-height:38px}.work-collection{padding-top:25px}.work-page .project-meta{margin-top:17px}.work-page .project-preview>div,.work-page .project-form .project-preview>div{aspect-ratio:1.25}.work-page .form-word{font-size:clamp(82px,24vw,140px);top:19%;left:7%;letter-spacing:-6px}.work-page .form-star{font-size:90px}.work-page .form-disc{width:67%}.work-page .form-caption{font-size:5px}.work-next>div>p:last-child{font-size:28px}.about-intro{padding-top:35px;padding-bottom:45px;gap:30px}.about-intro h1{font-size:clamp(43px,10vw,60px);letter-spacing:-1.9px}.about-lead{font-size:18px}.intro-paragraphs p{font-size:12px}.about-image-0{padding:12px;border-radius:10px}.about-section-heading h2{font-size:32px}.faq-list summary{font-size:12px}.faq-list details>p{font-size:12px}.about-closing>p{font-size:27px}.gallery-intro{padding-top:30px;padding-bottom:25px}.gallery-intro h1{font-size:clamp(37px,8.4vw,56px);letter-spacing:-1.6px}.gallery-intro>p:not(.eyebrow){font-size:11px}.gallery-intro>p.gallery-notice{font-size:8px}.pin-button{padding:8px;border-radius:9px}.pin-art{border-radius:5px}.pin-caption{padding:9px 1px 2px}.pin-caption strong{font-size:10px}.pin-caption>span{font-size:8px}.gallery-closing>p{font-size:23px}.case-banner{width:calc(100% - 32px);margin:5px 16px 0;border-radius:11px;height:480px;min-height:440px;padding:90px 18px 100px}.case-banner h1{font-size:clamp(42px,10vw,66px);letter-spacing:-1.8px}.case-banner-scroll{bottom:35px;font-size:10px}.case-opening{padding-top:calc(35px + var(--case-tabs-height));padding-bottom:45px}.case-opening>h2{font-size:clamp(40px,9.5vw,58px);letter-spacing:-1.6px}.case-opening .case-lead{font-size:15px;line-height:1.85}.case-project-details{margin-bottom:45px;gap:22px}.case-project-details dt{font-size:10px}.case-project-details dd{font-size:15px}.case-cover .case-art{padding:11px;border-radius:9px}.case-cover .case-art>div{border-radius:5px}.case-visual-pair{gap:16px}.case-system-board,.case-detail-crop{border-radius:9px}.case-body{padding-top:45px}.case-story h2{font-size:29px;letter-spacing:-1px}.case-story>section>p:not(.eyebrow){font-size:12px}.case-story .case-question{padding:28px 22px;border-radius:10px}.case-question h2{font-size:32px}.case-flow>div{padding:20px;border:1px solid #fff}.case-demo-art{border-radius:9px}.case-related-project .case-art{padding:11px;border-radius:9px}.case-related-project>h2{font-size:24px}.case-contents{background:#eff1f4}.case-contents>a[aria-current="location"]{border-bottom-color:#272721}.case-page footer .wordmark{font:italic 23px var(--display)}dialog,#study-dialog{border-radius:10px}.dialog-copy h2,.study-dialog-header h2{font-size:28px}}
 @media(max-width:360px){.modern-hero h1{font-size:29px;letter-spacing:-1.25px}.modern-hero{padding-top:34px}.intro-capsule{width:1.18em}.modern-hero .hero-links{gap:10px}.modern-hero .primary{font-size:10px;padding-inline:16px}.hero-description br{display:none}.pin-caption strong{font-size:9px}.pin-caption>span{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.capsule-orbit,.pin-open{transition:none}}
 @media(max-width:700px){.intro-capsule{min-width:58px;min-height:44px}.modern-hero h1{line-height:1.45}}
@@ -87,3 +87,147 @@ footer.site-footer.wrap{display:block;padding-top:65px;padding-bottom:25px;margi
 .home-page.home-entry-pending .home-entry-target{transition:none}
 .home-page.home-entry-instant .home-entry-target,.home-page.home-entry-instant .hero-description{transition:none!important}
 @media(prefers-reduced-motion:reduce){.home-page .home-entry-target{transition:none!important}}
+
+/* Balance hero spacing while keeping a gentle separation from the projects. */
+.modern-hero{padding-bottom:65px}
+@media(min-width:1500px){.modern-hero{padding-bottom:80px}}
+@media(max-width:700px){.modern-hero{padding-bottom:45px}}
+
+/* Separate the shared navigation from the page content. */
+.header.wrap{border-bottom:1px solid var(--line)}
+
+/* A more compact shared navigation bar. */
+:root{--site-header-height:84px}
+@media(max-width:700px){:root{--site-header-height:96px}.header.wrap{padding-top:4px;padding-bottom:4px}}
+
+/* Indicate the active page with weight instead of an underline. */
+.header nav a[aria-current="page"]{font-weight:700;text-decoration:none}
+
+/* Keep navigation geometry identical when an active label becomes bold. */
+.header.wrap{background:#f7f8fa;color:#171717;border-bottom-color:#d7dae0}
+.header nav a[data-nav-label]{display:inline-grid;grid-template-areas:'label';align-items:center;justify-items:start}
+.header nav a[data-nav-label]::before{content:attr(data-nav-label);grid-area:label;font-weight:700;visibility:hidden;pointer-events:none}
+.header nav a[data-nav-label]>span{grid-area:label}
+
+/* About toolkit: a compact grid of icon-and-description cards. */
+.about-tools-section{display:block}
+.about-tools-section .about-section-heading{margin-bottom:30px}
+.about-tools-section .about-section-heading h2{margin-top:0;font-size:38px;line-height:1.15;letter-spacing:-1.2px}
+.about-tools-section .about-section-heading h2>span{color:#777b77;font-style:normal}
+.about-tools-section .about-section-heading>.toolkit-note{font-size:10px;margin-top:12px;color:#6b6b65}
+.about-tools-section .tool-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.about-tools-section .tool-list li{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:15px;padding:17px;border:1px solid #fff;background:#e7e8e480;border-radius:12px;min-width:0}
+.about-tools-section .tool-list .tool-icon{grid-row:auto;align-self:center;width:48px;height:48px;border-radius:8px;box-shadow:none;font:500 23px/1 Arial,Helvetica,sans-serif}
+.about-tools-section .tool-list .tool-icon[data-tool="figma"]{background:#161616;color:white;border:0}
+.about-tools-section .tool-icon svg{display:block;width:24px;height:35px}
+.about-tools-section .tool-list .tool-icon[data-tool="figjam"]{background:#e3dcf2;color:#66528c;border:0;font-size:20px}
+.about-tools-section .tool-list .tool-icon[data-tool="illustrator"]{background:#340b06;color:#ffad00;border:0}
+.about-tools-section .tool-list .tool-icon[data-tool="photoshop"]{background:#072333;color:#38aafa;border:0}
+.about-tools-section .tool-list .tool-icon[data-tool="notion"]{background:#fafbfc;color:#272727;border:1px solid #c9cbc5;font-family:Georgia,serif;font-weight:700}
+.about-tools-section .tool-list .tool-icon[data-tool="claude-code"]{background:transparent;color:#c37e60;border:0;font-size:46px;font-weight:400}
+.about-tools-section .tool-description{min-width:0}
+.about-tools-section .tool-description h3{font:400 16px/1.4 Arial,Helvetica,sans-serif;letter-spacing:-.35px;overflow-wrap:anywhere}
+.about-tools-section .tool-description p{font-size:12px;line-height:1.6;margin:4px 0 0;color:#727772;max-width:none}
+@media(max-width:1050px){.about-tools-section .tool-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.about-tools-section .about-section-heading h2{font-size:32px}.about-tools-section .about-section-heading{margin-bottom:24px}.about-tools-section .tool-list{grid-template-columns:1fr;gap:12px}.about-tools-section .tool-list li{padding:15px;gap:15px;border-radius:10px}.about-tools-section .tool-description h3{font-size:16px}.about-tools-section .tool-description p{font-size:12px}}
+
+/* Keep the shared navigation visible and account for it at section anchors. */
+.header.wrap{position:sticky;top:0;z-index:30;background:#f7f8fa}
+html{scroll-padding-top:calc(var(--site-header-height) + 20px)}
+@media(max-width:700px){.case-contents{top:var(--site-header-height)}}
+
+/* Home project captions: title and quiet metadata pills, followed by a summary. */
+.home-page .project-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin:22px 0 10px}
+.home-page .project-meta>div{min-width:0}
+.home-page .project-meta h3{font-size:26px;line-height:1.25;font-weight:400;letter-spacing:-.6px}
+.home-page .project-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px;list-style:none;padding:0;margin:0;max-width:none;text-align:left}
+.home-page .project-tags li{border:1px solid #c8c8c2;border-radius:999px;padding:5px 11px;color:#6b6b65;font:400 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.45px;text-transform:uppercase}
+.home-page .project-description{margin:0;font-size:15px;line-height:1.65;color:#777772;max-width:none}
+@media(max-width:1000px){.home-page .project-meta{align-items:flex-start;flex-direction:column;gap:10px}.home-page .project-tags{justify-content:flex-start}}
+@media(max-width:700px){.home-page .project-meta{margin-top:18px}.home-page .project-meta h3{font-size:23px}.home-page .project-tags li{font-size:9px;padding:5px 10px}.home-page .project-description{font-size:14px}}
+
+/* Compact text-only footer, with the same quiet palette as the page. */
+footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
+.site-footer .footer-grid{grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;max-width:620px}
+.site-footer .footer-column h2{font:400 11px/1.5 Arial,Helvetica,sans-serif;letter-spacing:1px;text-transform:uppercase;color:#797c74;margin:0 0 10px}
+.site-footer .footer-column nav{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.site-footer .footer-column nav>a,.site-footer .footer-placeholder,.site-footer .footer-email{display:flex;align-items:center;min-height:32px;font:400 14px/1.5 Arial,Helvetica,sans-serif;letter-spacing:-.15px;color:#343630}
+.site-footer .footer-placeholder{color:#797c74}
+.site-footer .footer-column a:hover{color:#171717;text-decoration:underline;text-underline-offset:3px}
+.site-footer .footer-bottom{font-size:10px}
+.site-footer .footer-bottom a{min-height:32px}
+@media(max-width:700px){footer.site-footer.wrap{padding-top:25px;margin-top:20px}.site-footer .footer-grid{grid-template-columns:1fr 1fr;gap:24px;padding-bottom:16px}}
+
+.site-footer button.footer-email{background:transparent;border:0;padding:0;text-align:left;cursor:pointer}
+.site-footer button.footer-email:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* A lightweight, non-interactive label follows desktop thumbnail hovers. */
+.project-cursor-pill{position:fixed;z-index:50;pointer-events:none;display:block;padding:12px 21px;border-radius:999px;background:#242520;color:#f7f8fa;box-shadow:0 3px 16px #0002;font:400 13px/1 Arial,Helvetica,sans-serif;opacity:0;transform:translate(-50%,-50%) scale(.9);transition:opacity .15s ease,transform .15s ease}
+.project-cursor-pill.is-visible{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media(hover:hover) and (pointer:fine){.project-preview{cursor:none}}
+@media(prefers-reduced-motion:reduce){.project-cursor-pill{transition:none}}
+
+/* Let the section rail share the case study's continuous page background. */
+.case-page .case-contents{background:transparent;border-right:0;box-shadow:none}
+
+/* Project overview: title, central idea, then four quiet metadata columns. */
+.case-opening>h2{font-size:clamp(38px,4.5vw,64px);line-height:1.12;letter-spacing:-2px;margin:0 0 34px}
+.case-central-idea{border-left:1px solid var(--line);padding-left:22px;margin-bottom:48px}
+.case-detail-label,.case-project-details dt{font:400 11px/1.5 Arial,Helvetica,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:#7b7b76}
+.case-detail-label{margin:0 0 12px}
+.case-central-idea .case-lead{font-size:20px;line-height:1.65;margin:0;color:#62625c}
+.case-opening .case-project-details{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:0}
+.case-project-details dt{margin:0 0 16px}
+.case-project-details dd{font:400 17px/1.7 Arial,Helvetica,sans-serif;margin:0;color:#343430}
+.case-project-details dd>span{display:block;margin-bottom:4px}
+.case-opening .case-notice{margin-top:28px}
+@media(max-width:1000px){.case-opening .case-project-details{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}}
+@media(max-width:700px){.case-opening>h2{font-size:36px;letter-spacing:-1.2px;margin-bottom:26px}.case-central-idea{padding-left:16px;margin-bottom:32px}.case-central-idea .case-lead{font-size:17px}.case-project-details dd{font-size:15px}}
+
+/* Match the overview's scope tags to the homepage project captions. */
+.case-title-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px 24px;margin-bottom:34px}
+.case-title-row h2{font-family:var(--display);font-size:clamp(38px,4.5vw,64px);font-weight:400;line-height:1.12;letter-spacing:-2px;margin:0}
+.case-scope-pills{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0}
+.case-scope-pills li{border:1px solid #c8c8c2;border-radius:999px;padding:5px 11px;color:#6b6b65;font:400 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.45px;text-transform:uppercase}
+@media(max-width:700px){.case-title-row{align-items:flex-start;flex-direction:column;gap:14px;margin-bottom:26px}.case-title-row h2{font-size:36px;letter-spacing:-1.2px}.case-scope-pills li{font-size:9px;padding:5px 10px}}
+
+/* Supplied artwork keeps its full natural proportions in the gallery and dialog. */
+.pin-art.pin-image{display:block;aspect-ratio:auto;filter:none;background:transparent}
+.pin-art.pin-image img{display:block;width:100%;height:auto;object-fit:contain;border-radius:0}
+#study-preview .pin-art.pin-image{aspect-ratio:auto;max-height:none;background:transparent}
+#study-preview .pin-image img{width:100%;height:auto;max-height:75dvh;object-fit:contain}
+.study-tools[hidden],.study-disclaimer[hidden]{display:none}
+
+/* Artwork gently expands as a whole, preserving the full uncropped image. */
+.pin-button .pin-art{transform:scale(1);transition:transform .3s ease;transform-origin:center}
+@media(hover:hover){.pin-button:hover .pin-art{transform:scale(1.025);filter:none}}
+.pin-button:focus-visible .pin-art{transform:scale(1.025)}
+@media(prefers-reduced-motion:reduce){.pin-button .pin-art{transition:none}.pin-button:hover .pin-art,.pin-button:focus-visible .pin-art{transform:none}}
+
+/* Uploaded artwork shares a row while retaining each image's natural proportions. */
+.uploaded-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:20px;margin-bottom:28px}
+.uploaded-gallery .gallery-pin{margin:0;min-width:0}
+@media(max-width:700px){.uploaded-gallery{gap:12px;margin-bottom:22px}}
+
+/* Keep both gallery groups aligned to three columns on desktop. */
+.uploaded-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pin-gallery{column-count:3}
+@media(max-width:700px){.uploaded-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.pin-gallery{column-count:2}}
+
+/* Gallery artwork sits directly on the page, with only its medium below. */
+.playground-page .pin-button{padding:0;border:0;background:transparent;box-shadow:none;border-radius:0}
+.playground-page .pin-caption{padding:10px 0 0}
+
+#play-title .play-type-unit{visibility:hidden}
+#play-title .play-type-unit.is-typed{visibility:visible}
+@media(prefers-reduced-motion:reduce){#play-title .play-type-unit{visibility:visible}}
+
+/* Keep the portrait centered on Emily's face within the inline oval. */
+.capsule-portrait{background:#c7c8ce}
+.capsule-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+
+.capsule-interface .capsule-landscape-image{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+
+/* A continuous shaded rim keeps the glass finish smooth and the images sharp. */
+.intro-capsule{border-color:transparent;background:linear-gradient(#242a27,#242a27) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box;box-shadow:0 4px 10px rgba(20,28,23,.18)}
+.modern-hero .capsule-art{background:linear-gradient(#d5bfc5,#d5bfc5) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box}

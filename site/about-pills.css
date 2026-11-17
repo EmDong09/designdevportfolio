@@ -1,0 +1,10 @@
+/* Layout only: the capsules inherit the homepage's border, rim, and shadow. */
+.about-landing{position:relative;display:grid;grid-template-columns:45% 55%;min-height:min(740px,max(640px,calc(100svh - var(--site-header-height))));isolation:isolate}
+.about-pill-stage{position:absolute;left:0;top:0;bottom:0;width:45%;overflow:hidden;pointer-events:none}
+.about-pill-stage .about-physics-pill{position:absolute;left:0;top:0;width:var(--physics-width,220px);height:var(--physics-height,120px);margin:0;vertical-align:initial;visibility:hidden;transform-origin:center;transition:none}
+.about-pill-stage .about-pill-fill{position:absolute;inset:0;display:block;width:100%;height:100%;background:var(--pill-fill);object-fit:cover}
+.about-landing-copy{grid-column:2;align-self:center;width:100%;max-width:690px;padding:64px clamp(28px,5vw,90px) 64px clamp(32px,4vw,72px)}
+.about-landing-copy h1{font-family:var(--display);font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:-2.5px;line-height:1.08;margin:0 0 28px}
+.about-landing-copy .about-lead{font-size:20px;line-height:1.6;margin:0 0 22px;max-width:none}
+.about-landing-copy .intro-paragraphs p{font-size:14px;line-height:1.9;margin:0 0 16px;max-width:none}
+@media(max-width:760px){.about-landing{display:flex;flex-direction:column;min-height:0}.about-landing-copy{order:0;max-width:620px;padding:42px 24px 24px;margin:auto}.about-landing-copy h1{font-size:48px}.about-landing-copy .about-lead{font-size:18px}.about-pill-stage{order:1;position:relative;top:auto;bottom:auto;width:100%;height:460px}.about-landing-copy .intro-paragraphs p{font-size:13px}}

@@ -2,10 +2,14 @@ import {headerFor} from './header.mjs';
 import {readFile,writeFile,cp,mkdir,rm,readdir} from 'node:fs/promises';
 import {themeLink} from './theme.mjs';
 import {createHash} from 'node:crypto';
+// Serve the installed physics library locally, with its license.
+await mkdir(new URL('../site/vendor/matter/',import.meta.url),{recursive:true});
+await cp(new URL('../node_modules/matter-js/build/matter.min.js',import.meta.url),new URL('../site/vendor/matter/matter.min.js',import.meta.url));
+await cp(new URL('../node_modules/matter-js/LICENSE',import.meta.url),new URL('../site/vendor/matter/LICENSE',import.meta.url));
 // Home is hand-authored; secondary pages are generated from the shared shell/content.
 const homePath=new URL('../site/index.html',import.meta.url);
 let home=await readFile(homePath,'utf8');
-home=home.replace(/<header\b[\s\S]*?<\/header>/,headerFor('work'));
+home=home.replace(/<header\b[\s\S]*?<\/header>/,headerFor());
 const footer=await readFile(new URL('./templates/shared-footer.html',import.meta.url),'utf8');
 home=/<footer\b/.test(home)?home.replace(/<footer\b[\s\S]*?<\/footer>/,footer):home.replace('</main>',`</main>${footer}`);
 const typingRevision=createHash('sha256').update(await readFile(new URL('../site/hero-typewriter.js',import.meta.url))).digest('hex').slice(0,12);

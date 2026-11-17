@@ -1,0 +1,47 @@
+/* A slow clockwise procession along a semicircle, inset from the viewport edges. */
+.playground-page .gallery-intro{padding-top:32px;padding-bottom:0}
+.playground-page .gallery-intro h1{font-size:clamp(34px,4vw,54px);letter-spacing:-1.8px;margin:16px 0}
+.playground-page .gallery-section{width:100%;max-width:1600px;padding:0;margin:auto}
+.arc-viewport{position:relative;height:clamp(480px,calc(50vw + 160px),1000px);overflow:hidden}
+.arc-track{position:absolute;inset:0}
+.arc-track .gallery-pin{position:absolute;left:0;top:0;margin:0;display:block;width:var(--arc-width);height:var(--arc-height);will-change:transform;transform:translate(-50%,-50%)}
+.playground-page .arc-track .pin-button{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;box-shadow:none;border-radius:0}
+.playground-page .arc-track .pin-art{display:block;width:100%;height:100%;aspect-ratio:auto;border-radius:0;transform:none;filter:none;box-shadow:0 6px 18px #293a2612;transition:box-shadow .25s}
+.playground-page .arc-track .pin-button:hover .pin-art,.playground-page .arc-track .pin-button:focus-visible .pin-art{transform:none;box-shadow:0 10px 24px #293a2626}
+.arc-track .pin-image{background:transparent}
+.playground-page .arc-track .pin-image img{display:block;width:100%;height:100%;object-fit:contain;border-radius:0;-webkit-user-drag:none}
+.arc-track .pin-caption{display:block;text-align:center;padding:10px 0 0;font-size:11px;color:var(--muted)}
+.arc-controls{display:flex;justify-content:center}
+.arc-controls button{min-height:36px;padding:8px 18px;border:1px solid #d6d6d0;border-radius:999px;background:#ffffff80;font:400 12px/1.4 Arial,Helvetica,sans-serif}
+.arc-controls button:hover{background:#fff}
+.arc-gallery>p{text-align:center;font-size:10px;color:#777b73;margin:14px 0 30px}
+@media(max-width:600px){.arc-viewport{height:420px}.arc-track .pin-caption{font-size:9px}.arc-gallery>p{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.arc-track .gallery-pin{will-change:auto}.arc-track .pin-art{transition:none}}
+
+.arc-track .gallery-pin{transform-origin:50% 100%}
+
+/* Drag artwork around the same circular path; hovering leaves auto-drift running. */
+.arc-track .pin-button{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.arc-viewport.is-dragging,.arc-viewport.is-dragging .pin-button{cursor:grabbing}
+.arc-track .pin-image img{pointer-events:none;user-select:none;-webkit-user-select:none}
+
+/* Keep the motion control centered in the open space beneath the top of the arch. */
+.arc-gallery{position:relative}
+.arc-controls{position:absolute;left:50%;top:var(--arc-control-top,65%);transform:translateX(-50%);z-index:5}
+
+/* The heading sits inside the open arch, beneath the artwork. */
+.playground-page .arc-gallery>.gallery-intro{position:absolute;left:50%;top:var(--arc-heading-top,55%);transform:translateX(-50%);padding:0;margin:0;z-index:4;text-align:center;pointer-events:none}
+.playground-page .arc-gallery>.gallery-intro h1{margin:0;line-height:1.15}
+@media(max-width:600px){.playground-page .arc-gallery>.gallery-intro h1{font-size:28px;letter-spacing:-1px}.playground-page .arc-gallery>.gallery-intro{width:calc(100% - 32px)}}
+
+.arc-gallery{padding-bottom:var(--arc-bottom-space,0px)}
+
+/* End the gallery shortly after its controls rather than reserving the lower orbit. */
+.arc-gallery{height:var(--arc-content-height,auto);padding-bottom:0;overflow:hidden}
+
+/* Let artwork reach the lower clipping edge of the gallery wrapper. */
+.arc-viewport{overflow:visible}
+
+/* Clip artwork at the navigation line; space the content inside the scene. */
+.playground-page .gallery-section{display:flow-root}
+.arc-gallery{margin-top:0}

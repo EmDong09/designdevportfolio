@@ -23,14 +23,8 @@ function updateType(){const preview=document.querySelector('#type-preview');prev
 styleButton.addEventListener('click',()=>{const italic=styleButton.getAttribute('aria-pressed')!=='true';styleButton.setAttribute('aria-pressed',String(italic));styleButton.textContent=italic?'Try roman':'Try italic';document.querySelector('#type-preview').style.fontStyle=italic?'italic':'normal';});
 document.querySelector('#reset-type').addEventListener('click',()=>{words.value='Stay curious.';size.value=64;spacing.value=-2;styleButton.setAttribute('aria-pressed','false');styleButton.textContent='Try italic';document.querySelector('#type-preview').style.fontStyle='normal';updateType();});
 
-// Masonry-gallery filters and accessible enlarged previews.
+// Accessible enlarged gallery previews.
 {
- const pins=[...document.querySelectorAll('.gallery-pin')];
- document.querySelectorAll('[data-gallery-filter]').forEach(button=>button.addEventListener('click',()=>{
-  document.querySelectorAll('[data-gallery-filter]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});
-  pins.forEach(pin=>{pin.hidden=button.dataset.galleryFilter!=='all' && pin.dataset.category!==button.dataset.galleryFilter;});
-  const count=pins.filter(pin=>!pin.hidden).length;document.querySelector('#gallery-count').textContent=`${count} ${count===1?'study':'studies'}`;
- }));
  const dialog=document.querySelector('#study-dialog');let trigger;
  const panels=[...document.querySelectorAll('#study-experiments .experiment')];
  document.querySelectorAll('[data-study-id]').forEach(button=>button.addEventListener('click',()=>{
@@ -38,6 +32,10 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
   trigger=button;document.querySelector('#study-dialog-title').textContent=study.title;
   const preview=button.querySelector('.pin-art').cloneNode(true);preview.querySelector('.pin-open')?.remove();document.querySelector('#study-preview').replaceChildren(preview);
   document.querySelector('.study-tools').open=false;
+  document.querySelector('.study-tools').hidden=Boolean(study.src);
+  document.querySelector('.study-dialog-header .eyebrow').textContent=study.src?(study.medium || 'Artwork').toUpperCase():'PLACEHOLDER VISUAL STUDY';
+  document.querySelector('.study-disclaimer').hidden=Boolean(study.src);
+
   const experimentId={color:'palette-title',form:'shape-title',type:'type-title'}[study.category];
   panels.forEach(panel=>panel.hidden=panel.getAttribute('aria-labelledby')!==experimentId);
   if(study.category==='color')setPalette(study.palette);
@@ -48,3 +46,41 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
  dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');trigger?.focus();});
  dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)dialog.close();});
 }
+
+// Match the landing title's typing rhythm without shifting the gallery layout.
+(()=>{
+ const heading=document.querySelector('#play-title');
+ const motion=matchMedia('(prefers-reduced-motion: reduce)');
+ if(!heading || motion.matches)return;
+ const text=heading.textContent;
+ heading.setAttribute('aria-label',text);
+ const characters=Array.from(text).map(character=>{
+  const span=document.createElement('span');
+  span.className='play-type-unit';span.textContent=character;
+  span.setAttribute('aria-hidden','true');
+  return span;
+ });
+ heading.replaceChildren(...characters);
+ let index=0,timer,done=false;
+ function finish(){
+  if(done)return;
+  done=true;clearTimeout(timer);
+  heading.textContent=text;
+  document.removeEventListener('keydown',onKey);
+  document.removeEventListener('visibilitychange',onVisibility);
+  motion.removeEventListener('change',finish);
+  window.removeEventListener('pagehide',finish);
+ }
+ function onKey(event){if(event.key==='Tab'||event.key==='Escape')finish();}
+ function onVisibility(){if(document.hidden)finish();}
+ function next(){
+  if(index===characters.length){finish();return;}
+  const span=characters[index++];span.classList.add('is-typed');
+  timer=setTimeout(next,/[,.!?]/.test(span.textContent)?40:span.textContent===' '?19:27);
+ }
+ document.addEventListener('keydown',onKey);
+ document.addEventListener('visibilitychange',onVisibility);
+ motion.addEventListener('change',finish);
+ window.addEventListener('pagehide',finish);
+ timer=setTimeout(next,100);
+})();

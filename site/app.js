@@ -1,7 +1,7 @@
 const content = window.portfolioContent;
 const art = window.projectArt;
 const projects=document.querySelector('#projects');
-content.projects.forEach((p,i)=>{ const card=document.createElement('article'); card.className=`project project-${p.id}`; card.dataset.category=p.category; card.innerHTML=`<a class="project-preview" href="/work/${p.caseStudy.slug}/" aria-label="Explore ${p.title}, sample case study">${art[p.id]}</a><div class="project-meta"><div><p class="project-number">0${i+1} / SAMPLE PROJECT</p><h3><a href="/work/${p.caseStudy.slug}/">${p.title}</a></h3></div><span class="project-tags">${p.tags.join(' / ')}</span></div><p class="project-description">${p.description}</p>`;projects.append(card);});
+content.projects.forEach((p,i)=>{ const card=document.createElement('article'); card.className=`project project-${p.id}`; card.dataset.category=p.category; card.innerHTML=`<a class="project-preview" href="/work/${p.caseStudy.slug}/" aria-label="Explore ${p.title}, sample case study">${art[p.id]}</a><div class="project-meta"><div><p class="project-number">0${i+1} / SAMPLE PROJECT</p><h3><a href="/work/${p.caseStudy.slug}/">${p.title}</a></h3></div>${document.body.classList.contains('home-page') ? `<ul class="project-tags" aria-label="Project disciplines">${p.tags.map(tag=>`<li>${tag}</li>`).join('')}</ul>` : `<span class="project-tags">${p.tags.join(' / ')}</span>`}</div><p class="project-description">${p.description}</p>`;projects.append(card);});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});document.querySelectorAll('.project').forEach(card=>card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter);updateProjectCount();}));
 const dialog=document.querySelector('#preview');let lastTrigger;
 function openPreview(trigger,{title,description,artwork,label='SAMPLE PROJECT',interaction=''}){lastTrigger=trigger;document.querySelector('#dialog-title').textContent=title;document.querySelector('#dialog-description').textContent=description;document.querySelector('#dialog-label').textContent=label;document.querySelector('#dialog-art').classList.remove('alternate');document.querySelector('#dialog-art').innerHTML=artwork;document.querySelector('#dialog-interaction').innerHTML=interaction;dialog.showModal();document.body.classList.add('dialog-open');document.querySelector('#close-dialog').focus();}
@@ -11,3 +11,29 @@ let composition=0;document.querySelector('#sculpture')?.addEventListener('click'
 
 function updateProjectCount(){const status=document.querySelector('#project-count');if(status){const count=document.querySelectorAll('.project:not([hidden])').length;status.textContent=`${String(count).padStart(2,'0')} ${count===1?'concept':'concepts'} shown`;}}
 updateProjectCount();
+
+// A decorative cursor label keeps the whole thumbnail available as the link.
+{
+ const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)');
+ const viewPill=document.createElement('span');
+ viewPill.className='project-cursor-pill';
+ viewPill.textContent='View';
+ viewPill.setAttribute('aria-hidden','true');
+ document.body.append(viewPill);
+ const hide=()=>viewPill.classList.remove('is-visible');
+ document.querySelectorAll('.project-preview').forEach(link=>{
+  const follow=event=>{
+   if(!finePointer.matches || event.pointerType==='touch')return;
+   viewPill.style.left=`${Math.max(40,Math.min(window.innerWidth-40,event.clientX))}px`;
+   viewPill.style.top=`${Math.max(24,Math.min(window.innerHeight-24,event.clientY))}px`;
+   viewPill.classList.add('is-visible');
+  };
+  link.addEventListener('pointerenter',follow);
+  link.addEventListener('pointermove',follow);
+  link.addEventListener('pointerleave',hide);
+  link.addEventListener('pointerdown',hide);
+ });
+ window.addEventListener('scroll',hide,{passive:true});
+ window.addEventListener('blur',hide);
+ finePointer.addEventListener('change',hide);
+}

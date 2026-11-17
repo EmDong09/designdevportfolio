@@ -1,7 +1,7 @@
 /** Central editable content. All projects and artwork below are placeholders. */
 window.portfolioContent = {
   name: 'Emily Dong', university: 'University of Michigan', majors: ['User Experience Design', 'Art and Design'],
-  email: 'emdong@umich.edu', linkedin: null, instagram: null, resume: null,
+  email: 'emdong@umich.edu', linkedin: 'https://www.linkedin.com/in/em-dong', github: 'https://github.com/EmDong09', instagram: 'https://www.instagram.com/emilydong.art/', resume: null,
   projects: [
     { id: 'campus', title: 'Campus Compass', category: 'digital', description: 'A placeholder concept for exploring campus resources.', tags: ['UX Research', 'Interaction Design'], overview: 'An illustrative starting point for a campus resource finder. Explore a sample resource category below. Real research, project process, and case study content have yet to be added.', sample: true },
     { id: 'ritual', title: 'Everyday Rituals', category: 'digital', description: 'A placeholder concept for a reflective daily interface.', tags: ['UI Design', 'Prototyping'], overview: 'A sample interface exploring a quieter moment in the day. Try the mood selector below to see the concept respond. Responses are temporary and are not collected or saved.', sample: true },
@@ -13,12 +13,19 @@ window.portfolioContent = {
 /**
  * @typedef {{src: string|null, alt: string, caption: string, width: number, height: number}} AboutImage
  * @typedef {{id: string, question: string, answer: string}} FAQ
- * @typedef {{id: string, name: string, description: string, category: string, icon?: string, url?: string|null}} Tool
+ * @typedef {{id: string, name: string, description: string, category: string, summary?: string, icon?: string, url?: string|null}} Tool
  * @typedef {{title: string, lead: string, paragraphs: string[], images: AboutImage[], faqs: FAQ[], tools: Tool[], sampleToolkit: boolean, placeholderNotice: string|null, education: {institution: string, program: string, dates?: string|null, details?: string|null}, closing: string}} AboutContent
  */
 /** @type {AboutContent} Editable sample copy; confirm personal details and tools before removing notices. */
 window.portfolioContent.about = {
-  title: 'A little about me',
+  title: 'About Me',
+  pills: [
+    {id:'pill-1',src:null,alt:'',fill:'#bdc9da'},
+    {id:'pill-2',src:null,alt:'',fill:'#d4c8df'},
+    {id:'pill-3',src:null,alt:'',fill:'#aebfc0'},
+    {id:'pill-4',src:null,alt:'',fill:'#c3cbdc'},
+    {id:'pill-5',src:null,alt:'',fill:'#d5d9e2'}
+  ],
   lead: 'Hi, I’m Emily — exploring where thoughtful experiences meet visual expression.',
   paragraphs: [
     'I’m studying User Experience Design + Art and Design at the University of Michigan. I’m interested in how useful digital experiences and expressive visual design can work together.',
@@ -38,12 +45,12 @@ window.portfolioContent.about = {
   ],
   sampleToolkit: true,
   tools: [
-    {id: 'figma', name: 'Figma', description: 'Exploring interface layouts, components, and interactive flows.', category: 'Interface design', icon: 'F', url: null},
-    {id: 'figjam', name: 'FigJam', description: 'Mapping questions, organizing ideas, and making sense of research.', category: 'Research & ideation', icon: 'Fj', url: null},
-    {id: 'illustrator', name: 'Adobe Illustrator', description: 'Creating vector illustrations and experimenting with visual systems.', category: 'Vector & illustration', icon: 'Ai', url: null},
-    {id: 'photoshop', name: 'Adobe Photoshop', description: 'Editing imagery and exploring compositions.', category: 'Image making', icon: 'Ps', url: null},
-    {id: 'notion', name: 'Notion', description: 'Keeping project notes, references, and process documentation organized.', category: 'Organization', icon: 'N', url: null},
-    {id: 'claude-code', name: 'Claude Code', description: 'Turning early ideas into working web prototypes.', category: 'Prototyping', icon: '↗', url: null}
+    {id: 'figma', summary: 'Interface layouts & prototypes', name: 'Figma', description: 'Exploring interface layouts, components, and interactive flows.', category: 'Interface design', icon: 'F', url: null},
+    {id: 'figjam', summary: 'Research & visual brainstorming', name: 'FigJam', description: 'Mapping questions, organizing ideas, and making sense of research.', category: 'Research & ideation', icon: 'Fj', url: null},
+    {id: 'illustrator', summary: 'Vector illustration & layouts', name: 'Adobe Illustrator', description: 'Creating vector illustrations and experimenting with visual systems.', category: 'Vector & illustration', icon: 'Ai', url: null},
+    {id: 'photoshop', summary: 'Image editing & compositions', name: 'Adobe Photoshop', description: 'Editing imagery and exploring compositions.', category: 'Image making', icon: 'Ps', url: null},
+    {id: 'notion', summary: 'Notes & process documentation', name: 'Notion', description: 'Keeping project notes, references, and process documentation organized.', category: 'Organization', icon: 'N', url: null},
+    {id: 'claude-code', summary: 'Interactive web prototypes', name: 'Claude Code', description: 'Turning early ideas into working web prototypes.', category: 'Prototyping', icon: '↗', url: null}
   ],
   education: {institution: 'University of Michigan', program: 'User Experience Design + Art and Design', dates: null, details: null},
   closing: 'Thanks for getting to know me.'
@@ -61,7 +68,7 @@ window.portfolioContent.work = {
 /** @type {{eyebrow:string, title:string, description:string, notice:string, palettes:Array<{id:string,name:string,colors:string[]}>}} */
 window.portfolioContent.playground = {
   eyebrow: 'SMALL EXPERIMENTS / OPEN POSSIBILITIES',
-  title: 'A little room to play.',
+  title: 'Made for the fun of it',
   description: 'An interactive space for color, form, and type. Change a setting, follow a curiosity, see what happens.',
   notice: 'Interactive placeholder studies created for this portfolio, ready to be replaced with personal explorations.',
   palettes: [
@@ -130,6 +137,8 @@ window.portfolioContent.projects.forEach(project => { project.caseStudy = sample
 
 /** Original placeholder studies for the masonry gallery, not supplied personal artwork. */
 window.portfolioContent.playground.studies = [
+ {id:'painting-01',title:'Untitled',medium:'Painting',category:'art',src:'/assets/art/emily-dong-painting.jpg',alt:'A painting of a car interior viewed from the back seat, with passengers and a tablet showing a drawing in progress.',width:3616,height:3616},
+ {id:'set-free',title:'Set Free',medium:'Mixed media',category:'art',src:'/assets/art/emily-dong-set-free.jpg',alt:'A collage with a graphite angel, colorful cosmic background, a bird, and layered landscape imagery.',width:2700,height:3600},
  {id:'conversation',title:'Color in conversation',category:'color',art:'circles',ratio:'4 / 5',palette:'studio'},
  {id:'perspective',title:'A different perspective',category:'form',art:'squares',ratio:'1 / 1',palette:'studio'},
  {id:'curious',title:'Stay curious.',category:'type',art:'type',words:'Stay\ncurious.',ratio:'3 / 4',palette:'studio'},

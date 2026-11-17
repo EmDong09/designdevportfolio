@@ -4,15 +4,17 @@
  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
  const navigationType=window.performance?.getEntriesByType('navigation')[0]?.type;
  const isReload=navigationType==='reload';
- let returningHome=false,internalReferrer=false;
+ let returningHome=false,internalReferrer=false,replayIntro=false;
  try{
+  replayIntro=sessionStorage.getItem('emily-portfolio:replay-intro')==='1';
+  sessionStorage.removeItem('emily-portfolio:replay-intro');
   returningHome=sessionStorage.getItem('emily-portfolio:skip-intro')==='1';
   sessionStorage.removeItem('emily-portfolio:skip-intro');
  }catch{}
  try{internalReferrer=Boolean(document.referrer) && new URL(document.referrer).origin===window.location.origin;}catch{}
  const internalReturn=!isReload && (returningHome || internalReferrer || navigationType==='back_forward');
  const projectJump=!isReload && window.location.hash && window.location.hash!=='#top';
- if(!heading || internalReturn || projectJump || motion.matches)return;
+ if(!heading || (!replayIntro && (internalReturn || projectJump)) || motion.matches)return;
  const description=document.querySelector('.modern-hero .hero-description');
  description?.classList.add('hero-description-pending');
  const restOfPage=[...document.querySelectorAll('.home-page > .header, .home-page #projects > .project, .home-page > footer')];

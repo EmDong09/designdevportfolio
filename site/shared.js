@@ -1,9 +1,17 @@
-// Returning through the wordmark should open the homepage fully loaded.
+// The wordmark explicitly replays the homepage entrance, including from home itself.
 {
  const wordmark=document.querySelector('.header .wordmark');
- wordmark?.addEventListener('click',()=>{
-  if(window.location.pathname!=='/'){
-   try{sessionStorage.setItem('emily-portfolio:skip-intro','1');}catch{}
+ wordmark?.addEventListener('click',event=>{
+  if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  try{
+   sessionStorage.removeItem('emily-portfolio:skip-intro');
+   sessionStorage.setItem('emily-portfolio:replay-intro','1');
+  }catch{}
+  if(window.location.pathname==='/'||window.location.pathname==='/index.html'){
+   event.preventDefault();
+   history.replaceState(null,'','/#top');
+   window.scrollTo(0,0);
+   window.location.reload();
   }
  });
 }
@@ -29,19 +37,46 @@
   }
 }
 
-// Footer actions are only created when real destinations are supplied.
+// Keep pending contact destinations as text until real links are supplied.
 {
- const {email,linkedin,instagram,resume}=window.portfolioContent;
+ const content=window.portfolioContent;
  const emailLink=document.querySelector('[data-footer-email]');
- if(emailLink && email){emailLink.href=`mailto:${email}`;emailLink.textContent=email;}
- if(resume){
-  const placeholder=document.querySelector('[data-footer-resume]');
-  if(placeholder){const link=document.createElement('a');link.href=/^(https?:\/\/|\/)/.test(resume)?resume:`/${resume.replace(/^\.\//,'')}`;link.textContent='Resume';placeholder.replaceWith(link);}
+ if(emailLink && content.email){
+  let resetTimer;
+  emailLink.addEventListener('click',async()=>{
+   const status=document.querySelector('[data-footer-copy-status]');
+   clearTimeout(resetTimer);
+   try{
+    await navigator.clipboard.writeText(content.email);
+    emailLink.textContent='Copied!';
+    if(status)status.textContent='Email address copied to clipboard.';
+   }catch{
+    emailLink.textContent=content.email;
+    if(status)status.textContent='Unable to copy automatically. Email address: '+content.email;
+   }
+   resetTimer=setTimeout(()=>{emailLink.textContent='Email';if(status)status.textContent='';},3000);
+  });
  }
- const socials=document.querySelector('[data-footer-socials]');
- const icons={
-  LinkedIn:'<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="1.5"/><path d="M7 10v7M7 7v.2M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg>',
-  Instagram:'<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>'
- };
- if(socials){for(const [name,url] of [['LinkedIn',linkedin],['Instagram',instagram]]){if(!url)continue;const link=document.createElement('a');link.href=url;link.setAttribute('aria-label',name);link.innerHTML=icons[name];socials.append(link);}socials.hidden=!socials.children.length;}
+ document.querySelectorAll('[data-footer-link]').forEach(placeholder=>{
+  const url=content[placeholder.dataset.footerLink];
+  if(!url)return;
+  const link=document.createElement('a');
+  link.href=url;
+  link.textContent=placeholder.textContent;
+  placeholder.replaceWith(link);
+ });
+}
+
+// The landing view has no active page; Work becomes active at the project anchor.
+{
+ if(window.location.pathname==='/' || window.location.pathname==='/index.html'){
+  const workLink=document.querySelector('.header nav a[href="/#work"]');
+  function updateHomeNavigation(){
+   if(!workLink)return;
+   if(window.location.hash==='#work')workLink.setAttribute('aria-current','page');
+   else workLink.removeAttribute('aria-current');
+  }
+  window.addEventListener('hashchange',updateHomeNavigation);
+  updateHomeNavigation();
+ }
 }

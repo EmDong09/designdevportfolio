@@ -2,13 +2,15 @@
 
 The current portfolio for Emily Dong, a University of Michigan student studying User Experience Design + Art and Design. It includes Home, Work, Playground, About, and four dedicated sample case-study pages.
 
-This version uses HTML, CSS, and JavaScript with original SVG/CSS artwork. It has no runtime or development dependencies. The earlier React application has been removed from the current source tree.
+This version uses HTML, CSS, and JavaScript with original SVG/CSS artwork. Matter.js is the only runtime dependency and powers the About-page pill pile. The build copies it locally, so the site does not require a CDN. The earlier React application has been removed from the current source tree.
 
 ## Preview and build
 
-Requires Node.js 20 or newer. No dependency installation is needed.
+Requires Node.js 20 or newer. Run `npm ci` and `npm run build` before the first preview.
 
 ```sh
+npm ci
+npm run build
 npm run dev
 # Open http://127.0.0.1:5173/
 
@@ -32,6 +34,7 @@ The preview is local to your computer. These commands and GitHub pushes do not p
 - `site/hero-typewriter.js`: headline entrance. Text types at a continuous pace, then the pills fade and expand into the lines; reduced-motion preferences skip the animation.
 - `site/project-art.js` and `site/app.js`: shared artwork, project links and collection filters.
 - `site/about.css`, `site/work.css`, `site/playground.css`, and `site/case-study.css`: page-specific structure.
+- `site/about-pills.css`, `site/about-pill-physics.js`, and `site/about-pills.js`: responsive About landing layout, capsule collision bodies, and one-time drop animation. Edit `about.pills` in `site/content.js` to swap placeholder fills for images.
 - `scripts/build-*.mjs`: generators for About, Work, Playground, and case-study pages.
 - `scripts/templates/playground-experiments.html`: interactive panels for the gallery previews.
 - `scripts/serve.mjs`: local-only development and production preview server.
