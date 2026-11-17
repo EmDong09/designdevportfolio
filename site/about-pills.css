@@ -1,12 +1,12 @@
 /* Layout only: the capsules inherit the homepage's border, rim, and shadow. */
 .about-landing{position:relative;display:grid;grid-template-columns:45% 55%;min-height:max(640px,calc(100svh - var(--site-header-height)));isolation:isolate}
 .about-pill-stage{position:absolute;left:0;top:0;bottom:0;width:45%;overflow:hidden;pointer-events:none}
-.about-pill-stage .about-pill-body{position:absolute;left:0;top:0;width:var(--physics-width,220px);height:var(--physics-height,120px);visibility:hidden;transform-origin:center;--hover-tilt:9deg}
-.about-pill-stage .about-pill-body:nth-child(2){--hover-tilt:-8deg}
+.about-pill-stage .about-pill-body{position:absolute;left:0;top:0;width:var(--physics-width,220px);height:var(--physics-height,120px);visibility:hidden;transform-origin:center;--hover-tilt:3deg}
+.about-pill-stage .about-pill-body:nth-child(2){--hover-tilt:-3deg}
 .about-pill-stage .about-physics-pill{display:block;width:100%;height:100%;margin:0;vertical-align:initial;transform:rotate(0deg);transform-origin:center;transition:transform .25s ease}
 /* Keep the sleeping collision bodies fixed; tilt only their visible capsules. */
 .about-pill-stage.is-settled .about-pill-body{pointer-events:auto}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.about-pill-stage.is-settled .about-pill-body:hover .about-physics-pill{transform:rotate(var(--hover-tilt))}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.about-pill-stage.is-settled .about-pill-body:hover .about-physics-pill{animation:about-pill-jiggle .55s ease-in-out}}
 @media(prefers-reduced-motion:reduce){.about-pill-stage .about-physics-pill{transition:none}}
 .about-pill-stage .about-pill-fill{position:absolute;inset:0;display:block;width:100%;height:100%;background:var(--pill-fill);object-fit:cover}
 .about-landing-copy{grid-column:2;align-self:center;width:100%;max-width:690px;padding:64px clamp(28px,5vw,90px) 64px clamp(32px,4vw,72px)}
@@ -14,3 +14,16 @@
 .about-landing-copy .about-lead{font-size:20px;line-height:1.6;margin:0 0 22px;max-width:none}
 .about-landing-copy .intro-paragraphs p{font-size:14px;line-height:1.9;margin:0 0 16px;max-width:none}
 @media(max-width:760px){.about-landing{display:flex;flex-direction:column;min-height:0}.about-landing-copy{order:0;max-width:620px;padding:42px 24px 24px;margin:auto}.about-landing-copy h1{font-size:48px}.about-landing-copy .about-lead{font-size:18px}.about-pill-stage{order:1;position:relative;top:auto;bottom:auto;width:100%;height:460px}.about-landing-copy .intro-paragraphs p{font-size:13px}}
+
+/* The heading uses the homepage typing rhythm; body copy follows in a cascade. */
+.about-is-typing .about-type-unit{visibility:hidden}
+.about-is-typing .about-type-unit.is-typed{visibility:visible}
+.about-type-current{position:relative}
+.about-type-current::after{content:'';position:absolute;left:100%;top:.12em;width:1px;height:.8em;background:currentColor}
+.about-landing-copy .about-entry-target{opacity:1;transform:translateY(0);transition:opacity .5s ease var(--about-entry-delay,0ms),transform .5s ease var(--about-entry-delay,0ms)}
+.about-landing-copy.about-entry-pending .about-entry-target{opacity:0;transform:translateY(8px)}
+.about-landing-copy.about-entry-instant .about-entry-target{transition:none}
+@media(prefers-reduced-motion:reduce){.about-landing-copy .about-entry-target{opacity:1;transform:none;transition:none}.about-is-typing .about-type-unit{visibility:visible}.about-type-current::after{display:none}}
+
+/* Hover may wobble briefly, but must return to the actual supported resting pose. */
+@keyframes about-pill-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(var(--hover-tilt))}65%{transform:rotate(calc(var(--hover-tilt)*-.6))}85%{transform:rotate(calc(var(--hover-tilt)*.25))}}

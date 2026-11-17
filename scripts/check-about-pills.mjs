@@ -6,7 +6,7 @@ const context={window:{}};
 vm.runInNewContext(await readFile(new URL('../site/about-pill-physics.js',import.meta.url),'utf8'),context);
 let checks=0;
 for(const [width,height,floorY] of [[650,816,620],[540,684,519.68],[390,460,452],[320,460,452]]){
- for(let seed=1;seed<=8;seed++){
+ for(let seed=1;seed<=32;seed++){
   let state=seed;
   const random=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296;};
   const scene=context.window.createAboutPillScene(Matter,width,height,random,floorY);
@@ -18,7 +18,7 @@ for(const [width,height,floorY] of [[650,816,620],[540,684,519.68],[390,460,452]
   for(const body of scene.bodies){
    assert.ok(body.bounds.min.x>=-2&&body.bounds.max.x<=width+2,'Escaped side wall');
    assert.ok(body.bounds.max.y<=scene.floorY+2,'Escaped floor');
-   assert.ok(Math.abs(body.angle)*180/Math.PI<=27,'Pill tipped too far');
+   assert.ok(Math.abs(body.angle)*180/Math.PI<=2,'Pill froze at an unsupported tilt');
   }
   const base=scene.bodies.filter(body=>body.bounds.max.y>=scene.floorY-2);
   assert.equal(base.length,1,`${width}px seed ${seed}: expected one floor pill`);
