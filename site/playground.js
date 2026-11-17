@@ -62,6 +62,9 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
  const heading=document.querySelector('#play-title');
  const motion=matchMedia('(prefers-reduced-motion: reduce)');
  if(!heading || motion.matches)return;
+ const controls=document.querySelector('.arc-controls');
+ controls?.classList.add('play-controls-pending');
+ if(controls)controls.inert=true;
  const text=heading.textContent;
  heading.setAttribute('aria-label',text);
  const characters=Array.from(text).map(character=>{
@@ -76,6 +79,8 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
   if(done)return;
   done=true;clearTimeout(timer);
   heading.textContent=text;
+  controls?.classList.remove('play-controls-pending');
+  if(controls)controls.inert=false;
   document.removeEventListener('keydown',onKey);
   document.removeEventListener('visibilitychange',onVisibility);
   motion.removeEventListener('change',finish);
@@ -86,7 +91,7 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
  function next(){
   if(index===characters.length){finish();return;}
   const span=characters[index++];span.classList.add('is-typed');
-  timer=setTimeout(next,/[,.!?]/.test(span.textContent)?40:span.textContent===' '?19:27);
+  timer=setTimeout(next,/[,.!?]/.test(span.textContent)?55:span.textContent===' '?27:38);
  }
  document.addEventListener('keydown',onKey);
  document.addEventListener('visibilitychange',onVisibility);

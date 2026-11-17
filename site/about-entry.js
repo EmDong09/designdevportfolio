@@ -38,7 +38,7 @@
    current?.classList.remove('about-type-current');current=unit;
    current.classList.add('about-type-current');
   }
-  timer=setTimeout(next,/[,.!?]/.test(unit.textContent)?40:unit.textContent===' '?19:27);
+  timer=setTimeout(next,/[,.!?]/.test(unit.textContent)?55:unit.textContent===' '?27:38);
  }
  function onKey(event){if(event.key==='Tab'||event.key==='Escape')finish(true);}
  function onVisibility(){if(document.hidden)finish(true);}

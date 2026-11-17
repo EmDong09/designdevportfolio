@@ -16,7 +16,7 @@ h1,h2{font-family:var(--display);font-weight:400}.serif{font-family:var(--displa
 /* Work index follows the landing page's centered rhythm and framed cards. */
 .work-intro{padding-top:42px;padding-bottom:48px;text-align:center}.work-intro-grid{display:block;margin-top:20px}.work-intro h1{font-family:var(--display);font-weight:400;font-size:clamp(62px,7vw,94px);line-height:1.02;letter-spacing:-4px;max-width:900px;margin-inline:auto}.work-intro h1 .serif{color:#78786f}.work-introduction{font-size:13px;line-height:1.9;max-width:400px;margin:24px auto 0}.work-margin{border:0;padding:0;margin:26px auto 0;max-width:none;display:flex;flex-direction:column;align-items:center;gap:10px}.work-mark,.work-margin>.eyebrow{display:none}.work-margin ul{display:flex;gap:20px;justify-content:center;margin:0;font-size:10px;color:#707068;line-height:1.8}.work-jump{font-size:10px;min-height:40px}.work-collection{border-top:1px solid #d9d9d3;padding-top:28px}.collection-status{margin-top:18px;margin-bottom:28px}.work-page .project-grid{grid-template-columns:1fr 1fr;gap:44px 28px}.work-page .project{display:block}.work-page .project-form{grid-column:1/-1}.work-page .project-preview>div{aspect-ratio:1.3}.work-page .project-form .project-preview>div{aspect-ratio:2.5}.work-page .project-meta{margin:20px 6px 0;padding:0}.work-page .project-meta h3{font-size:26px;line-height:1.2}.work-page .project-number{margin-bottom:9px;font-size:8px}.work-page .project-tags{margin-top:10px;font-size:9px}.work-page .project-description{margin:12px 6px 0;max-width:none;font-size:12px}.work-page .preview-link{right:40px;bottom:40px;font-size:10px}.work-page .campus-type,.work-page .ritual-heading{font-size:clamp(25px,2.5vw,36px)}.work-page .form-word{font-size:clamp(100px,15vw,205px);left:14%;top:7%}.work-page .form-star{font-size:190px}.work-page .form-disc{width:43%;top:7%}.work-page .form-caption{font-size:8px}.work-next{padding-top:20px;padding-bottom:60px}.work-next>div>p:last-child{font-family:var(--display);font-size:35px;font-weight:400}.work-next .text-link{font-size:11px}
 /* About: calm surfaces and consistent serif headings. */
-.about-intro{padding-top:55px;padding-bottom:65px;column-gap:90px}.about-intro h1{font-family:var(--display);font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:-2.5px;line-height:1.06}.about-intro h1 .serif{color:#78786f}.about-lead{font-size:20px;line-height:1.6}.intro-paragraphs p{font-size:13px;line-height:1.95;color:#6b6b65}.about-image-0{padding:16px;background:#ffffff6e;border:1px solid #fff;border-radius:12px;box-shadow:var(--soft-shadow)}.about-image-0 .image-placeholder,.about-image-0 img{border-radius:6px}.image-placeholder.placeholder-0{background:linear-gradient(145deg,#e3e3df,#cdcdc6)}.placeholder-0 .placeholder-form{background:#b8b8ad}.placeholder-0 .placeholder-spark{color:#68685f}.about-image-0 figcaption{padding:12px 2px 0;font-size:9px}.about-image-1{background:#fafbfc;border-radius:6px;box-shadow:0 8px 30px #20282012}.about-detail-section{border-color:#d9d9d3}.about-section-heading h2{font-family:var(--display);font-size:38px;font-weight:400;line-height:1.1}.faq-list details{border-color:#d9d9d3}.faq-list details:first-child{border-color:#d9d9d3}.faq-list summary{font-size:14px}.faq-list details[open] summary{color:#242420}.faq-list details>p{color:#6b6b63}.tool-list li{border-color:#d9d9d3}.tool-list .tool-icon,.tool-list li:nth-child(2n) .tool-icon,.tool-list li:nth-child(3n) .tool-icon{background:#ffffff88;color:#494940;border:1px solid #fff;border-radius:6px}.tool-description h3{font-size:15px}.tool-description p,.tool-category{color:#6b6b65}.education-glyph{border-color:#bdbdb2;color:#555549}.about-closing>p{font-family:var(--display);font-size:32px;font-weight:400}.page-notice{border-color:#d9d9d0}.page-notice>span{color:#67675a}
+.about-intro{padding-top:55px;padding-bottom:65px;column-gap:90px}.about-intro h1{font-family:var(--display);font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:-2.5px;line-height:1.06}.about-intro h1 .serif{color:#78786f}.about-lead{font-size:20px;line-height:1.6}.intro-paragraphs p{font-size:13px;line-height:1.95;color:#6b6b65}.about-image-0{padding:16px;background:#ffffff6e;border:1px solid #fff;border-radius:12px;box-shadow:var(--soft-shadow)}.about-image-0 .image-placeholder,.about-image-0 img{border-radius:6px}.image-placeholder.placeholder-0{background:linear-gradient(145deg,#e3e3df,#cdcdc6)}.placeholder-0 .placeholder-form{background:#b8b8ad}.placeholder-0 .placeholder-spark{color:#68685f}.about-image-0 figcaption{padding:12px 2px 0;font-size:9px}.about-image-1{background:#fafbfc;border-radius:6px;box-shadow:0 8px 30px #20282012}.about-detail-section{border-color:#d9d9d3}.about-section-heading h2{font-family:var(--display);font-size:38px;font-weight:400;line-height:1.1}.faq-list details{border-color:#d9d9d3}.faq-list details:first-child{border-color:#d9d9d3}.faq-list summary{font-size:14px}.faq-list details[open] summary{color:#242420}.faq-list details>p{color:#6b6b63}.education-glyph{border-color:#bdbdb2;color:#555549}.about-closing>p{font-family:var(--display);font-size:32px;font-weight:400}.page-notice{border-color:#d9d9d0}.page-notice>span{color:#67675a}
 /* Playground keeps its masonry layout, with gallery-like framing. */
 .gallery-intro{text-align:center;padding-top:45px;padding-bottom:30px}.gallery-intro h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,5.5vw,74px);letter-spacing:-2.8px}.gallery-intro h1 .serif{color:#77776c}.gallery-intro>p{margin-inline:auto}.gallery-intro>p:not(.eyebrow){font-size:12px;line-height:1.9;color:#6b6b65}.gallery-toolbar{margin-bottom:25px}.pin-button{padding:12px;background:#ffffff75;border:1px solid #fff;border-radius:12px;box-shadow:var(--soft-shadow)}.pin-art{border-radius:7px;filter:saturate(.8)}.pin-button:hover .pin-art{filter:saturate(1)}.pin-caption{padding:12px 3px 3px}.pin-caption strong{font-size:12px;color:#3b3b36}.pin-caption>span{color:#6b6b65}.gallery-closing>p{font-family:var(--display);font-size:28px;font-weight:400}.gallery-closing>span{color:#767669}
 /* Case-study structure and scrolling behavior are preserved, with the shared theme. */
@@ -109,27 +109,7 @@ footer.site-footer.wrap{display:block;padding-top:65px;padding-bottom:25px;margi
 .header nav a[data-nav-label]::before{content:attr(data-nav-label);grid-area:label;font-weight:700;visibility:hidden;pointer-events:none}
 .header nav a[data-nav-label]>span{grid-area:label}
 
-/* About toolkit: a compact grid of icon-and-description cards. */
-.about-tools-section{display:block;border-top:0}
-.about-tools-section .about-section-heading{margin-bottom:30px}
-.about-tools-section .about-section-heading h2{margin-top:0;font-size:38px;line-height:1.15;letter-spacing:-1.2px;color:#161616}
-.about-tools-section .about-section-heading h2>span{color:inherit;font-style:normal}
-.about-tools-section .about-section-heading>.toolkit-note{font-size:10px;margin-top:12px;color:#6b6b65}
-.about-tools-section .tool-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.about-tools-section .tool-list li{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:15px;padding:17px;border:3px solid transparent;--capsule-fill:#e9ebee;border-radius:999px;min-width:0}
-.about-tools-section .tool-list .tool-icon{grid-row:auto;align-self:center;width:48px;height:48px;border-radius:50%;overflow:hidden;box-shadow:none;font:500 23px/1 Arial,Helvetica,sans-serif}
-.about-tools-section .tool-list .tool-icon[data-tool="figma"]{background:#161616;color:white;border:0}
-.about-tools-section .tool-icon svg{display:block;width:24px;height:35px}
-.about-tools-section .tool-list .tool-icon[data-tool="figjam"]{background:#e3dcf2;color:#66528c;border:0;font-size:20px}
-.about-tools-section .tool-list .tool-icon[data-tool="illustrator"]{background:#340b06;color:#ffad00;border:0}
-.about-tools-section .tool-list .tool-icon[data-tool="photoshop"]{background:#072333;color:#38aafa;border:0}
-.about-tools-section .tool-list .tool-icon[data-tool="notion"]{background:#fafbfc;color:#272727;border:1px solid #c9cbc5;font-family:Georgia,serif;font-weight:700}
-.about-tools-section .tool-list .tool-icon[data-tool="claude-code"]{background:transparent;color:#c37e60;border:0;font-size:46px;font-weight:400}
-.about-tools-section .tool-description{min-width:0}
-.about-tools-section .tool-description h3{font:400 16px/1.4 Arial,Helvetica,sans-serif;letter-spacing:-.35px;overflow-wrap:anywhere}
-.about-tools-section .tool-description p{font-size:12px;line-height:1.6;margin:4px 0 0;color:#727772;max-width:none}
-@media(max-width:1050px){.about-tools-section .tool-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){.about-tools-section .about-section-heading h2{font-size:32px}.about-tools-section .about-section-heading{margin-bottom:24px}.about-tools-section .tool-list{grid-template-columns:1fr;gap:12px}.about-tools-section .tool-list li{padding:15px;gap:15px;border-radius:999px}.about-tools-section .tool-description h3{font-size:16px}.about-tools-section .tool-description p{font-size:12px}}
+
 
 /* Keep the shared navigation visible and account for it at section anchors. */
 .header.wrap{position:sticky;top:0;z-index:30;background:#f7f8fa}
@@ -229,14 +209,10 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .capsule-interface .capsule-landscape-image{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
 
 /* A continuous shaded rim keeps the glass finish smooth and the images sharp. */
-.intro-capsule,.about-tools-section .tool-list li{border-color:transparent;background:linear-gradient(var(--capsule-fill,#242a27),var(--capsule-fill,#242a27)) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box;box-shadow:0 4px 10px rgba(20,28,23,.18)}
+.intro-capsule{border-color:transparent;background:linear-gradient(var(--capsule-fill,#242a27),var(--capsule-fill,#242a27)) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box;box-shadow:0 4px 10px rgba(20,28,23,.18)}
 .modern-hero .capsule-art{background:linear-gradient(#d5bfc5,#d5bfc5) padding-box,linear-gradient(155deg,#7b837f 0%,#454c48 28%,#242a27 65%,#444d47 100%) border-box}
 
-/* A brief hover wobble returns toolkit pills to their resting position. */
-.about-tools-section .tool-list li{--tool-jiggle-angle:2deg;transform-origin:center}
-.about-tools-section .tool-list li:nth-child(even){--tool-jiggle-angle:-2deg}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.about-tools-section .tool-list li:hover,.about-tools-section .tool-list li:focus-within{animation:tool-pill-jiggle .55s ease-in-out}}
-@keyframes tool-pill-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(var(--tool-jiggle-angle))}65%{transform:rotate(calc(var(--tool-jiggle-angle)*-.6))}85%{transform:rotate(calc(var(--tool-jiggle-angle)*.25))}}
+
 
 /* Case-study sections use shaded pills instead of a vertical progress track. */
 .case-page .case-contents{gap:8px}
@@ -245,3 +221,11 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .case-page .case-contents>a[aria-current="location"]{background:#dfe5ed;color:#20252b;font-weight:400;box-shadow:none}
 .case-page .case-contents .case-back{padding-left:18px;border:0}
 @media(max-width:700px){.case-page{--case-tabs-height:64px}.case-page .case-contents{display:flex;flex-direction:row;align-items:center;height:64px;padding:10px 16px;overflow-x:auto;overflow-y:hidden;border:0}.case-page .case-contents>a{flex:0 0 auto;white-space:nowrap}.case-page .case-contents>a:not(.case-back){font-size:11px}.case-page .case-contents .case-back{padding:10px 4px;margin:0 6px 0 0}}
+
+/* The original personal mark, rendered black beside the shared wordmark. */
+.header .wordmark{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.header .wordmark-logo{display:block;flex:0 0 32px;width:32px;height:32px;object-fit:contain;filter:brightness(0)}
+@media(max-width:700px){.header .wordmark{gap:7px}.header .wordmark-logo{flex-basis:26px;width:26px;height:26px}}
+
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.header .wordmark-logo:hover,.header .wordmark:focus-visible .wordmark-logo{animation:wordmark-jiggle .55s ease-in-out}}
+@keyframes wordmark-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(6deg)}65%{transform:rotate(-3.6deg)}85%{transform:rotate(1.5deg)}}

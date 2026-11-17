@@ -30,7 +30,7 @@ for(const relative of await readdir(source,{recursive:true})){
  for(const match of assets){
   if(/^(?:[a-z]+:|\/\/)/i.test(match[2]))continue;
   const asset=new URL(match[2],`https://portfolio.invalid/${relative}`);
-  if(!/\.(?:js|css)$/.test(asset.pathname))continue;
+  if(!/\.(?:js|css)$/.test(asset.pathname)&&asset.pathname!=='/favicon.svg')continue;
   if(!revisions.has(asset.pathname))revisions.set(asset.pathname,createHash('sha256').update(await readFile(new URL('.'+asset.pathname,source))).digest('hex').slice(0,12));
   html=html.replace(match[0],`${match[1]}${asset.pathname}?v=${revisions.get(asset.pathname)}${match[3]}`);
  }

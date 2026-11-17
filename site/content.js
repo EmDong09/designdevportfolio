@@ -41,6 +41,11 @@ window.portfolioContent.about = {
     {id: 'outside-design', question: 'What do I enjoy outside of design?', answer: 'This space will eventually hold a few favorite hobbies, creative rituals, and things that keep me curious.'},
     {id: 'next', question: 'What would I like to work on next?', answer: 'I’m using this portfolio to collect my work and discover which questions I want to explore next.'}
   ],
+  involvements: [
+    {id:'atlas-digital',organization:'Atlas Digital',roles:[{title:'Product Designer',dates:'Sep 2026–Present'}],description:'A student organization at the University of Michigan that builds technology and design solutions for businesses, startups, and nonprofits.',logo:null,url:null},
+    {id:'michigan-daily',organization:'The Michigan Daily (Product Team)',roles:[{title:'UI/UX Designer',dates:'Sep 2026–Present'}],description:'A student team that designs the visual identity and user experience of the mobile app, web apps, and new website features, working with engineers and every section of The Daily on everything from user research to final implementation.',logo:null,url:null},
+    {id:'mae-magazine',organization:'MA:E Magazine',roles:[{title:'Publication Layout Designer',dates:'Jan 2026–Present'},{title:'Assistant Design Director',dates:'Sep 2026–Present'}],description:'A student publication and creative collective at the University of Michigan focused on the Asian Pacific Islander Desi American (APIDA) community.',logo:null,url:null}
+  ],
   sampleToolkit: true,
   tools: [
     {id: 'figma', summary: 'Interface layouts & prototypes', name: 'Figma', description: 'Exploring interface layouts, components, and interactive flows.', category: 'Interface design', icon: 'F', url: null},
