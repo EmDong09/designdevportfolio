@@ -11,7 +11,8 @@
   const study=studies.find(s=>s.id===card.querySelector('[data-study-id]').dataset.studyId);
   return study.src?study.width/study.height:study.ratio.split('/').map(Number).reduce((a,b)=>a/b);
  });
- // Parameterize the ellipse by distance so entry, travel and exit have the same speed.
+ // Space the procession along the inner edges of the artwork.
+ // This keeps the straight stretches compact while allowing room around the bends.
  function curveProgress(p){
   const distance=Math.max(0,Math.min(1,(p+.5)/2))*arcLength;
   let low=0,high=arcTable.length-1;
@@ -70,18 +71,22 @@
   for(let i=1;i<=720;i++){
    const theta=-Math.PI/2+i*2*Math.PI/720;
    const point={x:rx*Math.cos(theta),y:ry*Math.sin(theta)};
-   arcLength+=Math.hypot(point.x-last.x,point.y-last.y);
+   const middle=theta-Math.PI/720;
+   const speed=Math.hypot(rx*Math.sin(middle),ry*Math.cos(middle));
+   const curvature=rx*ry/Math.pow(speed,3);
+   const innerScale=Math.max(.2,1-cardHeight*curvature);
+   arcLength+=Math.hypot(point.x-last.x,point.y-last.y)*innerScale;
    arcTable.push({theta,distance:arcLength});last=point;
   }
   viewport.parentElement.style.setProperty('--arc-heading-top',(20+textInset)+'px');
   viewport.parentElement.style.setProperty('--arc-control-top',(108+textInset)+'px');
   viewport.parentElement.style.setProperty('--arc-content-height',(archBottom+80)+'px');
-  // Find the closest safe angular separation on the actual elliptical path.
-  // Fit each neighboring pair with a small safety margin, without widening every gap.
+  // Fit each pair using its actual nearest corners and edges throughout the curve.
+  // Solve spacing on resize only, so positions never nudge or shuffle during motion.
   function polygon(progress,artworkWidth){
    const theta=curveProgress(progress)*Math.PI,a=Math.atan2(-ry*Math.cos(theta),rx*Math.sin(theta));
    const x=width/2+rx*Math.cos(theta),y=baseY+ry*Math.sin(theta);
-   return [[-artworkWidth/2-1.5,1.5],[artworkWidth/2+1.5,1.5],[artworkWidth/2+1.5,-cardHeight-1.5],[-artworkWidth/2-1.5,-cardHeight-1.5]].map(([u,v])=>[x+u*Math.cos(a)-v*Math.sin(a),y+u*Math.sin(a)+v*Math.cos(a)]);
+   return [[-artworkWidth/2,0],[artworkWidth/2,0],[artworkWidth/2,-cardHeight],[-artworkWidth/2,-cardHeight]].map(([u,v])=>[x+u*Math.cos(a)-v*Math.sin(a),y+u*Math.sin(a)+v*Math.cos(a)]);
   }
   function overlaps(a,b){
    for(const shape of [a,b])for(let k=0;k<2;k++){
@@ -91,13 +96,27 @@
    }
    return true;
   }
+  function pointEdgeDistanceSquared(point,start,end){
+   const dx=end[0]-start[0],dy=end[1]-start[1];
+   const t=Math.max(0,Math.min(1,((point[0]-start[0])*dx+(point[1]-start[1])*dy)/(dx*dx+dy*dy)));
+   return (point[0]-start[0]-t*dx)**2+(point[1]-start[1]-t*dy)**2;
+  }
+  function cornerClearance(a,b){
+   // A nearest pair is either corner-to-corner or corner-to-edge.
+   let distance=Infinity;
+   for(const [first,second] of [[a,b],[b,a]])for(const point of first){
+    for(let k=0;k<4;k++)distance=Math.min(distance,pointEdgeDistanceSquared(point,second[k],second[(k+1)%4]));
+   }
+   return distance;
+  }
+  const minimumGap=18;
   function clear(delta,firstWidth,secondWidth){
    for(let p=-.5;p<=1.5-delta;p+=.008){
     const a=polygon(p,firstWidth),b=polygon(p+delta,secondWidth);
     // Fully off-screen artwork does not need to reserve visible gallery space.
     const onScreen=poly=>Math.max(...poly.map(p=>p[1]))>0&&Math.min(...poly.map(p=>p[1]))<archBottom+80&&Math.max(...poly.map(p=>p[0]))>0&&Math.min(...poly.map(p=>p[0]))<width;
     if(!onScreen(a)||!onScreen(b))continue;
-    if(overlaps(a,b))return false;
+    if(overlaps(a,b)||cornerClearance(a,b)<minimumGap**2)return false;
    }
    return true;
   }
@@ -110,10 +129,11 @@
     const middle=(low+high)/2;
     if(clear(middle,cardHeight*ratio,cardHeight*next))high=middle;else low=middle;
    }
-   const gap=high+.003;
+   const gap=high+.0015;
    pairCache.set(key,gap);return gap;
   });
-  loopSpan=Math.max(2,gaps.reduce((sum,gap)=>sum+gap,0));
+  // The repeated sequence fills the return path without an artificial end gap.
+  loopSpan=gaps.reduce((sum,gap)=>sum+gap,0);
   let cursor=0;
   itemOffsets=gaps.map((gap,index)=>{if(index)cursor+=gaps[index-1];return cursor;});
   phase%=loopSpan;
@@ -143,7 +163,9 @@
   if(delta>Math.PI)delta-=2*Math.PI;
   if(delta< -Math.PI)delta+=2*Math.PI;
   const middle=angle-delta/2;
-  const pathDelta=delta*Math.hypot(rx*Math.sin(middle),ry*Math.cos(middle))/arcLength*2;
+  const speed=Math.hypot(rx*Math.sin(middle),ry*Math.cos(middle));
+  const innerScale=Math.max(.2,1-cardHeight*rx*ry/Math.pow(speed,3));
+  const pathDelta=delta*speed*innerScale/arcLength*2;
   phase=wrap(phase+pathDelta);drag.angle=angle;render();
  });
  function endDrag(){

@@ -135,17 +135,166 @@ const sampleCaseStudies = {
 };
 window.portfolioContent.projects.forEach(project => { project.caseStudy = sampleCaseStudies[project.id]; });
 
-/** Original placeholder studies for the masonry gallery, not supplied personal artwork. */
+/** Uploaded portrait and square artwork for the interactive gallery. */
 window.portfolioContent.playground.studies = [
- {id:'painting-01',title:'Untitled',medium:'Painting',category:'art',src:'/assets/art/emily-dong-painting.jpg',alt:'A painting of a car interior viewed from the back seat, with passengers and a tablet showing a drawing in progress.',width:3616,height:3616},
- {id:'set-free',title:'Set Free',medium:'Mixed media',category:'art',src:'/assets/art/emily-dong-set-free.jpg',alt:'A collage with a graphite angel, colorful cosmic background, a bird, and layered landscape imagery.',width:2700,height:3600},
- {id:'conversation',title:'Color in conversation',category:'color',art:'circles',ratio:'4 / 5',palette:'studio'},
- {id:'perspective',title:'A different perspective',category:'form',art:'squares',ratio:'1 / 1',palette:'studio'},
- {id:'curious',title:'Stay curious.',category:'type',art:'type',words:'Stay\ncurious.',ratio:'3 / 4',palette:'studio'},
- {id:'corners',title:'Soft corners, sharp ideas',category:'form',art:'arches',ratio:'4 / 5',palette:'garden'},
- {id:'garden-notes',title:'Garden notes',category:'color',art:'swatches',ratio:'1 / 1',palette:'garden'},
- {id:'between-lines',title:'Between the lines',category:'form',art:'lines',ratio:'3 / 4',palette:'garden'},
- {id:'small-words',title:'Small words, big feelings',category:'type',art:'type',words:'make\nroom for\nplay.',ratio:'4 / 5',palette:'afterhours'},
- {id:'after-hours',title:'After hours',category:'color',art:'rings',ratio:'4 / 5',palette:'afterhours'},
- {id:'balance',title:'A moment of balance',category:'form',art:'orbit',ratio:'1 / 1',palette:'studio'}
+  {
+    "id": "painting-01",
+    "title": "Untitled",
+    "medium": "Painting",
+    "category": "art",
+    "src": "/assets/art/emily-dong-painting.jpg",
+    "alt": "A painting of a car interior viewed from the back seat, with passengers and a tablet showing a drawing in progress.",
+    "width": 3616,
+    "height": 3616
+  },
+  {
+    "id": "clover-stool",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-clover-stool.jpg",
+    "width": 1800,
+    "height": 2400,
+    "medium": "Woodworking",
+    "alt": "A wooden stool with a clover-shaped seat and three angled legs."
+  },
+  {
+    "id": "portrait-purple",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-portrait-purple.jpg",
+    "width": 1794,
+    "height": 2400,
+    "medium": "Painting",
+    "alt": "A figure wrapped in purple fabric, with softly lit hands and a textured violet background."
+  },
+  {
+    "id": "comic-page-1",
+    "title": "Comic — page 1",
+    "category": "art",
+    "src": "/assets/art/emily-dong-comic-page-1.jpg",
+    "width": 1553,
+    "height": 2400,
+    "medium": "Digital illustration",
+    "alt": "A comic page featuring a small character wearing goggles in a lush green landscape."
+  },
+  {
+    "id": "tomato-study",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-artwork-3182.jpg",
+    "width": 1721,
+    "height": 2400,
+    "medium": "Painting",
+    "alt": "A painting of red and orange cherry tomatoes casting shadows on blue and white gingham fabric."
+  },
+  {
+    "id": "form-emotion-portrait",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-form-emotion-portrait.jpg",
+    "width": 1229,
+    "height": 1638,
+    "medium": "Digital art",
+    "alt": "An abstract artwork with softly glowing yellow forms, pale blue shapes, green curves, and a textured surface."
+  },
+  {
+    "id": "comic-page-2",
+    "title": "Comic — page 2",
+    "category": "art",
+    "src": "/assets/art/emily-dong-comic-page-2.jpg",
+    "width": 1553,
+    "height": 2400,
+    "medium": "Digital illustration",
+    "alt": "A comic page featuring a goggle-wearing character, a butterfly, and a four-leaf clover."
+  },
+  {
+    "id": "youthful-chaos",
+    "title": "Youthful Chaos",
+    "category": "art",
+    "src": "/assets/art/emily-dong-youthful-chaos.jpg",
+    "width": 1714,
+    "height": 2400,
+    "medium": "Digital art",
+    "alt": "A colorful portrait of a smiling child surrounded by blue and yellow botanical outlines and rippling water."
+  },
+  {
+    "id": "set-free",
+    "title": "Set Free",
+    "medium": "Mixed media",
+    "category": "art",
+    "src": "/assets/art/emily-dong-set-free.jpg",
+    "alt": "A collage with a graphite angel, colorful cosmic background, a bird, and layered landscape imagery.",
+    "width": 2700,
+    "height": 3600
+  },
+  {
+    "id": "cooking-study",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-cooking-study.jpg",
+    "width": 1800,
+    "height": 2400,
+    "medium": "Painting",
+    "alt": "A person cooking at a stove, with expressive blue and orange paint drips and visible sketch lines."
+  },
+  {
+    "id": "morning-commute",
+    "title": "Morning Commute",
+    "category": "art",
+    "src": "/assets/art/emily-dong-morning-commute.jpg",
+    "width": 1800,
+    "height": 2400,
+    "medium": "Digital painting",
+    "alt": "A portrait of a commuter in profile beside a sunlit train window, with warm light against a dark interior."
+  },
+  {
+    "id": "december",
+    "title": "December",
+    "category": "art",
+    "src": "/assets/art/emily-dong-december.jpg",
+    "width": 1800,
+    "height": 2400,
+    "medium": "Digital illustration",
+    "alt": "A December 2026 calendar illustrated with gingerbread cookies, ornaments, and glowing holiday lights."
+  },
+  {
+    "id": "painted-tote",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-painted-tote.jpg",
+    "width": 1800,
+    "height": 2400,
+    "medium": "Painting",
+    "alt": "A canvas tote hand-painted with pink blossoms, colorful fruit, and turquoise geometric shapes."
+  },
+  {
+    "id": "street-painter",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-street-painter.jpg",
+    "width": 1745,
+    "height": 2400,
+    "medium": "Digital painting",
+    "alt": "An artist painting at an easel on a sunlit street, surrounded by warm architecture and a bicycle."
+  },
+  {
+    "id": "seated-figures",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-seated-figures.jpg",
+    "width": 1800,
+    "height": 2400,
+    "medium": "Painting",
+    "alt": "Two seated figures leaning forward, combining painted blue fabric with sketched ochre trousers."
+  },
+  {
+    "id": "figure-study",
+    "title": "Untitled",
+    "category": "art",
+    "src": "/assets/art/emily-dong-figure-study.jpg",
+    "width": 1787,
+    "height": 2400,
+    "medium": "Drawing",
+    "alt": "A figure holding the hem of a purple shirt against a peach background."
+  }
 ];

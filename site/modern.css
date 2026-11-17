@@ -224,7 +224,7 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 
 /* Keep the portrait centered on Emily's face within the inline oval. */
 .capsule-portrait{background:#c7c8ce}
-.capsule-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.capsule-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 
 .capsule-interface .capsule-landscape-image{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
 
