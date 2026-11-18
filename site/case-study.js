@@ -3,6 +3,7 @@
  const navigation=document.querySelector('.case-contents');
  const intro=document.querySelector('.case-opening');
  const header=document.querySelector('.header');
+ const footer=document.querySelector('.site-footer');
  const links=[...document.querySelectorAll('.case-contents a[href^="#"]')];
  const targets=links.map(link=>document.querySelector(link.getAttribute('href')));
  let scheduled=false;
@@ -14,9 +15,10 @@
   const introTop=intro.getBoundingClientRect().top;
   const viewportHeight=window.innerHeight;
   // On desktop, enter with the white introduction, never over the cover artwork.
-  // The rail then settles below the header and stays fixed through the footer.
+  // Hide the rail as the shared full-width footer enters the viewport.
   const railTop=Math.max(headerBottom+24,introTop+36);
-  const visible=mobile?introTop<=headerBottom+1:introTop<viewportHeight-120;
+  const beforeFooter=!footer || footer.getBoundingClientRect().top>=viewportHeight+80;
+  const visible=beforeFooter&&(mobile?introTop<=headerBottom+1:introTop<viewportHeight-120);
   navigation.style.setProperty('--case-sidebar-top',`${Math.round(railTop)}px`);
   document.body.classList.toggle('case-sidebar-visible',visible);
   navigation.inert=!visible;

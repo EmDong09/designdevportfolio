@@ -2,7 +2,7 @@
 window.createAboutPillScene=(Matter,width,height,random=Math.random,floorY=height*.76+20)=>{
  const {Engine,Bodies,Body,Composite,Sleeping,Query}=Matter;
  const engine=Engine.create({enableSleeping:true,positionIterations:12,velocityIterations:10});
- engine.gravity.y=.44;engine.gravity.scale=.001;
+ engine.gravity.y=.48;engine.gravity.scale=.001;
  // One shared size for all three capsules; only their drop positions and angles vary.
  const PILL_WIDTH=Math.min(305,width*.48),PILL_HEIGHT=PILL_WIDTH*.46;
  const sizes=Array.from({length:3},()=>({width:PILL_WIDTH,height:PILL_HEIGHT}));
