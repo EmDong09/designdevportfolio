@@ -1,20 +1,20 @@
 <section class="life-journal" aria-labelledby="journal-heading">
  <h2 id="journal-heading">A Peek into My Life</h2>
  <div class="journal-orbit">
- <!-- JOURNAL_TOOLS -->
  <div class="journal-frame" data-flipbook role="group" aria-label="Life journal. Use the left and right arrow keys to turn pages." tabindex="0">
   <div class="journal-scene" aria-hidden="true">
    <div class="journal-stack journal-stack-left"></div><div class="journal-stack journal-stack-right"></div>
    <div class="journal-spread"><div class="journal-page journal-left"><img class="journal-image" alt="" decoding="async"></div><div class="journal-page journal-right"><img class="journal-image" alt="" decoding="async"></div></div>
-   <div class="journal-spine"></div>
    <div class="journal-turn" hidden><div class="journal-face journal-front"><img class="journal-image" alt="" decoding="async"><span class="journal-turn-shade"></span></div><div class="journal-face journal-back"><img class="journal-image" alt="" decoding="async"><span class="journal-turn-shade"></span></div></div>
    <div class="journal-crossfade" hidden><div class="journal-page journal-left"><img class="journal-image" alt="" decoding="async"></div><div class="journal-page journal-right"><img class="journal-image" alt="" decoding="async"></div></div>
   </div>
+  <div class="journal-spine" aria-hidden="true"></div>
   <button class="journal-zone journal-zone-left" type="button" data-journal-step="-1" aria-label="Turn to the previous spread"></button>
   <button class="journal-zone journal-zone-right" type="button" data-journal-step="1" aria-label="Turn to the next spread"></button>
   <button class="journal-stack-zone journal-stack-zone-left" type="button" data-journal-step="-1" aria-label="Flip back through the left page stack"></button>
   <button class="journal-stack-zone journal-stack-zone-right" type="button" data-journal-step="1" aria-label="Flip forward through the right page stack"></button>
  </div>
  </div>
- <p class="journal-status" role="status" aria-live="polite" data-journal-status>Spread 1 of 8</p>
+ <div class="journal-progress" data-journal-progress aria-hidden="true"></div>
+ <p class="visually-hidden" role="status" aria-live="polite" data-journal-status>Spread 5 of 10</p>
 </section>
