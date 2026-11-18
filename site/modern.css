@@ -243,3 +243,10 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 
 /* Match the Playground title's clean character reveal. */
 .modern-hero .type-current::after{display:none}
+
+/* A personal sign-off balances the compact navigation on the right. */
+.site-footer .footer-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);align-items:start;gap:64px;padding-block:12px 20px}
+.site-footer .footer-signoff p{font:400 clamp(25px,2.5vw,34px)/1.15 var(--display);letter-spacing:-.8px;color:var(--ink);margin:0 0 24px}
+.site-footer .footer-signoff img{display:block;width:225px;height:auto;max-width:100%;object-fit:contain}
+.site-footer .footer-grid{width:100%;max-width:none;justify-self:end;padding-bottom:0}
+@media(max-width:700px){.site-footer .footer-layout{grid-template-columns:1fr;gap:32px;padding-bottom:20px}.site-footer .footer-grid{max-width:360px;justify-self:start}.site-footer .footer-signoff img{width:190px}}
