@@ -5,3 +5,8 @@ window.projectArt = {
 };
 window.projectArt.loop = `<div class="loop-art" aria-hidden="true"><div class="loop-street street-a"></div><div class="loop-street street-b"></div><span class="loop-building building-a"></span><span class="loop-building building-b"></span><span class="loop-building building-c"></span><div class="loop-copy">good things,<br><em>closer to home.</em></div><div class="loop-screen"><span class="loop-brand">local loop <b>✳</b></span><p>Your next<br>little discovery.</p><div class="loop-map"><i></i><i></i><i></i></div><span class="loop-chip">Around the corner</span><div class="loop-list"><span>Places to pause</span><span>Room to connect</span></div></div><span class="loop-note">LOCAL LOOP / SAMPLE CONCEPT</span></div>`;
 window.projectArt.shelf = `<div class="shelf-art" aria-hidden="true"><div class="shelf-copy">a new chapter<br><em>starts here.</em></div><div class="shelf-book book-a"><span>OPEN<br>ENDS</span><i></i></div><div class="shelf-book book-b"><span>Little<br>Wonders</span><i></i></div><div class="shelf-screen"><div class="shelf-brand">open shelf.</div><p>Find a story<br>to stay with.</p><div class="mini-books"><i></i><i></i><i></i></div><span>A little room for discovery</span></div><span class="shelf-note">OPEN SHELF / SAMPLE CONCEPT</span></div>`;
+
+// Listing artwork can evolve independently of a case study's internal visuals.
+window.projectThumbnails = {
+ campus: '<div class="aspect-thumbnail"><img src="/assets/aspect-case-thumbnail.svg" alt="Aspect. Backed by Y Combinator." width="1600" height="1230" fetchpriority="high"></div>'
+};

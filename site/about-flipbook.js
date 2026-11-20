@@ -1,20 +1,21 @@
 // Original photo proportions are retained; focal points crop each full spread to 6:5.
 const SPREADS = [
  '/assets/journal/spread-01.webp',
- '/assets/journal/spread-02.webp',
  '/assets/journal/spread-03.webp',
  '/assets/journal/spread-04.webp',
+ '/assets/journal/spread-11.webp',
+ '/assets/journal/spread-12.webp',
  '/assets/journal/spread-06.webp',
  '/assets/journal/spread-05.webp',
  '/assets/journal/spread-07.webp',
  '/assets/journal/spread-08.webp',
  '/assets/journal/spread-09.webp',
- '/assets/journal/spread-10.webp'
+ '/assets/journal/spread-10.webp',
+ '/assets/journal/spread-13.webp'
 ];
-// Both page halves and turning faces use the same crop, preserving spine continuity.
+// Both page halves share a crop so each photograph stays continuous across the spine.
 const SPREAD_FOCAL_POINTS = [
- '0% 50%', '50% 87%', '62% 50%', '50% 60%', '58% 50%',
- '50% 62%', '95% 50%', '50% 50%', '50% 50%', '50% 65%'
+ '0% 50%', '62% 50%', '50% 60%', '50% 60%', '50% 62%', '58% 50%', '50% 62%', '95% 50%', '50% 50%', '50% 50%', '50% 65%', '50% 50%'
 ];
 (()=>{
  const root=document.querySelector('[data-flipbook]');

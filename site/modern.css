@@ -251,3 +251,18 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .site-footer .footer-signoff img{display:block;flex:0 0 44px;width:44px;height:44px;object-fit:contain;filter:brightness(0)}
 .site-footer .footer-grid{width:100%;max-width:none;justify-self:end;padding-bottom:0}
 @media(max-width:700px){.site-footer .footer-layout{grid-template-columns:1fr;gap:32px;padding-bottom:20px}.site-footer .footer-grid{max-width:360px;justify-self:start}.site-footer .footer-signoff{gap:12px}.site-footer .footer-signoff img{flex-basis:36px;width:36px;height:36px}}
+
+.home-page .project-preview>.aspect-thumbnail,.work-page .project-preview>.aspect-thumbnail{position:relative;aspect-ratio:1600/1230;overflow:hidden;background:#070e22}
+.project-preview .aspect-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* Keep homepage case-study previews more compact. */
+.home-page .project-preview>div,.home-page .project-preview>.aspect-thumbnail{aspect-ratio:1.5}
+
+.about-landing-copy h1,.about-landing-copy .about-lead,.about-landing-copy .intro-paragraphs p{color:#171717}
+
+/* A shared page frame connects the introduction and centered journal. */
+@media(min-width:761px){
+ .about-landing,.life-journal{width:min(calc(100% - 112px),var(--max));margin-inline:auto}
+ .about-landing-copy{position:relative;top:16px;margin-left:0;padding:64px 32px 64px 0;max-width:none}
+ .about-pill-stage{margin-left:-36px}
+}

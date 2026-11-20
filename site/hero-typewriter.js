@@ -13,8 +13,8 @@
  }catch{}
  try{internalReferrer=Boolean(document.referrer) && new URL(document.referrer).origin===window.location.origin;}catch{}
  const internalReturn=!isReload && (returningHome || internalReferrer || navigationType==='back_forward');
- const projectJump=!isReload && window.location.hash && window.location.hash!=='#top';
- if(!heading || (!replayIntro && (internalReturn || projectJump)) || motion.matches)return;
+ const projectJump=window.location.hash && window.location.hash!=='#top';
+ if(!heading || projectJump || (!replayIntro && internalReturn) || motion.matches)return;
  const subtitle=heading.querySelector('.hero-subtitle');
  const description=document.querySelector('.modern-hero .hero-description');
  description?.classList.add('hero-description-pending');

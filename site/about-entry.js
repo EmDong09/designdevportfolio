@@ -1,4 +1,4 @@
-// Match the homepage: type the heading, then reveal the supporting copy in order.
+// Type the heading, then reveal the supporting copy and remaining sections together.
 (()=>{
  const copy=document.querySelector('.about-landing-copy');
  const heading=copy?.querySelector('#about-heading');
@@ -12,19 +12,17 @@
   span.textContent=character;span.setAttribute('aria-hidden','true');return span;
  });
  heading.setAttribute('aria-label',text);heading.replaceChildren(...units);
- const paragraphs=[...copy.querySelectorAll('.about-lead,.intro-paragraphs p')];
- paragraphs.forEach((paragraph,index)=>{
-  paragraph.classList.add('about-entry-target');
-  paragraph.style.setProperty('--about-entry-delay',`${index*120}ms`);
- });
- copy.classList.add('about-entry-pending');heading.classList.add('about-is-typing');
+ const targets=[...copy.querySelectorAll('.about-lead,.intro-paragraphs p'),...document.querySelectorAll('.life-journal,.campus-section,.about-page > footer')];
+ targets.forEach(target=>target.classList.add('about-entry-target'));
+ document.querySelectorAll('.life-journal,.campus-section,.about-page > footer').forEach(target=>target.classList.add('about-entry-follow'));
+ document.body.classList.add('about-entry-pending');heading.classList.add('about-is-typing');
  let index=0,timer=0,current=null,done=false;
  function finish(immediate=false){
   if(done)return;
   done=true;clearTimeout(timer);current?.classList.remove('about-type-current');
-  if(immediate)copy.classList.add('about-entry-instant');
+  if(immediate)document.body.classList.add('about-entry-instant');
   heading.textContent=text;heading.classList.remove('about-is-typing');
-  copy.classList.remove('about-entry-pending');
+  document.body.classList.remove('about-entry-pending');
   document.removeEventListener('keydown',onKey);
   document.removeEventListener('visibilitychange',onVisibility);
   motion.removeEventListener('change',onMotion);

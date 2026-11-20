@@ -3,7 +3,7 @@ window.portfolioContent = {
   name: 'Emily Dong', university: 'University of Michigan', majors: ['User Experience Design', 'Art and Design'],
   email: 'emdong@umich.edu', linkedin: 'https://www.linkedin.com/in/em-dong', github: 'https://github.com/EmDong09', instagram: 'https://www.instagram.com/emilydong.art/', resume: null,
   projects: [
-    { id: 'campus', title: 'Campus Compass', category: 'digital', description: 'A placeholder concept for exploring campus resources.', tags: ['UX Research', 'Interaction Design'], overview: 'An illustrative starting point for a campus resource finder. Explore a sample resource category below. Real research, project process, and case study content have yet to be added.', sample: true },
+    { id: 'campus', title: 'Aspect', category: 'digital', description: 'Internal dashboard for testing and refining the motion skills behind a lightweight agent harness for AE editing.', tags: ['Information Architecture', 'UI Design', 'Interaction Design'], overview: 'An illustrative starting point for a campus resource finder. Explore a sample resource category below. Real research, project process, and case study content have yet to be added.', sample: true },
     { id: 'ritual', title: 'Everyday Rituals', category: 'digital', description: 'A placeholder concept for a reflective daily interface.', tags: ['UI Design', 'Prototyping'], overview: 'A sample interface exploring a quieter moment in the day. Try the mood selector below to see the concept respond. Responses are temporary and are not collected or saved.', sample: true },
     { id: 'loop', title: 'Local Loop', category: 'digital', description: 'A sample concept for finding small moments of connection close to home.', tags: ['UX Design', 'Community'], overview: 'An illustrative neighborhood discovery concept. No research or outcomes are claimed.', sample: true },
     { id: 'shelf', title: 'Open Shelf', category: 'digital', description: 'A sample exploration of a more personal way to discover your next read.', tags: ['UI Design', 'Interaction Design'], overview: 'An illustrative reading discovery interface. No research or outcomes are claimed.', sample: true },
@@ -20,15 +20,13 @@ window.portfolioContent = {
 window.portfolioContent.about = {
   title: 'About Me',
   pills: [
-    {id:'pill-1',src:null,alt:'',fill:'#bdc9da'},
-    {id:'pill-2',src:null,alt:'',fill:'#d4c8df'},
-    {id:'pill-3',src:null,alt:'',fill:'#aebfc0'}
+    {id:'pill-1',src:'/assets/about-pill-bench.webp',alt:'Emily sitting beneath an autumn tree',fill:'#bdc9da'},
+    {id:'pill-2',src:'/assets/about-pill-mirror.webp',alt:'Emily wearing a cap in a mirror',fill:'#d4c8df'},
+    {id:'pill-3',src:'/assets/about-pill-chinatown.webp',alt:'Emily in a lantern-lined Chinatown street',fill:'#aebfc0'}
   ],
-  lead: 'Hi, I’m Emily — exploring where thoughtful experiences meet visual expression.',
+  lead: 'I’m an undergraduate at the University of Michigan pursuing a BA in Art & Design and a BSI in User Experience Design.',
   paragraphs: [
-    'I’m studying User Experience Design + Art and Design at the University of Michigan. I’m interested in how useful digital experiences and expressive visual design can work together.',
-    // Editable filler, not a verified description of Emily’s process.
-    'My process moves between asking questions, sketching possibilities, and making ideas tangible. I’m still exploring the kinds of problems and creative practices I want to grow into.'
+    'I started in fine arts, working in drawing and painting, but wanted to explore how I could use my creativity to solve problems alongside people with different perspectives. That led me to graphic and UI/UX design, where I can help make everyday experiences more enjoyable, inclusive, and intuitive. My process combines strategic thinking, color psychology, and visual storytelling to bring that goal to life.'
   ],
   placeholderNotice: 'This page is taking shape; some details are placeholders.',
   images: [
@@ -42,7 +40,7 @@ window.portfolioContent.about = {
     {id: 'next', question: 'What would I like to work on next?', answer: 'I’m using this portfolio to collect my work and discover which questions I want to explore next.'}
   ],
   involvements: [
-    {id:'atlas-digital',organization:'Atlas Digital',hoverImage:{src:'/assets/atlas-digital-team.jpg',alt:'Atlas Digital members posing together on a staircase'},image:{src:'/assets/atlas-digital-logo.png',alt:'Atlas Digital logo',kind:'logo'},roles:[{title:'Product Designer',dates:'Sep 2026–Present'}],description:'Atlas Digital is a student organization at the University of Michigan building technology and design solutions for businesses, startups, and nonprofits. As a Product Designer, I help turn client needs into approachable digital experiences that support their goals and communities.',logo:null,url:null},
+    {id:'atlas-digital',organization:'Atlas Digital',hoverImage:{src:'/assets/atlas-digital-team.jpg',alt:'Atlas Digital members posing together on a staircase'},image:{src:'/assets/atlas-digital-logo.png',alt:'Atlas Digital logo',kind:'logo'},roles:[{title:'Product Designer',dates:'Sep 2026–Present'}],description:'Atlas Digital is a student organization at the University of Michigan building technology and design solutions for businesses, startups, and nonprofits. As a Product Designer, I help turn client needs into approachable digital experiences that support their goals.',logo:null,url:null},
     {id:'michigan-daily',organization:'The Michigan Daily (Web Team)',image:{src:'/assets/michigan-daily-logo.png',alt:'The Michigan Daily logo',kind:'logo'},roles:[{title:'UI/UX Designer',dates:'Sep 2026–Present'}],description:'The Michigan Daily is a student-run news organization independent of the university. On the Web Team’s product subteam, I help design apps and website features, collaborating with engineers and teams across the organization from research to implementation.',logo:null,url:null},
     {id:'mae-magazine',organization:'MA:E Magazine',image:{src:'/assets/mae-magazine-logo.png',alt:'MA:E Magazine logo',kind:'logo'},roles:[{title:'Publication Layout Designer',dates:'Jan 2026–Present'},{title:'Assistant Design Director',dates:'Sep 2026–Present'}],description:'MA:E Magazine is a student publication and creative collective at the University of Michigan centered on the APIDA community. Among its multiple teams, I’m on the creative team’s design subteam, creating the final published layouts for editorial and photoshoot spreads.',logo:null,url:null}
   ],
