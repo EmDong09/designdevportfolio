@@ -1,5 +1,5 @@
 /* Layout only: the capsules inherit the homepage's border, rim, and shadow. */
-.about-landing{position:relative;display:grid;grid-template-columns:55% 45%;min-height:max(520px,calc(100svh - var(--site-header-height) - 160px));isolation:isolate}
+.about-landing{position:relative;display:grid;grid-template-columns:55% 45%;min-height:max(480px,calc(100svh - var(--site-header-height) - 240px));isolation:isolate}
 .about-pill-stage{position:absolute;left:55%;top:0;bottom:0;width:45%;overflow:hidden;pointer-events:none}
 .about-pill-stage .about-pill-body{position:absolute;left:0;top:0;width:var(--physics-width,220px);height:var(--physics-height,120px);visibility:hidden;transform-origin:center;--hover-tilt:3deg}
 .about-pill-stage .about-pill-body:nth-child(2){--hover-tilt:-3deg}
@@ -28,8 +28,8 @@
 @keyframes about-pill-jiggle{0%,100%{transform:rotate(0deg)}30%{transform:rotate(var(--hover-tilt))}65%{transform:rotate(calc(var(--hover-tilt)*-.6))}85%{transform:rotate(calc(var(--hover-tilt)*.25))}}
 
 /* Campus roles share the site's neutral surfaces, serif headings, and pill details. */
-.campus-section{padding-block:76px 64px}
-.campus-section h2{font:400 38px/1.15 var(--display);letter-spacing:-1.2px;color:#161616;margin:0 0 62px;text-align:center}
+.campus-section{padding-block:28px 64px}
+.campus-section h2{font:400 38px/1.15 var(--display);letter-spacing:-1.2px;color:#161616;margin:0 0 62px;text-align:left}
 .campus-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:0}
 .campus-card{padding:0;border:0;background:transparent;min-width:0;text-align:left}
 .campus-card-header{margin:22px 0 16px}
@@ -45,7 +45,7 @@
 .campus-role{display:inline-block;padding:6px 12px;border:1px solid #d2d8e0;border-radius:999px;font:400 13px/1.4 Arial,Helvetica,sans-serif;color:#5a626c}
 .campus-description{font:400 13px/1.8 Arial,Helvetica,sans-serif;color:var(--muted);margin:16px 0 0}
 @media(max-width:900px){.campus-list{grid-template-columns:1fr}.campus-card{padding:0}.campus-card-header{margin-bottom:18px}}
-@media(max-width:650px){.campus-section{padding-block:56px 44px}.campus-section h2{font-size:32px;margin-bottom:56px}}
+@media(max-width:650px){.campus-section{padding-block:40px 44px}.campus-section h2{font-size:32px;margin-bottom:56px}}
 
 .campus-roles{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .campus-roles>li{display:flex;flex-wrap:wrap;align-items:center;gap:7px 10px}
@@ -80,3 +80,7 @@
 .about-pill-body:nth-child(1) img.about-pill-fill{object-position:50% 69%}
 .about-pill-body:nth-child(2) img.about-pill-fill{object-position:50% 44%}
 .about-pill-body:nth-child(3) img.about-pill-fill{object-position:50% 73%}
+
+/* Match the introduction's text inset and narrow the involvement cards with it. */
+@media(min-width:761px){.about-page .campus-section{padding-inline:clamp(32px,4vw,72px)}}
+@media(max-width:760px){.about-page .campus-section{width:min(calc(100% - 48px),572px);padding-inline:0}}
