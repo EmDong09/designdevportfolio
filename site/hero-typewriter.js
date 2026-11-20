@@ -14,7 +14,10 @@
  try{internalReferrer=Boolean(document.referrer) && new URL(document.referrer).origin===window.location.origin;}catch{}
  const internalReturn=!isReload && (returningHome || internalReferrer || navigationType==='back_forward');
  const projectJump=window.location.hash && window.location.hash!=='#top';
- if(!heading || projectJump || (!replayIntro && internalReturn) || motion.matches)return;
+ if(!heading || projectJump || (!replayIntro && internalReturn) || motion.matches){
+  document.documentElement.classList.remove('home-intro-boot');
+  return;
+ }
  const subtitle=heading.querySelector('.hero-subtitle');
  const description=document.querySelector('.modern-hero .hero-description');
  description?.classList.add('hero-description-pending');
@@ -115,6 +118,8 @@
   timer=setTimeout(typeNext,index<typingEvents.length?typingEvents[index].at-at:0);
  }
  heading.classList.add('is-entering','is-typing');
+ // Reveal only after the untyped characters and pending capsules are hidden.
+ document.documentElement.classList.remove('home-intro-boot');
  document.addEventListener('keydown',onKey);
  document.addEventListener('visibilitychange',onVisibility);
  window.addEventListener('resize',finish,{once:true});
