@@ -108,9 +108,9 @@ const sampleCaseStudies = {
   reflection: 'Future work could replace these placeholders with actual exploration, feedback, and reflections. No testing results, client outcomes, or product impact are claimed.'
  },
  campus: {
-  details: {projectType: 'Sample UX concept', team: null, tools: [], timeline: null},
-  slug: 'campus-compass', headline: 'A little direction. A lot to discover.',
-  intro: 'An illustrative campus-resource concept that brings a place to look, a category to explore, and a next step into one simple interface.',
+  details: {projectType: 'Internal benchmarking dashboard', role: 'Designer', team: '2 Project Managers, 3 Software Analysts, 1 Designer', tools: ['Figma', 'Claude'], timeline: 'TBD'},
+  slug: 'campus-compass', headline: 'Aspect',
+  intro: 'I designed an internal benchmarking dashboard that gives my team one shared place to test, store, grade and compare the After Effects motion design skills we’re building for an AI agent harness, so we can tell which skills are improving and why.',
   question: 'How might a campus resource finder make the first step feel easier?',
   context: 'This sample starts with a question about finding resources on campus. It does not assume that students have a particular problem; that would need to be established through research.',
   questions: ['What do students look for when they need a resource?', 'Which details help someone decide where to go?', 'How can a resource finder support different access needs?'],

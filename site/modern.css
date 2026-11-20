@@ -274,3 +274,24 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .case-campus .case-banner h1.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .aspect-hero-backing{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;white-space:nowrap;font-size:clamp(12px,1.1vw,16px);color:#f7f8fa}
 .aspect-hero-backing svg{width:1.25em;height:1.25em;flex:none}
+
+.case-campus .case-central-idea{border:0;padding:0;margin:42px 0 0}
+.case-campus .case-central-idea .case-lead{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);margin:0;max-width:76ch}
+@media(max-width:700px){.case-campus .case-central-idea .case-lead{font-size:12px}}
+
+.case-campus .case-opening .case-project-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:28px}
+.case-campus .case-central-idea .case-section-heading{font:400 32px/1.15 var(--display);letter-spacing:-1px;color:var(--ink);margin:0 0 22px}
+@media(max-width:700px){.case-campus .case-central-idea .case-section-heading{font-size:29px}}
+
+.case-campus .case-project-details>div:nth-child(2) dd{max-width:19ch;text-wrap:pretty}
+
+.case-campus .case-summary{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);max-width:none;margin:0 0 34px}
+.home-page .project-grid{gap:64px 36px}
+.home-page .project-preview{transition:transform .35s cubic-bezier(.2,.65,.3,1)}
+.home-page .project-preview::after{content:"";position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;transition:opacity .35s ease}
+@media(hover:hover) and (pointer:fine){.home-page .project-preview:hover{transform:scale(.985)}.home-page .project-preview:hover::after{opacity:.14}}
+@media(max-width:700px){.home-page .project-grid{gap:48px}.case-campus .case-summary{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.home-page .project-preview{transition:none}.home-page .project-preview:hover{transform:none}.home-page .project-preview::after{transition:none}}
+
+.case-campus .case-opening{padding-bottom:24px}
+.case-campus .case-body{padding-top:24px}
