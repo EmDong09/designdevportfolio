@@ -288,10 +288,60 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .case-campus .case-summary{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);max-width:none;margin:0 0 34px}
 .home-page .project-grid{gap:64px 36px}
 .home-page .project-preview{transition:transform .35s cubic-bezier(.2,.65,.3,1)}
-.home-page .project-preview::after{content:"";position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;transition:opacity .35s ease}
-@media(hover:hover) and (pointer:fine){.home-page .project-preview:hover{transform:scale(.985)}.home-page .project-preview:hover::after{opacity:.14}}
+.home-page .project-preview::after{content:"";position:absolute;inset:0;z-index:10;border-radius:inherit;background:#fff;opacity:0;pointer-events:none;transition:opacity .35s ease}
+@media(hover:hover) and (pointer:fine){.home-page .project-preview:hover{transform:scale(.985)}.home-page .project-preview:hover::after{opacity:.22}}
 @media(max-width:700px){.home-page .project-grid{gap:48px}.case-campus .case-summary{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.home-page .project-preview{transition:none}.home-page .project-preview:hover{transform:none}.home-page .project-preview::after{transition:none}}
 
 .case-campus .case-opening{padding-bottom:24px}
 .case-campus .case-body{padding-top:24px}
+
+.case-background-block{max-width:76ch;margin-top:28px}
+.case-background-block h3{font:500 18px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 12px}
+.case-background-block p,.case-background-block li{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted)}
+.case-background-block p{margin:0}
+.case-background-block ul{padding-left:20px;margin:0}
+.case-background-block li+li{margin-top:10px}
+@media(max-width:700px){.case-background-block p,.case-background-block li{font-size:12px}.case-background-block h3{font-size:16px}}
+
+.case-campus #background>p,.case-campus .case-background-block{max-width:none}
+
+/* Readable body copy across the portfolio, independent of headings and labels. */
+.home-page .project-description,.work-page .project-description{font-size:16px;line-height:1.75}
+.about-page .about-landing-copy .intro-paragraphs p{font-size:16px;line-height:1.85}
+.about-page .about-landing-copy .about-lead{font-size:21px}
+.about-page .campus-description{font-size:15px;line-height:1.85}
+.about-page .campus-role{font-size:15px}
+.case-page .case-story>section>p:not(.eyebrow):not(.case-caption),.case-page .case-background-block p,.case-page .case-background-block li,.case-campus .case-summary{font-size:16px;line-height:1.85}
+.work-page .work-introduction,.playground-page .play-description,.playground-page .gallery-intro>p:not(.eyebrow):not(.gallery-notice){font-size:16px;line-height:1.85}
+@media(max-width:700px){
+ .home-page .project-description,.work-page .project-description,.about-page .about-landing-copy .intro-paragraphs p,.case-page .case-story>section>p:not(.eyebrow):not(.case-caption),.case-page .case-background-block p,.case-page .case-background-block li,.case-campus .case-summary,.work-page .work-introduction,.playground-page .play-description,.playground-page .gallery-intro>p:not(.eyebrow):not(.gallery-notice){font-size:15px}
+ .about-page .about-landing-copy .about-lead{font-size:19px}
+ .about-page .campus-description,.about-page .campus-role{font-size:14px}
+}
+
+/* Labels and navigation use the same responsive size as body copy. */
+:root{--body-text-size:16px}
+body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer-column nav>a,body .site-footer .footer-email,body .site-footer .footer-placeholder,body .eyebrow,.home-page .project-tags li,.work-page .project-tags,.case-page .case-scope-pills li,.case-page .case-project-details dt,.case-page .case-detail-label,.case-page .case-contents>a,.case-page .case-contents>a:not(.case-back){font-size:var(--body-text-size)}
+@media(max-width:700px){:root{--body-text-size:15px}}
+
+.case-page .case-scope-pills li{font-size:var(--body-text-size);font-family:Arial,Helvetica,sans-serif;font-weight:400;letter-spacing:0;text-transform:none}
+
+.home-page .project-tags li{font-size:var(--body-text-size);font-family:Arial,Helvetica,sans-serif;font-weight:400;letter-spacing:0;text-transform:none}
+
+.home-page .project-meta{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:14px}
+.home-page .project-tags{justify-content:flex-start;width:100%}
+
+.home-page .project-description,.home-page .project-tags li{font-size:15px}
+@media(max-width:700px){.home-page .project-description,.home-page .project-tags li{font-size:14px}}
+
+/* Slightly smaller skills pills on every home project card. */
+.home-page .project-tags li{font-size:13px;padding:5px 12px}
+@media(max-width:700px){.home-page .project-tags li{font-size:11px;padding:4px 10px}}
+
+/* Constraints read as individual cards within the Background section. */
+.case-campus .case-background-block .case-constraint-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;list-style:none;padding:0;margin:0}
+.case-campus .case-constraint-cards li{margin:0;padding:24px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.45)}
+.case-campus .case-constraint-cards li+li{margin-top:0}
+@media(max-width:1100px){.case-campus .case-background-block .case-constraint-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.case-campus .case-background-block .case-constraint-cards{grid-template-columns:1fr;gap:12px}.case-campus .case-constraint-cards li{padding:20px}}

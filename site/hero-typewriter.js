@@ -15,6 +15,7 @@
  const internalReturn=!isReload && (returningHome || internalReferrer || navigationType==='back_forward');
  const projectJump=window.location.hash && window.location.hash!=='#top';
  if(!heading || projectJump || (!replayIntro && internalReturn) || motion.matches){
+  heading?.style.removeProperty('opacity');
   document.documentElement.classList.remove('home-intro-boot');
   return;
  }
@@ -118,7 +119,8 @@
   timer=setTimeout(typeNext,index<typingEvents.length?typingEvents[index].at-at:0);
  }
  heading.classList.add('is-entering','is-typing');
- // Reveal only after the untyped characters and pending capsules are hidden.
+ // Opacity on the original HTML also hides descendants that set visibility themselves.
+ heading.style.removeProperty('opacity');
  document.documentElement.classList.remove('home-intro-boot');
  document.addEventListener('keydown',onKey);
  document.addEventListener('visibilitychange',onVisibility);
