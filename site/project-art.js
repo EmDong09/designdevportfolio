@@ -15,4 +15,4 @@ window.projectThumbnails.ritual = '<div class="fidget-thumbnail"><img src="/asse
 
 window.projectThumbnails.loop = '<div class="shai-thumbnail"><img src="/assets/shai-skin-thumbnail.jpg" alt="Shai Skin butterfly-inspired skincare packaging, bottles and brand imagery arranged on a textured moodboard." loading="lazy" decoding="async"></div>';
 
-window.projectThumbnails.shelf = '<div class="ripe-thumbnail"><img src="/assets/ripe-archive-thumbnail-warm.png" alt="Four Ripe Archive sparkling juice cans with colorful seasonal fruit illustrations." loading="lazy" decoding="async"></div>';
+window.projectThumbnails.shelf = '<div class="ripe-thumbnail"><img src="/assets/ripe-archive-poster-thumbnail.jpg" alt="Ripe Archive poster gallery featuring colorful sparkling juice packaging and fruit-inspired advertisements." loading="lazy" decoding="async"></div>';
