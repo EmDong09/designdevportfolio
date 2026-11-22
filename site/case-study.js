@@ -53,10 +53,11 @@ document.querySelector('#case-interaction')?.addEventListener('click',event=>{
 // Process images open in an accessible on-page card, with the shared View cursor.
 {
  const dialog=document.querySelector('#aspect-image-dialog');
- const triggers=[...document.querySelectorAll('[data-preview-src]')];
+ const triggers=[...document.querySelectorAll('[data-preview-src], [data-preview-markup]')];
  if(dialog && triggers.length){
   const image=dialog.querySelector('.aspect-preview-full');
   const title=dialog.querySelector('#aspect-preview-title');
+  const rendered=dialog.querySelector('.aspect-preview-render');
   const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)');
   const pill=document.createElement('span');
   pill.className='project-cursor-pill';pill.textContent='View';pill.setAttribute('aria-hidden','true');document.body.append(pill);
@@ -70,7 +71,11 @@ document.querySelector('#case-interaction')?.addEventListener('click',event=>{
    trigger.addEventListener('pointerleave',hideCursor);
    trigger.addEventListener('click',()=>{
     if(dialog.open)return;
-    opener=trigger;hideCursor();image.src=trigger.dataset.previewSrc;image.alt=trigger.querySelector('img').alt;title.textContent=trigger.dataset.previewTitle;
+    opener=trigger;hideCursor();title.textContent=trigger.dataset.previewTitle;
+    const isMarkup=trigger.hasAttribute('data-preview-markup');
+    image.hidden=isMarkup;rendered.hidden=!isMarkup;rendered.replaceChildren();
+    if(isMarkup){rendered.append(trigger.querySelector('.af-screen').cloneNode(true));}
+    else{image.src=trigger.dataset.previewSrc;image.alt=trigger.querySelector('img').alt;}
     previousOverflow=document.documentElement.style.overflow;document.documentElement.style.overflow='hidden';dialog.showModal();
    });
   });

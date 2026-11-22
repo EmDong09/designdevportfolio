@@ -339,13 +339,6 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 .home-page .project-tags li{font-size:13px;padding:5px 12px}
 @media(max-width:700px){.home-page .project-tags li{font-size:11px;padding:4px 10px}}
 
-/* Constraints read as individual cards within the Background section. */
-.case-campus .case-background-block .case-constraint-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;list-style:none;padding:0;margin:0}
-.case-campus .case-constraint-cards li{margin:0;padding:24px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.45)}
-.case-campus .case-constraint-cards li+li{margin-top:0}
-@media(max-width:1100px){.case-campus .case-background-block .case-constraint-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.case-campus .case-background-block .case-constraint-cards{grid-template-columns:1fr;gap:12px}.case-campus .case-constraint-cards li{padding:20px}}
-
 /* Aspect's design process, with replaceable reference and comparison image slots. */
 .aspect-design-process{display:grid;gap:48px;margin-top:28px}
 .aspect-design-block h3{font:500 23px/1.35 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 16px}
@@ -467,3 +460,60 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .aspect-comparison .aspect-input-image-link{background:#1e1e1e;border:0;border-radius:8px}
 
 .aspect-comparison.aspect-comparison-stacked{grid-template-columns:1fr;gap:28px}
+
+/* Supplied dashboard images retain their original proportions and spacing. */
+.aspect-first-pass-visuals{display:grid;gap:28px;margin-top:24px}
+.aspect-first-pass-figure{margin:0;min-width:0}
+.aspect-first-pass-board{container-type:inline-size}
+.af-board-content{display:grid;grid-template-columns:minmax(0,1fr) 8.5% minmax(0,1fr);align-items:stretch}
+.af-page-preview{display:flex;align-items:stretch;min-width:0;width:100%;padding:0;border:1px solid #cbd1da;border-radius:8px;background:#f5f6f9;overflow:hidden;cursor:pointer}
+.af-page-preview>img{display:block;width:100%;height:auto;object-fit:contain;align-self:center}
+.af-page-preview:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.af-arrow{display:grid;place-items:center}
+.af-arrow svg{width:46%;fill:none;stroke:#737b87;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.af-unknown{display:grid;place-items:center;width:100%;min-height:100%;background:#fff}
+.af-unknown>span{font:600 6cqw/1 Arial,Helvetica,sans-serif;color:#737b87}
+.aspect-preview-render{container-type:inline-size;width:100%}
+.aspect-preview-render>.af-unknown{aspect-ratio:1.5;border:1px solid #cbd1da;border-radius:8px}
+.aspect-preview-render .af-unknown>span{font-size:12cqw}
+.case-page .case-story .aspect-first-pass-figure figcaption{font:400 13px/1.6 Arial,Helvetica,sans-serif;color:var(--muted);margin-top:10px}
+.case-campus .case-background-why{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:#000;margin:28px 0 12px}
+@media(max-width:700px){.case-campus .case-background-why{font-size:16px}.aspect-first-pass-visuals{gap:24px}}
+@media(hover:hover) and (pointer:fine){.af-page-preview{cursor:none}}
+
+/* Preview gallery for individual refinements; replace slots with supplied images. */
+.aspect-refinement-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;margin-top:28px}
+.aspect-refinement-gallery figure{margin:0;min-width:0}
+.aspect-refinement-placeholder{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#e9ecf1;border:1px solid #d0d6df;border-radius:8px;color:#596372;font:400 15px/1.5 Arial,Helvetica,sans-serif}
+.aspect-refinement-placeholder small{font-size:12px;color:#858e9b}
+.aspect-refinement-placeholder-icon svg{width:32px;height:26px;stroke:#939dab;stroke-width:1.2}
+.case-page .case-story .aspect-refinement-gallery figcaption{font:400 13px/1.65 Arial,Helvetica,sans-serif;color:var(--muted);margin-top:10px;max-width:48ch}
+@media(max-width:600px){.aspect-refinement-gallery{grid-template-columns:1fr;gap:24px}}
+
+.case-page .case-story .aspect-refinement-gallery figcaption{max-width:none}
+
+.aspect-refinement-image{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:4/3;padding:0;background:#f5f6f9;border:1px solid #d0d6df;border-radius:8px;overflow:hidden;cursor:pointer}
+.aspect-refinement-image img{display:block;width:100%;height:100%;object-fit:contain}
+.aspect-refinement-image:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@media(hover:hover) and (pointer:fine){.aspect-refinement-image{cursor:none}}
+
+.aspect-refinement-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;aspect-ratio:4/3;align-items:center;padding:14px;background:#e9ecf1;border:1px solid #d0d6df;border-radius:8px;box-sizing:border-box}
+.aspect-refinement-pair>div{min-width:0}
+.aspect-refinement-pair .aspect-refinement-image{aspect-ratio:1/1.12;background:#f5f6f9;border:0;border-radius:4px}
+.aspect-refinement-pair-label{display:block;margin-top:8px;color:var(--muted);font:400 12px/1.5 Arial,Helvetica,sans-serif;text-align:center}
+
+/* Card interaction comparison has no added frame or background. */
+.aspect-card-interaction{align-items:start}
+.aspect-card-interaction .aspect-input-image-link{background:transparent;border:0;border-radius:0}
+.aspect-card-interaction .aspect-input-image-link img{width:100%;height:auto;object-fit:contain;clip-path:inset(1% 1.5% 1.7% round 5%)}
+
+.case-campus .aspect-feedback{margin-left:24px}
+@media(max-width:700px){.case-campus .aspect-feedback{margin-left:12px}}
+
+.aspect-card-interaction{width:100%;max-width:560px;gap:24px}
+
+.case-campus .aspect-feedback>article>p{max-width:68ch;text-wrap:pretty}
+
+.aspect-skills-filter{grid-template-columns:1fr;gap:24px}
+.aspect-skills-filter .aspect-input-image-link{background:#f5f6f9}
+.aspect-skills-filter .aspect-input-image-link img{display:block;width:100%;height:auto;object-fit:contain}
