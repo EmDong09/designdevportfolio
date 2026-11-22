@@ -10,3 +10,7 @@ window.projectArt.shelf = `<div class="shelf-art" aria-hidden="true"><div class=
 window.projectThumbnails = {
  campus: '<div class="aspect-thumbnail"><img src="/assets/aspect-case-thumbnail.svg" alt="Aspect. Backed by Y Combinator." width="1600" height="1230" fetchpriority="high"></div>'
 };
+
+window.projectThumbnails.ritual = '<div class="fidget-thumbnail"><img src="/assets/fidget-ui.jpg" alt="Four mobile screens showing a companion device app, temperature controls, microcurrent settings, and device settings." loading="lazy" decoding="async"></div>';
+
+window.projectThumbnails.loop = '<div class="shai-thumbnail"><img src="/assets/shai-skin-thumbnail.jpg" alt="Shai Skin butterfly-inspired skincare packaging, bottles and brand imagery arranged on a textured moodboard." loading="lazy" decoding="async"></div>';

@@ -268,33 +268,32 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 }
 
 /* Aspect carries its thumbnail identity into the case-study hero. */
-.case-campus .case-banner::before{display:none}
-.case-campus .case-banner-art{filter:none;background:#070e22}
-.case-campus .aspect-hero-image{display:block;width:100%;height:100%;object-fit:cover}
-.case-campus .case-banner h1.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.case-page .case-banner::before{display:none}
+.case-page .case-banner-art{filter:none;background:#070e22}
+.case-page .aspect-hero-image{display:block;width:100%;height:100%;object-fit:cover}
+.case-page .case-banner h1.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .aspect-hero-backing{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;white-space:nowrap;font-size:clamp(12px,1.1vw,16px);color:#f7f8fa}
 .aspect-hero-backing svg{width:1.25em;height:1.25em;flex:none}
 
-.case-campus .case-central-idea{border:0;padding:0;margin:42px 0 0}
-.case-campus .case-central-idea .case-lead{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);margin:0;max-width:76ch}
-@media(max-width:700px){.case-campus .case-central-idea .case-lead{font-size:12px}}
+.case-page .case-central-idea{border:0;padding:0;margin:42px 0 0}
+.case-page .case-central-idea .case-lead{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);margin:0;max-width:76ch}
+@media(max-width:700px){.case-page .case-central-idea .case-lead{font-size:12px}}
 
-.case-campus .case-opening .case-project-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:28px}
-.case-campus .case-central-idea .case-section-heading{font:400 32px/1.15 var(--display);letter-spacing:-1px;color:var(--ink);margin:0 0 22px}
-@media(max-width:700px){.case-campus .case-central-idea .case-section-heading{font-size:29px}}
+.case-page .case-opening .case-project-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:28px}
+.case-page .case-central-idea .case-section-heading{font:400 32px/1.15 var(--display);letter-spacing:-1px;color:var(--ink);margin:0 0 22px}
+@media(max-width:700px){.case-page .case-central-idea .case-section-heading{font-size:29px}}
 
-.case-campus .case-project-details>div:nth-child(2) dd{max-width:19ch;text-wrap:pretty}
+.case-page .case-project-details>div:nth-child(2) dd{max-width:19ch;text-wrap:pretty}
 
-.case-campus .case-summary{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);max-width:none;margin:0 0 34px}
+.case-page .case-summary{font:400 14px/1.9 Arial,Helvetica,sans-serif;color:var(--muted);max-width:none;margin:0 0 34px}
 .home-page .project-grid{gap:64px 36px}
 .home-page .project-preview{transition:transform .35s cubic-bezier(.2,.65,.3,1)}
-.home-page .project-preview::after{content:"";position:absolute;inset:0;z-index:10;border-radius:inherit;background:#fff;opacity:0;pointer-events:none;transition:opacity .35s ease}
-@media(hover:hover) and (pointer:fine){.home-page .project-preview:hover{transform:scale(.985)}.home-page .project-preview:hover::after{opacity:.22}}
-@media(max-width:700px){.home-page .project-grid{gap:48px}.case-campus .case-summary{font-size:12px}}
+@media(hover:hover) and (pointer:fine){.home-page .project-preview:hover{transform:scale(.985)}}
+@media(max-width:700px){.home-page .project-grid{gap:48px}.case-page .case-summary{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.home-page .project-preview{transition:none}.home-page .project-preview:hover{transform:none}.home-page .project-preview::after{transition:none}}
 
-.case-campus .case-opening{padding-bottom:24px}
-.case-campus .case-body{padding-top:24px}
+.case-page .case-opening{padding-bottom:24px}
+.case-page .case-body{padding-top:24px}
 
 .case-background-block{max-width:76ch;margin-top:28px}
 .case-background-block h3{font:500 18px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 12px}
@@ -304,7 +303,7 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .case-background-block li+li{margin-top:10px}
 @media(max-width:700px){.case-background-block p,.case-background-block li{font-size:12px}.case-background-block h3{font-size:16px}}
 
-.case-campus #background>p,.case-campus .case-background-block{max-width:none}
+.case-page #background>p,.case-page .case-background-block{max-width:none}
 
 /* Readable body copy across the portfolio, independent of headings and labels. */
 .home-page .project-description,.work-page .project-description{font-size:16px;line-height:1.75}
@@ -312,10 +311,10 @@ footer.site-footer.wrap{padding-top:30px;padding-bottom:12px;margin-top:28px}
 .about-page .about-landing-copy .about-lead{font-size:21px}
 .about-page .campus-description{font-size:15px;line-height:1.85}
 .about-page .campus-role{font-size:15px}
-.case-page .case-story>section>p:not(.eyebrow):not(.case-caption),.case-page .case-background-block p,.case-page .case-background-block li,.case-campus .case-summary{font-size:16px;line-height:1.85}
+.case-page .case-story>section>p:not(.eyebrow):not(.case-caption),.case-page .case-background-block p,.case-page .case-background-block li,.case-page .case-summary{font-size:16px;line-height:1.85}
 .work-page .work-introduction,.playground-page .play-description,.playground-page .gallery-intro>p:not(.eyebrow):not(.gallery-notice){font-size:16px;line-height:1.85}
 @media(max-width:700px){
- .home-page .project-description,.work-page .project-description,.about-page .about-landing-copy .intro-paragraphs p,.case-page .case-story>section>p:not(.eyebrow):not(.case-caption),.case-page .case-background-block p,.case-page .case-background-block li,.case-campus .case-summary,.work-page .work-introduction,.playground-page .play-description,.playground-page .gallery-intro>p:not(.eyebrow):not(.gallery-notice){font-size:15px}
+ .home-page .project-description,.work-page .project-description,.about-page .about-landing-copy .intro-paragraphs p,.case-page .case-story>section>p:not(.eyebrow):not(.case-caption),.case-page .case-background-block p,.case-page .case-background-block li,.case-page .case-summary,.work-page .work-introduction,.playground-page .play-description,.playground-page .gallery-intro>p:not(.eyebrow):not(.gallery-notice){font-size:15px}
  .about-page .about-landing-copy .about-lead{font-size:19px}
  .about-page .campus-description,.about-page .campus-role{font-size:14px}
 }
@@ -343,7 +342,7 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 .aspect-design-process{display:grid;gap:48px;margin-top:28px}
 .aspect-design-block h3{font:500 23px/1.35 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 16px}
 .aspect-design-block h4{font:500 18px/1.45 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 12px}
-.case-campus .aspect-design-block p,.case-campus .aspect-design-block li{font-size:var(--body-text-size);line-height:1.85;color:var(--muted)}
+.case-page .aspect-design-block p,.case-page .aspect-design-block li{font-size:var(--body-text-size);line-height:1.85;color:var(--muted)}
 .aspect-design-block p{margin:0}.aspect-design-block>ul{padding-left:22px;margin:16px 0 0}.aspect-design-block>ul li+li{margin-top:8px}
 .aspect-input-images,.aspect-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
 .aspect-design-image{margin:0;min-width:0}.aspect-image-slot{aspect-ratio:16/10;border:1px dashed #c5cbd3;border-radius:8px;background:#e7eaef;display:grid;place-items:center;color:#717985;font:400 13px/1.5 Arial,Helvetica,sans-serif}
@@ -356,7 +355,7 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 .aspect-design-process{display:block;margin-top:0}
 .aspect-design-block{margin-top:28px}
 .aspect-design-block h3,.aspect-design-block h4{font:500 18px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 12px}
-.case-campus .aspect-design-block p,.case-campus .aspect-design-block li{font-size:var(--body-text-size);line-height:1.85;color:var(--muted)}
+.case-page .aspect-design-block p,.case-page .aspect-design-block li{font-size:var(--body-text-size);line-height:1.85;color:var(--muted)}
 .aspect-feedback{gap:28px;margin-top:28px}
 .aspect-principles{gap:28px}
 .aspect-principles article{padding:0;border:0;border-radius:0;background:none}
@@ -369,16 +368,16 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 @media(max-width:700px){.aspect-design-group{scroll-margin-top:calc(var(--site-header-height) + 180px)}.aspect-design-group>h3{font-size:16px}}
 
 /* Three clear levels: Design, its navigable groups, then individual topics. */
-.case-campus .aspect-design-group{margin-top:40px}
-.case-campus .aspect-design-group+.aspect-design-group{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
-.case-campus .aspect-design-group>h3{font:500 26px/1.3 Arial,Helvetica,sans-serif;letter-spacing:-.5px;color:var(--ink);margin:0 0 28px}
-.case-campus .aspect-design-group .aspect-design-block{margin-top:0}
-.case-campus .aspect-design-group .aspect-design-block+.aspect-design-block{margin-top:36px}
-.case-campus .aspect-design-block h4{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 10px}
-.case-campus .aspect-design-block h5{font:600 16px/1.5 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 8px}
-.case-campus .aspect-feedback{padding-left:20px;border-left:1px solid var(--line);margin-top:24px;gap:32px}
-.case-campus .aspect-principles{gap:32px}
-@media(max-width:700px){.case-campus .aspect-design-group{margin-top:32px}.case-campus .aspect-design-group+.aspect-design-group{margin-top:48px;padding-top:32px}.case-campus .aspect-design-group>h3{font-size:23px;margin-bottom:24px}.case-campus .aspect-design-block h4{font-size:17px}.case-campus .aspect-design-block h5{font-size:15px}.case-campus .aspect-feedback{padding-left:16px}}
+.case-page .aspect-design-group{margin-top:40px}
+.case-page .aspect-design-group+.aspect-design-group{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+.case-page .aspect-design-group>h3{font:500 26px/1.3 Arial,Helvetica,sans-serif;letter-spacing:-.5px;color:var(--ink);margin:0 0 28px}
+.case-page .aspect-design-group .aspect-design-block{margin-top:0}
+.case-page .aspect-design-group .aspect-design-block+.aspect-design-block{margin-top:36px}
+.case-page .aspect-design-block h4{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 10px}
+.case-page .aspect-design-block h5{font:600 16px/1.5 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 8px}
+.case-page .aspect-feedback{padding-left:20px;border-left:1px solid var(--line);margin-top:24px;gap:32px}
+.case-page .aspect-principles{gap:32px}
+@media(max-width:700px){.case-page .aspect-design-group{margin-top:32px}.case-page .aspect-design-group+.aspect-design-group{margin-top:48px;padding-top:32px}.case-page .aspect-design-group>h3{font-size:23px;margin-bottom:24px}.case-page .aspect-design-block h4{font-size:17px}.case-page .aspect-design-block h5{font-size:15px}.case-page .aspect-feedback{padding-left:16px}}
 
 /* Case study copy uses black; overview metadata labels retain their muted tone. */
 .case-page .case-summary,
@@ -390,22 +389,22 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 .case-page .case-story h3,
 .case-page .case-story h4,
 .case-page .case-story h5,
-.case-campus .case-background-block p,
-.case-campus .case-background-block li,
-.case-campus .aspect-design-block p,
-.case-campus .aspect-design-block li,
-.case-campus .aspect-color-key strong{color:#000}
+.case-page .case-background-block p,
+.case-page .case-background-block li,
+.case-page .aspect-design-block p,
+.case-page .aspect-design-block li,
+.case-page .aspect-color-key strong{color:#000}
 .case-page .case-project-details dt{color:var(--muted);text-transform:none;letter-spacing:0}
 
 .case-page .case-story>section#background>p{color:#000}
-.case-campus .case-background-block h3{font-weight:600;color:#000}
+.case-page .case-background-block h3{font-weight:600;color:#000}
 
 /* Design topics are standalone case-study sections with flat navigation. */
-.case-campus .case-story>section.aspect-design-group{margin-top:0}
-.case-campus .aspect-design-group>.aspect-design-block:first-of-type{margin-top:28px}
-.case-campus .aspect-design-block h3{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:#000;margin:0 0 10px}
-.case-campus .aspect-design-block h4{font:600 16px/1.5 Arial,Helvetica,sans-serif;color:#000;margin:0 0 8px}
-@media(max-width:700px){.case-campus .aspect-design-block h3{font-size:17px}.case-campus .aspect-design-block h4{font-size:15px}}
+.case-page .case-story>section.aspect-design-group{margin-top:0}
+.case-page .aspect-design-group>.aspect-design-block:first-of-type{margin-top:28px}
+.case-page .aspect-design-block h3{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:#000;margin:0 0 10px}
+.case-page .aspect-design-block h4{font:600 16px/1.5 Arial,Helvetica,sans-serif;color:#000;margin:0 0 8px}
+@media(max-width:700px){.case-page .aspect-design-block h3{font-size:17px}.case-page .aspect-design-block h4{font-size:15px}}
 
 /* Separate each main case-study section with the shared project-details rule. */
 .case-page .case-story>section~section{border-top:1px solid #d4d9e1;padding-top:48px}
@@ -446,16 +445,16 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .case-page .case-banner{width:100%;margin:0;border-radius:0;height:var(--case-hero-height);min-height:0;clip-path:url(#case-hero-arch);padding:80px 32px calc(var(--case-hero-height) * .16 + 80px)}
 .case-page .case-banner::after{display:none}
 .case-page .case-banner-scroll{display:none}
-.case-campus .aspect-hero-backing{bottom:calc(16% + 24px)}
+.case-page .aspect-hero-backing{bottom:calc(16% + 24px)}
 .case-hero-scroll-cue{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:calc(var(--case-hero-height) * -.12) auto 0;color:#89909a;border-radius:50%;transition:color .2s ease,transform .2s ease}
 .case-hero-scroll-cue:hover{color:#24282d;transform:translateY(3px)}
 .case-hero-scroll-cue:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-@media(max-width:700px){.case-page{--case-hero-height:clamp(420px,75svh,620px)}.case-campus .aspect-hero-backing{bottom:calc(16% + 22px)}.case-page .case-banner h1{padding-bottom:10%}}
+@media(max-width:700px){.case-page{--case-hero-height:clamp(420px,75svh,620px)}.case-page .aspect-hero-backing{bottom:calc(16% + 22px)}.case-page .case-banner h1{padding-bottom:10%}}
 @media(prefers-reduced-motion:reduce){.case-hero-scroll-cue{transition:none}.case-hero-scroll-cue:hover{transform:none}}
 
 /* Softer hero curve with the lockup and backing credit optically lifted. */
-.case-campus .aspect-hero-backing{bottom:calc(11% + 48px)}
-@media(max-width:700px){.case-campus .aspect-hero-backing{bottom:calc(11% + 42px)}}
+.case-page .aspect-hero-backing{bottom:calc(11% + 48px)}
+@media(max-width:700px){.case-page .aspect-hero-backing{bottom:calc(11% + 42px)}}
 
 .aspect-comparison .aspect-input-image-link{background:#1e1e1e;border:0;border-radius:8px}
 
@@ -477,8 +476,8 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .aspect-preview-render>.af-unknown{aspect-ratio:1.5;border:1px solid #cbd1da;border-radius:8px}
 .aspect-preview-render .af-unknown>span{font-size:12cqw}
 .case-page .case-story .aspect-first-pass-figure figcaption{font:400 13px/1.6 Arial,Helvetica,sans-serif;color:var(--muted);margin-top:10px}
-.case-campus .case-background-why{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:#000;margin:28px 0 12px}
-@media(max-width:700px){.case-campus .case-background-why{font-size:16px}.aspect-first-pass-visuals{gap:24px}}
+.case-page .case-background-why{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:#000;margin:28px 0 12px}
+@media(max-width:700px){.case-page .case-background-why{font-size:16px}.aspect-first-pass-visuals{gap:24px}}
 @media(hover:hover) and (pointer:fine){.af-page-preview{cursor:none}}
 
 /* Preview gallery for individual refinements; replace slots with supplied images. */
@@ -507,12 +506,12 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .aspect-card-interaction .aspect-input-image-link{background:transparent;border:0;border-radius:0}
 .aspect-card-interaction .aspect-input-image-link img{width:100%;height:auto;object-fit:contain;clip-path:inset(1% 1.5% 1.7% round 5%)}
 
-.case-campus .aspect-feedback{margin-left:24px}
-@media(max-width:700px){.case-campus .aspect-feedback{margin-left:12px}}
+.case-page .aspect-feedback{margin-left:24px}
+@media(max-width:700px){.case-page .aspect-feedback{margin-left:12px}}
 
 .aspect-card-interaction{width:100%;max-width:560px;gap:24px}
 
-.case-campus .aspect-feedback>article>p{max-width:none}
+.case-page .aspect-feedback>article>p{max-width:none}
 
 .aspect-skills-filter{grid-template-columns:1fr;gap:24px;width:90%}
 .aspect-skills-filter .aspect-input-image-link{background:#f5f6f9;border:1px solid #cbd1da}
@@ -533,27 +532,27 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 @media(max-width:480px){.aspect-motion-terms{gap:16px}}
 
 /* Separate each team feedback topic while preserving the shared indent. */
-.case-campus .aspect-feedback{gap:36px}
-.case-campus .aspect-feedback>article+article{border-top:1px solid #d4d9e1;padding-top:36px}
-@media(max-width:700px){.case-campus .aspect-feedback{gap:28px}.case-campus .aspect-feedback>article+article{padding-top:28px}}
+.case-page .aspect-feedback{gap:36px}
+.case-page .aspect-feedback>article+article{border-top:1px solid #d4d9e1;padding-top:36px}
+@media(max-width:700px){.case-page .aspect-feedback{gap:28px}.case-page .aspect-feedback>article+article{padding-top:28px}}
 
 /* Feedback topics use a single, consistent divider treatment. */
-.case-campus .aspect-feedback{border-left:0;padding-left:0;margin-left:0}
-@media(max-width:700px){.case-campus .aspect-feedback{padding-left:0;margin-left:0}}
+.case-page .aspect-feedback{border-left:0;padding-left:0;margin-left:0}
+@media(max-width:700px){.case-page .aspect-feedback{padding-left:0;margin-left:0}}
 
 /* Group feedback items in individual cards beside the shared vertical rule. */
-.case-campus .aspect-feedback{border-left:1px solid #d4d9e1;padding-left:20px;margin-left:24px;gap:24px}
-.case-campus .aspect-feedback>article{padding:24px;border:1px solid #d4d9e1;border-radius:8px;background:#ffffff45}
-.case-campus .aspect-feedback>article+article{padding-top:24px}
-@media(max-width:700px){.case-campus .aspect-feedback{padding-left:16px;margin-left:12px;gap:20px}.case-campus .aspect-feedback>article{padding:18px}.case-campus .aspect-feedback>article+article{padding-top:18px}}
+.case-page .aspect-feedback{border-left:1px solid #d4d9e1;padding-left:20px;margin-left:24px;gap:24px}
+.case-page .aspect-feedback>article{padding:24px;border:1px solid #d4d9e1;border-radius:8px;background:#ffffff45}
+.case-page .aspect-feedback>article+article{padding-top:24px}
+@media(max-width:700px){.case-page .aspect-feedback{padding-left:16px;margin-left:12px;gap:20px}.case-page .aspect-feedback>article{padding:18px}.case-page .aspect-feedback>article+article{padding-top:18px}}
 
 /* One section divider separates the overview details from Background. */
-.case-campus .case-opening .case-project-details{border:0;padding-block:0;margin-top:32px}
-.case-campus .case-opening{padding-bottom:64px}
-.case-campus .case-body{padding-top:0}
-.case-campus .case-story>section#background{border-top:1px solid #d4d9e1;padding-top:32px}
-.case-campus .case-story>section#background>h2:first-child{margin-top:0}
-@media(max-width:700px){.case-campus .case-opening{padding-bottom:40px}.case-campus .case-story>section#background{padding-top:24px}}
+.case-page .case-opening .case-project-details{border:0;padding-block:0;margin-top:32px}
+.case-page .case-opening{padding-bottom:64px}
+.case-page .case-body{padding-top:0}
+.case-page .case-story>section#background{border-top:1px solid #d4d9e1;padding-top:32px}
+.case-page .case-story>section#background>h2:first-child{margin-top:0}
+@media(max-width:700px){.case-page .case-opening{padding-bottom:40px}.case-page .case-story>section#background{padding-top:24px}}
 
 /* Keep equal breathing room on both sides of case study dividers. */
 .case-page{--case-divider-space:40px}
@@ -562,10 +561,25 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .case-page .case-story>section>:last-child{margin-bottom:0}
 .case-page .case-opening .case-project-details{border-top:1px solid #d4d9e1;border-bottom:0;margin-top:var(--case-divider-space);padding-top:var(--case-divider-space);padding-bottom:0}
 .case-page .case-opening .case-summary,.case-page .case-opening .case-central-idea{margin-bottom:0}
-.case-campus .case-opening{padding-bottom:var(--case-divider-space)}
-.case-campus .case-story>section#background{padding-top:var(--case-divider-space)}
-@media(max-width:700px){.case-page{--case-divider-space:28px}.case-campus .case-opening{padding-bottom:var(--case-divider-space)}.case-campus .case-story>section#background{padding-top:var(--case-divider-space)}}
+.case-page .case-opening{padding-bottom:var(--case-divider-space)}
+.case-page .case-story>section#background{padding-top:var(--case-divider-space)}
+@media(max-width:700px){.case-page{--case-divider-space:28px}.case-page .case-opening{padding-bottom:var(--case-divider-space)}.case-page .case-story>section#background{padding-top:var(--case-divider-space)}}
 
 .aspect-product-placeholder{display:grid;place-items:center;width:100%;aspect-ratio:16/9;background:#e9ecf1;border:1px solid #d0d6df;border-radius:8px;color:#7c8694;font:400 14px/1.5 Arial,Helvetica,sans-serif}
 
 .case-page .case-story>section#learnings>p{color:#000}
+
+/* Shared narrative typography across every case study. */
+.case-page .case-story>section>p:not(.case-caption):not(.eyebrow){color:#000}
+.case-page .case-story .case-caption{color:var(--muted)}
+.case-page .case-story .case-background-block>h3,.case-page .case-story .aspect-principles h3{font-weight:600}
+
+.fidget-thumbnail{position:relative;overflow:hidden;background:#d5f2f5}
+.project-preview .fidget-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}
+.case-ritual .case-banner{background:#d5f2f5}
+.case-ritual .case-banner-art{filter:none}
+.case-ritual .case-banner::before{background:none}
+.case-ritual .fidget-hero-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+
+.shai-thumbnail{position:relative;overflow:hidden;background:#c5bfae}
+.project-preview .shai-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}

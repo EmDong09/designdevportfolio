@@ -1,7 +1,18 @@
 const content = window.portfolioContent;
 const art = window.projectArt;
 const projects=document.querySelector('#projects');
-content.projects.forEach((p,i)=>{ const card=document.createElement('article'); card.className=`project project-${p.id}`; card.dataset.category=p.category; card.innerHTML=`<a class="project-preview" href="/work/${p.caseStudy.slug}/" aria-label="Explore ${p.title}, sample case study">${window.projectThumbnails?.[p.id] || art[p.id]}</a><div class="project-meta"><div><p class="project-number">0${i+1} / SAMPLE PROJECT</p><h3><a href="/work/${p.caseStudy.slug}/">${p.title}</a></h3></div>${document.body.classList.contains('home-page') ? `<ul class="project-tags" aria-label="Project disciplines">${p.tags.map(tag=>`<li>${tag}</li>`).join('')}</ul>` : `<span class="project-tags">${p.tags.join(' / ')}</span>`}</div><p class="project-description">${p.description}</p>`;projects.append(card);});
+content.projects.forEach((p,i)=>{
+ const card=document.createElement('article');
+ card.className=`project project-${p.id}`;
+ card.dataset.category=p.category;
+ const artwork=window.projectThumbnails?.[p.id] || art[p.id];
+ const preview=p.comingSoon
+  ? `<div class="project-preview" data-cursor-label="Coming Soon" aria-label="${p.title} — coming soon">${artwork}</div>`
+  : `<a class="project-preview" href="/work/${p.caseStudy.slug}/" aria-label="Explore ${p.title}, sample case study">${artwork}</a>`;
+ const title=p.comingSoon ? `${p.title}<span class="visually-hidden"> — Coming Soon</span>` : `<a href="/work/${p.caseStudy.slug}/">${p.title}</a>`;
+ card.innerHTML=`${preview}<div class="project-meta"><div><p class="project-number">0${i+1} / SAMPLE PROJECT</p><h3>${title}</h3></div>${document.body.classList.contains('home-page') ? `<ul class="project-tags" aria-label="Project disciplines">${p.tags.map(tag=>`<li>${tag}</li>`).join('')}</ul>` : `<span class="project-tags">${p.tags.join(' / ')}</span>`}</div><p class="project-description">${p.description}</p>`;
+ projects.append(card);
+});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});document.querySelectorAll('.project').forEach(card=>card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter);updateProjectCount();}));
 const dialog=document.querySelector('#preview');let lastTrigger;
 function openPreview(trigger,{title,description,artwork,label='SAMPLE PROJECT',interaction=''}){lastTrigger=trigger;document.querySelector('#dialog-title').textContent=title;document.querySelector('#dialog-description').textContent=description;document.querySelector('#dialog-label').textContent=label;document.querySelector('#dialog-art').classList.remove('alternate');document.querySelector('#dialog-art').innerHTML=artwork;document.querySelector('#dialog-interaction').innerHTML=interaction;dialog.showModal();document.body.classList.add('dialog-open');document.querySelector('#close-dialog').focus();}
@@ -24,6 +35,7 @@ updateProjectCount();
  document.querySelectorAll('.project-preview').forEach(link=>{
   const follow=event=>{
    if(!finePointer.matches || event.pointerType==='touch')return;
+   viewPill.textContent=link.dataset.cursorLabel || 'View';
    viewPill.style.left=`${Math.max(40,Math.min(window.innerWidth-40,event.clientX))}px`;
    viewPill.style.top=`${Math.max(24,Math.min(window.innerHeight-24,event.clientY))}px`;
    viewPill.classList.add('is-visible');
