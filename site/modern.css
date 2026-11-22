@@ -446,3 +446,24 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .aspect-preview-close:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .aspect-preview-full{display:block;width:100%;height:auto;max-height:calc(92dvh - 104px);object-fit:contain}
 @media(hover:hover) and (pointer:fine){button.aspect-input-image-link{cursor:none}}
+
+/* Full-width hero starts at the nav divider and opens into an arched lower edge. */
+.case-page{--case-hero-height:clamp(520px,82svh,800px)}
+.case-hero-clip-definition{position:absolute;pointer-events:none}
+.case-page .case-banner{width:100%;margin:0;border-radius:0;height:var(--case-hero-height);min-height:0;clip-path:url(#case-hero-arch);padding:80px 32px calc(var(--case-hero-height) * .16 + 80px)}
+.case-page .case-banner::after{display:none}
+.case-page .case-banner-scroll{display:none}
+.case-campus .aspect-hero-backing{bottom:calc(16% + 24px)}
+.case-hero-scroll-cue{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:calc(var(--case-hero-height) * -.12) auto 0;color:#89909a;border-radius:50%;transition:color .2s ease,transform .2s ease}
+.case-hero-scroll-cue:hover{color:#24282d;transform:translateY(3px)}
+.case-hero-scroll-cue:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(max-width:700px){.case-page{--case-hero-height:clamp(420px,75svh,620px)}.case-campus .aspect-hero-backing{bottom:calc(16% + 22px)}.case-page .case-banner h1{padding-bottom:10%}}
+@media(prefers-reduced-motion:reduce){.case-hero-scroll-cue{transition:none}.case-hero-scroll-cue:hover{transform:none}}
+
+/* Softer hero curve with the lockup and backing credit optically lifted. */
+.case-campus .aspect-hero-backing{bottom:calc(11% + 48px)}
+@media(max-width:700px){.case-campus .aspect-hero-backing{bottom:calc(11% + 42px)}}
+
+.aspect-comparison .aspect-input-image-link{background:#1e1e1e;border:0;border-radius:8px}
+
+.aspect-comparison.aspect-comparison-stacked{grid-template-columns:1fr;gap:28px}

@@ -2,6 +2,7 @@
 {
  const navigation=document.querySelector('.case-contents');
  const intro=document.querySelector('.case-opening');
+ const overviewHeading=document.querySelector('#case-headline');
  const header=document.querySelector('.header');
  const footer=document.querySelector('.site-footer');
  const links=[...document.querySelectorAll('.case-contents a[href^="#"]')];
@@ -16,7 +17,8 @@
   const viewportHeight=window.innerHeight;
   // On desktop, enter with the white introduction, never over the cover artwork.
   // Hide the rail as the shared full-width footer enters the viewport.
-  const railTop=Math.max(headerBottom+24,introTop+36);
+  const headingTop=overviewHeading?.getBoundingClientRect().top ?? introTop+54;
+  const railTop=mobile?headerBottom:Math.max(headerBottom+24,headingTop-18);
   const beforeFooter=!footer || footer.getBoundingClientRect().top>=viewportHeight+80;
   const visible=beforeFooter&&(mobile?introTop<=headerBottom+1:introTop<viewportHeight-120);
   navigation.style.setProperty('--case-sidebar-top',`${Math.round(railTop)}px`);
