@@ -610,6 +610,8 @@ main h1,main h2,.case-title-row h2,.case-page .case-story h2,.about-intro h1{fon
 
 .aspect-hero-backing,.aspect-thumbnail-backing{font-family:var(--body-font);font-weight:400}
 .aspect-thumbnail{container-type:inline-size}
-.aspect-thumbnail-backing{position:absolute;right:5.7%;bottom:10.8%;display:flex;align-items:center;gap:1.1cqw;white-space:nowrap;color:#f7f8fa;font-size:2cqw;line-height:1.25}
+.aspect-thumbnail-backing{position:absolute;right:5.7cqw;bottom:5.7cqw;display:flex;align-items:center;gap:1.1cqw;white-space:nowrap;color:#f7f8fa;font-size:2cqw;line-height:1.25}
 .aspect-thumbnail-backing>span:first-child{opacity:.85}
 .aspect-thumbnail-backing svg{display:block;width:2.5cqw;height:2.5cqw;flex:none}
+
+.site-footer .footer-signoff p{font-style:italic}
