@@ -1,4 +1,4 @@
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const revision=createHash('sha256').update(await readFile(new URL('../site/modern.css',import.meta.url))).digest('hex').slice(0,12);
-export const themeLink=`<link rel="stylesheet" href="/modern.css?v=${revision}">`;
+export const themeLink=`<link rel="stylesheet" href="https://use.typekit.net/liy1aeu.css?v=source-sans-20261122"><link rel="stylesheet" href="/modern.css?v=${revision}">`;

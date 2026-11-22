@@ -14,6 +14,7 @@ const footer=await readFile(new URL('./templates/shared-footer.html',import.meta
 home=/<footer\b/.test(home)?home.replace(/<footer\b[\s\S]*?<\/footer>/,footer):home.replace('</main>',`</main>${footer}`);
 const typingRevision=createHash('sha256').update(await readFile(new URL('../site/hero-typewriter.js',import.meta.url))).digest('hex').slice(0,12);
 home=home.replace(/src="\/hero-typewriter\.js[^"]*"/,`src="/hero-typewriter.js?v=${typingRevision}"`);
+home=home.replace(/<link rel="stylesheet" href="https:\/\/use\.typekit\.net\/liy1aeu\.css(?:\?[^\"]*)?">/g,'');
 home=home.replace(/<link rel="stylesheet" href="\/?modern\.css[^\"]*">/g,'').replace('</head>',`${themeLink}</head>`);
 await writeFile(homePath,home);
 for(const name of ['about','work','playground','case-studies'])await import(`./build-${name}.mjs`);

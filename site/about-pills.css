@@ -39,11 +39,11 @@
 .campus-thumbnail-placeholder{width:100%;height:100%;background:#dfe5ec}
 .campus-card:nth-child(2) .campus-thumbnail-placeholder{background:#e5e1ed}
 .campus-card:nth-child(3) .campus-thumbnail-placeholder{background:#dce7e6}
-.campus-card h3{font:400 23px/1.25 Arial,Helvetica,sans-serif;letter-spacing:-.3px;margin:0;overflow-wrap:anywhere}
+.campus-card h3{font:400 23px/1.25 var(--body-font,Arial);letter-spacing:-.3px;margin:0;overflow-wrap:anywhere}
 .campus-card h3 a:hover{text-decoration:underline;text-underline-offset:4px}
-.campus-dates{font:400 11px/1.6 Arial,Helvetica,sans-serif;color:var(--muted);margin:4px 0 0}
-.campus-role{display:inline-block;padding:6px 12px;border:1px solid #d2d8e0;border-radius:999px;font:400 13px/1.4 Arial,Helvetica,sans-serif;color:#5a626c}
-.campus-description{font:400 13px/1.8 Arial,Helvetica,sans-serif;color:var(--muted);margin:16px 0 0}
+.campus-dates{font:400 11px/1.6 var(--body-font,Arial);color:var(--muted);margin:4px 0 0}
+.campus-role{display:inline-block;padding:6px 12px;border:1px solid #d2d8e0;border-radius:999px;font:400 13px/1.4 var(--body-font,Arial);color:#5a626c}
+.campus-description{font:400 13px/1.8 var(--body-font,Arial);color:var(--muted);margin:16px 0 0}
 @media(max-width:900px){.campus-list{grid-template-columns:1fr}.campus-card{padding:0}.campus-card-header{margin-bottom:18px}}
 @media(max-width:650px){.campus-section{padding-block:40px 44px}.campus-section h2{font-size:32px;margin-bottom:56px}}
 

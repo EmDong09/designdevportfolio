@@ -8,7 +8,7 @@ window.projectArt.shelf = `<div class="shelf-art" aria-hidden="true"><div class=
 
 // Listing artwork can evolve independently of a case study's internal visuals.
 window.projectThumbnails = {
- campus: '<div class="aspect-thumbnail"><img src="/assets/aspect-case-thumbnail.svg" alt="Aspect. Backed by Y Combinator." width="1600" height="1230" fetchpriority="high"></div>'
+ campus: '<div class="aspect-thumbnail"><img src="/assets/aspect-case-thumbnail.svg" alt="Aspect. Backed by Y Combinator." width="1600" height="1230" fetchpriority="high"><span class="aspect-thumbnail-backing" aria-hidden="true"><span>Backed by</span><svg viewBox="0 0 48 48"><path fill="#ff6600" d="M0 0h48v48H0z"/><path fill="white" d="M13.9012 11.7843H17.6595L22.4961 21.5325C23.203 22.9836 23.7984 24.3976 23.7984 24.3976C23.7984 24.3976 24.4313 23.021 25.175 21.5325L30.0868 11.7843H33.5843L25.2865 27.3746V37.309H22.1244V27.1884L13.9012 11.7843Z"/></svg><span>Combinator</span></span></div>'
 };
 
 window.projectThumbnails.ritual = '<div class="fidget-thumbnail"><img src="/assets/fidget-ui.jpg" alt="Four mobile screens showing a companion device app, temperature controls, microcurrent settings, and device settings." loading="lazy" decoding="async"></div>';
