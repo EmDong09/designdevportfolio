@@ -47,3 +47,39 @@ document.querySelector('#case-interaction')?.addEventListener('click',event=>{
  if(button.dataset.mood)status.textContent=button.dataset.mood;
  if(button.dataset.palette){document.querySelector('#case-demo-art').classList.toggle('alternate',button.dataset.palette==='alternate');status.textContent=button.dataset.palette==='alternate'?'Plum & lime palette selected.':'Cobalt & peach palette selected.';}
 });
+
+// Process images open in an accessible on-page card, with the shared View cursor.
+{
+ const dialog=document.querySelector('#aspect-image-dialog');
+ const triggers=[...document.querySelectorAll('[data-preview-src]')];
+ if(dialog && triggers.length){
+  const image=dialog.querySelector('.aspect-preview-full');
+  const title=dialog.querySelector('#aspect-preview-title');
+  const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)');
+  const pill=document.createElement('span');
+  pill.className='project-cursor-pill';pill.textContent='View';pill.setAttribute('aria-hidden','true');document.body.append(pill);
+  let opener=null,previousOverflow='';
+  const hideCursor=()=>pill.classList.remove('is-visible');
+  triggers.forEach(trigger=>{
+   trigger.addEventListener('pointermove',event=>{
+    if(!finePointer.matches || dialog.open || event.pointerType==='touch')return;
+    pill.style.left=`${event.clientX}px`;pill.style.top=`${event.clientY}px`;pill.classList.add('is-visible');
+   });
+   trigger.addEventListener('pointerleave',hideCursor);
+   trigger.addEventListener('click',()=>{
+    if(dialog.open)return;
+    opener=trigger;hideCursor();image.src=trigger.dataset.previewSrc;image.alt=trigger.querySelector('img').alt;title.textContent=trigger.dataset.previewTitle;
+    previousOverflow=document.documentElement.style.overflow;document.documentElement.style.overflow='hidden';dialog.showModal();
+   });
+  });
+  dialog.querySelector('.aspect-preview-close').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{
+   if(event.target!==dialog)return;
+   const rect=dialog.getBoundingClientRect();
+   if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();
+  });
+  dialog.addEventListener('close',()=>{document.documentElement.style.overflow=previousOverflow;opener?.focus({preventScroll:true});});
+  window.addEventListener('blur',hideCursor);
+  window.addEventListener('scroll',hideCursor,{passive:true});
+ }
+}

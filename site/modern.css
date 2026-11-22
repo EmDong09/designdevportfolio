@@ -423,3 +423,26 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 .case-page .case-story>section+section{padding-top:32px}
 .case-page .case-story>section+section>h2:first-child{margin-top:0}
 @media(max-width:700px){.case-page .case-story>section{margin-bottom:40px}.case-page .case-story>section+section{padding-top:24px}}
+
+.aspect-input-image-link{display:block;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.aspect-input-image-link img{display:block;width:100%;height:auto;object-fit:contain}
+.aspect-input-image-link:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+
+/* Equal-height starting-input visuals, preserving the complete images. */
+.aspect-input-images .aspect-input-image-link{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center}
+.aspect-input-images .aspect-input-image-link img{width:100%;height:100%;object-fit:contain}
+
+.aspect-input-image-link[data-preview-src="/assets/aspect-pm-wireframe.png"]{background:#f0f5f4}
+.aspect-input-image-link[data-preview-src="/assets/aspect-navigation-flowchart.png"]{background:#f5f6f9}
+
+.case-page .case-story .aspect-design-image figcaption{color:var(--muted)}
+
+button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
+.case-page .aspect-image-dialog{width:min(1200px,94vw);max-width:94vw;max-height:92dvh;padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--paper,#eff1f4);box-shadow:0 24px 80px #0003;overflow:auto}
+.aspect-image-dialog::backdrop{background:#11182780;backdrop-filter:blur(5px)}
+.aspect-preview-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:16px}
+.case-page .aspect-preview-header p{margin:0;color:var(--ink);font-size:16px}
+.aspect-preview-close{flex-shrink:0;width:44px;height:44px;border:0;border-radius:50%;background:#e0e4e9;color:#000;font:300 30px/1 Arial;cursor:pointer}
+.aspect-preview-close:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.aspect-preview-full{display:block;width:100%;height:auto;max-height:calc(92dvh - 104px);object-fit:contain}
+@media(hover:hover) and (pointer:fine){button.aspect-input-image-link{cursor:none}}
