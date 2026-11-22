@@ -26,8 +26,6 @@
   const threshold=mobile?headerBottom+148:Math.max(headerBottom+40,viewportHeight*.28);
   let current=0;
   targets.forEach((target,index)=>{if(target && target.getBoundingClientRect().top<=threshold)current=index;});
-  const designActive=targets[current]?.id==='design'||targets[current]?.id.startsWith('design-');
-  document.body.classList.toggle('case-design-active',Boolean(designActive));
   links.forEach((link,index)=>{if(index===current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
  }
  function scheduleUpdate(){if(!scheduled){scheduled=true;requestAnimationFrame(updateCurrentSection);}}

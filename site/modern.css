@@ -370,13 +370,10 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 @media(max-width:700px){.aspect-design-block h3,.aspect-design-block h4{font-size:16px}.aspect-principles article{padding:0}}
 
 /* Nested Design navigation appears while reading the design process. */
-.case-campus .case-contents>a.case-design-sublink{display:none;padding-left:36px;min-height:38px;font-size:14px;line-height:1.5}
-.case-campus.case-design-active .case-contents>a.case-design-sublink{display:flex}
 .aspect-design-group{scroll-margin-top:calc(var(--site-header-height) + 40px);margin-top:28px}
 .aspect-design-group>h3{font:500 18px/1.4 Arial,Helvetica,sans-serif;color:var(--ink);margin:0 0 12px}
 .aspect-design-group .aspect-design-block{margin-top:24px}
-@media(max-width:700px){.case-campus .case-contents>a.case-design-sublink{padding-left:12px;font-size:13px}.aspect-design-group{scroll-margin-top:calc(var(--site-header-height) + 180px)}.aspect-design-group>h3{font-size:16px}}
-@media(max-width:700px){.case-campus .case-contents{display:flex;flex-direction:row;justify-content:flex-start;gap:6px;height:auto;max-height:100px;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap}.case-campus .case-contents>a{white-space:nowrap;flex-shrink:0}.case-campus .case-contents>a.case-design-sublink{padding-left:18px}}
+@media(max-width:700px){.aspect-design-group{scroll-margin-top:calc(var(--site-header-height) + 180px)}.aspect-design-group>h3{font-size:16px}}
 
 /* Three clear levels: Design, its navigable groups, then individual topics. */
 .case-campus .aspect-design-group{margin-top:40px}
@@ -406,3 +403,23 @@ body .header nav a,body .site-footer .footer-column h2,body .site-footer .footer
 .case-campus .aspect-design-block li,
 .case-campus .aspect-color-key strong{color:#000}
 .case-page .case-project-details dt{color:var(--muted);text-transform:none;letter-spacing:0}
+
+.case-page .case-story>section#background>p{color:#000}
+.case-campus .case-background-block h3{font-weight:600;color:#000}
+
+/* Design topics are standalone case-study sections with flat navigation. */
+.case-campus .case-story>section.aspect-design-group{margin-top:0}
+.case-campus .aspect-design-group>.aspect-design-block:first-of-type{margin-top:28px}
+.case-campus .aspect-design-block h3{font:600 18px/1.4 Arial,Helvetica,sans-serif;color:#000;margin:0 0 10px}
+.case-campus .aspect-design-block h4{font:600 16px/1.5 Arial,Helvetica,sans-serif;color:#000;margin:0 0 8px}
+@media(max-width:700px){.case-campus .aspect-design-block h3{font-size:17px}.case-campus .aspect-design-block h4{font-size:15px}}
+
+/* Separate each main case-study section with the shared project-details rule. */
+.case-page .case-story>section+section{border-top:1px solid #d4d9e1;padding-top:48px}
+@media(max-width:700px){.case-page .case-story>section+section{padding-top:32px}}
+
+/* Tighter, balanced breathing room around section dividers. */
+.case-page .case-story>section{margin-bottom:64px}
+.case-page .case-story>section+section{padding-top:32px}
+.case-page .case-story>section+section>h2:first-child{margin-top:0}
+@media(max-width:700px){.case-page .case-story>section{margin-bottom:40px}.case-page .case-story>section+section{padding-top:24px}}
