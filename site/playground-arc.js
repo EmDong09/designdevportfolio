@@ -188,4 +188,5 @@
  document.addEventListener('visibilitychange',sync);
  motion.addEventListener('change',event=>{paused=event.matches;sync();});
  new ResizeObserver(resize).observe(viewport);resize();sync();
+ document.documentElement.classList.remove('play-layout-boot');
 })();

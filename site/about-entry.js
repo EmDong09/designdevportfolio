@@ -3,7 +3,7 @@
  const copy=document.querySelector('.about-landing-copy');
  const heading=copy?.querySelector('#about-heading');
  const motion=matchMedia('(prefers-reduced-motion: reduce)');
- if(!heading||motion.matches)return;
+ if(!heading||motion.matches){document.documentElement.classList.remove('about-entry-boot');return;}
  const text=heading.textContent;
  const segmenter=typeof Intl.Segmenter==='function'?new Intl.Segmenter('en',{granularity:'grapheme'}):null;
  const characters=segmenter?[...segmenter.segment(text)].map(part=>part.segment):Array.from(text);
@@ -16,6 +16,7 @@
  targets.forEach(target=>target.classList.add('about-entry-target'));
  document.querySelectorAll('.life-journal,.campus-section,.about-page > footer').forEach(target=>target.classList.add('about-entry-follow'));
  document.body.classList.add('about-entry-pending');heading.classList.add('about-is-typing');
+ document.documentElement.classList.remove('about-entry-boot');
  let index=0,timer=0,current=null,done=false;
  function finish(immediate=false){
   if(done)return;

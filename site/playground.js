@@ -61,7 +61,7 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
 (()=>{
  const heading=document.querySelector('#play-title');
  const motion=matchMedia('(prefers-reduced-motion: reduce)');
- if(!heading || motion.matches)return;
+ if(!heading || motion.matches){document.documentElement.classList.remove('play-entry-boot');return;}
  const controls=document.querySelector('.arc-controls');
  controls?.classList.add('play-controls-pending');
  if(controls)controls.inert=true;
@@ -74,6 +74,7 @@ document.querySelector('#reset-type').addEventListener('click',()=>{words.value=
   return span;
  });
  heading.replaceChildren(...characters);
+ document.documentElement.classList.remove('play-entry-boot');
  let index=0,timer,done=false;
  function finish(){
   if(done)return;
