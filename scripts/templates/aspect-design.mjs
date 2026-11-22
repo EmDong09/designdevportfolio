@@ -8,7 +8,7 @@ export function renderAspectDesign(sections, escape) {
  const groups = [
   {id:'design-starting-point', title:'Starting Point', blocks:sections.slice(0,3)},
   {id:'design-iterations', title:'Design Iterations', blocks:sections.slice(3,6)},
-  {id:'design-principles', title:'Design Principles', blocks:sections.slice(6), hideBlockHeading:true}
+  {id:'design-rationale', title:'Design Rationale', blocks:sections.slice(6), hideBlockHeading:true}
  ];
  return ` ${groups.map(group=>`<section id="${group.id}" class="aspect-design-group" aria-labelledby="${group.id}-title"><h2 id="${group.id}-title">${group.title}</h2>${group.blocks.map(block=>renderBlock(block,!group.hideBlockHeading)).join('')}</section>`).join('')}<dialog id="aspect-image-dialog" class="aspect-image-dialog" aria-labelledby="aspect-preview-title"><div class="aspect-preview-header"><p id="aspect-preview-title"></p><button type="button" class="aspect-preview-close" aria-label="Close image preview" autofocus>×</button></div><img class="aspect-preview-full" alt=""><div class="aspect-preview-render" hidden></div></dialog>`;
 }

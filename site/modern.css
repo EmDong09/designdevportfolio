@@ -554,3 +554,18 @@ button.aspect-input-image-link{width:100%;padding:0;font:inherit;cursor:pointer}
 .case-campus .case-story>section#background{border-top:1px solid #d4d9e1;padding-top:32px}
 .case-campus .case-story>section#background>h2:first-child{margin-top:0}
 @media(max-width:700px){.case-campus .case-opening{padding-bottom:40px}.case-campus .case-story>section#background{padding-top:24px}}
+
+/* Keep equal breathing room on both sides of case study dividers. */
+.case-page{--case-divider-space:40px}
+.case-page .case-story>section{margin-bottom:var(--case-divider-space)}
+.case-page .case-story>section~section{padding-top:var(--case-divider-space)}
+.case-page .case-story>section>:last-child{margin-bottom:0}
+.case-page .case-opening .case-project-details{border-top:1px solid #d4d9e1;border-bottom:0;margin-top:var(--case-divider-space);padding-top:var(--case-divider-space);padding-bottom:0}
+.case-page .case-opening .case-summary,.case-page .case-opening .case-central-idea{margin-bottom:0}
+.case-campus .case-opening{padding-bottom:var(--case-divider-space)}
+.case-campus .case-story>section#background{padding-top:var(--case-divider-space)}
+@media(max-width:700px){.case-page{--case-divider-space:28px}.case-campus .case-opening{padding-bottom:var(--case-divider-space)}.case-campus .case-story>section#background{padding-top:var(--case-divider-space)}}
+
+.aspect-product-placeholder{display:grid;place-items:center;width:100%;aspect-ratio:16/9;background:#e9ecf1;border:1px solid #d0d6df;border-radius:8px;color:#7c8694;font:400 14px/1.5 Arial,Helvetica,sans-serif}
+
+.case-page .case-story>section#learnings>p{color:#000}
