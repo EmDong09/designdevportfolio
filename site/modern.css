@@ -620,3 +620,12 @@ main h1,main h2,.case-title-row h2,.case-page .case-story h2,.about-intro h1{fon
 :root{--skill-pill-size:15px}
 .home-page .project-tags li,.about-page .campus-role{font-family:var(--body-font);font-size:var(--skill-pill-size);font-weight:400;line-height:1.4;letter-spacing:0;text-transform:none;color:#6b6b65;border-color:#c8c8c2;padding:5px 12px}
 @media(max-width:700px){:root{--skill-pill-size:13px}.home-page .project-tags li,.about-page .campus-role{padding:4px 10px}}
+
+/* Separate takeaways into four readable cards. */
+.case-learning-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.case-learning-cards>article{padding:24px;border:1px solid #d4d9e1;border-radius:8px;background:#ffffff45}
+.case-page .case-story .case-learning-cards h3{font-family:var(--body-font);font-size:18px;font-weight:600;line-height:1.4;letter-spacing:0;margin:0 0 12px;color:#000}
+.case-page .case-story .case-learning-cards p{font-family:var(--body-font);font-size:var(--body-text-size);line-height:1.85;margin:0;color:#000}
+@media(max-width:700px){.case-learning-cards{grid-template-columns:1fr;gap:20px}.case-learning-cards>article{padding:18px}}
+
+.case-page .aspect-rationale>article>.aspect-design-image{margin-top:24px}
